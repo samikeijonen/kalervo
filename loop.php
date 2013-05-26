@@ -1,3 +1,5 @@
+<?php do_action( 'kalervo_before_loop' ); ?>
+
 <?php if ( have_posts() ) { ?>
 
 	<?php while ( have_posts() ) { ?>
@@ -19,3 +21,5 @@
 	<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
 
 <?php } // End if check. ?>
+
+<?php do_action( 'kalervo_after_loop' ); ?>
