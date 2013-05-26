@@ -33,6 +33,9 @@ function kalervo_theme_setup() {
 		
 	/* Include theme customize. */
 	require_once( trailingslashit( get_template_directory() ) . 'includes/theme-customize.php' );
+	
+	/* Include EDD functions. */
+	require_once( trailingslashit( get_template_directory() ) . 'includes/edd-functions.php' );
 
 	/* Add theme support for core framework features. */
 	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
@@ -227,8 +230,7 @@ function kalervo_respond_html5shiv() {
  */
 function kalervo_add_image_sizes() {
 
-	add_image_size( 'kalervo-thumbnail-portfolio-4', 220, 156, true );
-	add_image_size( 'kalervo-thumbnail-portfolio-3', 386, 238, true );
+	add_image_size( 'kalervo-thumbnail-portfolio', 450, 309, true );
 	add_image_size( 'kalervo-portfolio', 764, 472, true );
 	
 }
@@ -288,10 +290,10 @@ function kalervo_one_column() {
 	if ( !is_active_sidebar( 'primary' ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 		
-	elseif ( is_post_type_archive( 'portfolio_item' ) )
+	elseif ( is_post_type_archive( 'portfolio_item' ) || is_post_type_archive( 'download' ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 		
-	elseif ( is_tax( 'portfolio' ) )
+	elseif ( is_tax( 'portfolio' ) || is_tax( 'download_tag' ) || is_tax( 'download_category' ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 	
 	elseif ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
@@ -302,9 +304,10 @@ function kalervo_one_column() {
 		
 	elseif ( kalervo_check_attachments() )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
-		
-	elseif ( is_shop() || is_product_category() || is_product_tag() )
+	
+	elseif ( function_exists( 'woocommerce_list_pages' ) && ( is_shop() || is_product_category() || is_product_tag() ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
+	
 }
 
 
@@ -400,7 +403,7 @@ function kalervo_customize_register( $wp_customize ) {
  */
 function kalervo_customize_preview_js() {
 
-	wp_enqueue_script( 'kalervo-customizer', trailingslashit( get_template_directory_uri() ) . 'js/customize/kalervo-customizer.js', array( 'customize-preview' ), '20130209', true );
+	wp_enqueue_script( 'kalervo-customizer', trailingslashit( get_template_directory_uri() ) . 'js/customize/kalervo-customizer.js', array( 'customize-preview' ), '20130524', true );
 	
 }
 
@@ -541,7 +544,7 @@ function kalervo_get_portfolio_item_link() {
 	$kalervo_portfolio_url = get_post_meta( get_the_ID(), 'portfolio_item_url', true );
 
 	if ( !empty( $kalervo_portfolio_url ) )
-		return '<span class="kalervo-project-url"><a class="kalervo-portfolio-item-link" href="' . esc_url( $kalervo_portfolio_url ) . '" title="' . the_title( '','', false ) . '">' . __( 'Visit site', 'kalervo' ) . ' <i class="' . esc_attr( apply_filters( 'kalervo_link', 'icon-hand-right' ) ) . '"></i></a></span>';
+		return '<span class="kalervo-project-url"><a class="kalervo-portfolio-item-link" href="' . esc_url( $kalervo_portfolio_url ) . '" title="' . the_title( '','', false ) . '">' . __( 'Visit site', 'kalervo' ) . '</a></span>';
 	
 }
 

@@ -52,7 +52,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary
 }
 
 /* Gallery. */
-.gallery{display:block;clear:both;overflow:hidden;margin:0 auto}.gallery .gallery-row{display:block;clear:both;overflow:hidden;margin:0}.gallery .gallery-item{overflow:hidden;float:left;margin:0;text-align:center;list-style:none;padding:0}.gallery .gallery-item .gallery-icon img{width:auto;max-width:89%;height:auto;padding:1%;margin:0 auto}.gallery-caption{margin-left:0}.gallery .col-0{width:100%}.gallery .col-1{width:100%}.gallery .col-2{width:50%}.gallery .col-3{width:33.33%}.gallery .col-4{width:25%}.gallery .col-5{width:20%}.gallery .col-6{width:16.66%}.gallery .col-7{width:14.28%}.gallery .col-8{width:12.5%}.gallery .col-9{width:11.11%}.gallery .col-10{width:10%}.gallery .col-11{width:9.09%}.gallery .col-12{width:8.33%}.gallery .col-13{width:7.69%}.gallery .col-14{width:7.14%}.gallery .col-15{width:6.66%}.gallery .col-16{width:6.25%}.gallery .col-17{width:5.88%}.gallery .col-18{width:5.55%}.gallery .col-19{width:5.26%}.gallery .col-20{width:5%}.gallery .col-21{width:4.76%}.gallery .col-22{width:4.54%}.gallery .col-23{width:4.34%}.gallery .col-24{width:4.16%}.gallery .col-25{width:4%}.gallery .col-26{width:3.84%}.gallery .col-27{width:3.7%}.gallery .col-28{width:3.57%}.gallery .col-29{width:3.44%}.gallery .col-30{width:3.33%}
+.gallery{display: block;clear: both;overflow:hidden;margin: 0 auto}.gallery-row{display: block;clear: both;overflow:hidden;margin: 0}.gallery-item{overflow: hidden;float: left;margin: 0;padding: 0;text-align:center;list-style:none;border: none;background:transparent;-webkit-box-sizing:border-box;-moz-box-sizing: border-box;box-sizing: border-box}.gallery-icon{}.gallery-icon img{width: auto;max-width:89%;height: auto;margin: 0 auto;padding: 1%;-webkit-box-sizing:border-box;-moz-box-sizing: border-box;box-sizing: border-box}.gallery-caption{margin-left:0;-webkit-box-sizing:border-box;-moz-box-sizing: border-box;box-sizing: border-box}.gallery-col-0 .gallery-item {width:100%}.gallery-col-1 .gallery-item {width:100%}.gallery-col-2 .gallery-item {width:50%}.gallery-col-3 .gallery-item {width:33.33%}.gallery-col-4 .gallery-item {width:25%}.gallery-col-5 .gallery-item {width:20%}.gallery-col-6 .gallery-item {width:16.66%}.gallery-col-7 .gallery-item {width:14.28%}.gallery-col-8 .gallery-item {width:12.5%}.gallery-col-9 .gallery-item {width:11.11%}.gallery-col-10 .gallery-item{width:10%}.gallery-col-11 .gallery-item{width:9.09%}.gallery-col-12 .gallery-item{width:8.33%}.gallery-col-13 .gallery-item{width:7.69%}.gallery-col-14 .gallery-item{width:7.14%}.gallery-col-15 .gallery-item{width:6.66%}.gallery-col-16 .gallery-item{width:6.25%}.gallery-col-17 .gallery-item{width:5.88%}.gallery-col-18 .gallery-item{width:5.55%}.gallery-col-19 .gallery-item{width:5.26%}.gallery-col-20 .gallery-item{width:5%}.gallery-col-21 .gallery-item{width:4.76%}.gallery-col-22 .gallery-item{width:4.54%}.gallery-col-23 .gallery-item{width:4.34%}.gallery-col-24 .gallery-item{width:4.16%}.gallery-col-25 .gallery-item{width:4%}.gallery-col-26 .gallery-item{width:3.84%}.gallery-col-27 .gallery-item{width:3.7%}.gallery-col-28 .gallery-item{width:3.57%}.gallery-col-29 .gallery-item{width:3.44%}.gallery-col-30 .gallery-item{width:3.33%}
 
 /* Html, Body. */
 html {
@@ -98,6 +98,12 @@ img {
 	max-width: 100% !important;
 }
 
+/* Audio embed. Somehow 100% doesn't work for all screen sizes. Try to fix this. */
+.entry-media .wp-audio-shortcode,
+.entry-content .wp-audio-shortcode {
+	max-width: 99% !important;
+}
+
 /* Links. */
 a,
 a:visited {
@@ -141,7 +147,7 @@ input[type=button],
 input[type=text],
 textarea,
 .page-template-front-page #content img,
-.archive-portfolio_item .kalervo-portfolio .hentry  img,
+.archive-portfolio_item  .kalervo-portfolio .hentry  img,
 .taxonomy-portfolio .kalervo-portfolio .hentry  img {
 	-webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
@@ -299,7 +305,7 @@ pre code {
 /* Acronyms and abbreviations */
 acronym,
 abbr {
-	border-bottom: 1px dotted #999;
+	border-bottom: 1px dotted #777;
 }
 
 /* Tables. */
@@ -780,7 +786,7 @@ ul#kalervo-social-link-list li {
 	margin-right: 0.5rem;
 }
 .breadcrumbs .trail-end {
-	color: #999;
+	color: #777;
 	font-style: italic;
 }
 
@@ -815,8 +821,8 @@ ul#kalervo-social-link-list li {
 	margin-bottom: 28px;
 	margin-bottom: 2rem;
 }
-.singular-post .hentry {
-	border-top: 1px dashed #e6e6e6;
+.singular-post .hentry,
+.singular-post #sidebar-primary {
 	padding-top: 14px;
 	padding-top: 1rem;
 }
@@ -884,10 +890,6 @@ ul#kalervo-social-link-list li {
 	padding: 7px 0;
 	padding: 0.5rem 0;
 }
-.entry-meta .category,
-.entry-meta .post_tag {
-	display: block;
-}
 
 /* Loop meta. */
 .blog .loop-meta {
@@ -895,12 +897,11 @@ ul#kalervo-social-link-list li {
 	margin-bottom: 0;
 }
 .loop-meta .loop-title {
-	color: #fff;
 	margin-top: 5px;
 	margin-top: 0.35714285714rem;
 }
 .loop-meta .loop-description {
-	color: #f9e7e0;
+	color: #777;
 	font-style: italic;
 }
 .loop-meta .loop-description p {
@@ -909,8 +910,9 @@ ul#kalervo-social-link-list li {
 }
 
 /* Post formats. */
-.format-video .kalervo-video,
-.format-image .kalervo-image {
+.format-video .entry-media,
+.format-audio .entry-media,
+.format-image .entry-media {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
 }
@@ -939,69 +941,6 @@ a.post-format-link .kalervo-post-format-icon:hover {
 	margin-top: 0;
 }
 
-/* Icons. */
-.format-chat .post-format-link:before {
-	content: "\f086";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-gallery .post-format-link:before {
-	content: "\f03e";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-status .post-format-link:before {
-	content: "\f007";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-audio .post-format-link:before {
-	content: "\f01d";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-aside .post-format-link:before {
-	content: "\f06e";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-link .post-format-link:before {
-	content: "\f0c1";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-quote .post-format-link:before {
-	content: "\f10e";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-video .post-format-link:before {
-	content: "\f008";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-.format-image .post-format-link:before {
-	content: "\f030";
-	font-family: FontAwesome;
-	margin-right: 3px;
-	margin-right: 0.21428571428rem;
-}
-
-.hentry  .entry-header .published,
-.hentry  .entry-header .author,
-.hentry .entry-header .comments-link,
-.hentry .entry-header .post-format-link {
-	margin-right: 14px;
-	margin-right: 1rem;
-}
 
 /* =Pagination and prev/next links
 -------------------------------------------------------------- */
@@ -1027,7 +966,8 @@ a.post-format-link .kalervo-post-format-icon:hover {
 .page-links a,
 a.more-link,
 a.kalervo-portfolio-item-link,
-a.kalervo-button {
+a.kalervo-button,
+.edd-submit.button.kalervo-theme-color {
 	background: #303030;
 	color: #fff;
 	display: inline-block;
@@ -1052,15 +992,10 @@ a.kalervo-portfolio-item-link {
 }
 
 .loop-nav a {
-	width: 44px;
-	width: 3.14285714286rem;
+	min-width: 120px;
+	min-width: 8.57142857143rem;
 }
-.loop-nav .icon-chevron-left:before {
-	margin-left: -3px;
-}
-.loop-nav .icon-chevron-right:before {
-	margin-left: 0;
-}
+
 .loop-nav a:hover,
 .page-links a:hover ,
 .pagination  a.page-numbers:hover,
@@ -1129,7 +1064,13 @@ a.kalervo-portfolio-item-link:hover {
 .widget-search input[type="text"],
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+body #edd_checkout_form_wrap input[type="text"],
+body #edd_checkout_form_wrap input[type="email"],
+body #edd_checkout_form_wrap input[type="password"] {
 	background: #f9f9f9; 
 	border: 1px solid #e5e5e5;
 	color: #555;
@@ -1138,10 +1079,20 @@ input[type="email"] {
 	padding: 0.5rem;
 	width: 100%;
 }
+textarea {
+	min-height: 120px;
+	min-height: 8.57142857143rem;
+}
 .widget-search input[type="text"]:focus,
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="email"]:focus {
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+body #edd_checkout_form_wrap input[type="text"]:focus,
+body #edd_checkout_form_wrap input[type="email"]:focus,
+body #edd_checkout_form_wrap input[type="password"]:focus {
 	background: #fff;
 	border: 1px solid #191919;
 	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
@@ -1406,54 +1357,61 @@ ol.comment-list dl dl {
 -------------------------------------------------------------- */
 
 .archive-portfolio_item .kalervo-portfolio .hentry,
-.taxonomy-portfolio .kalervo-portfolio .hentry {
-	text-align: center;
-}
-
-.archive-portfolio_item .kalervo-portfolio .hentry,
 .taxonomy-portfolio .kalervo-portfolio .hentry,
-.page-template-front-page .hentry {
+.archive-download .kalervo-download .hentry,
+.taxonomy-download_category .kalervo-download .hentry,
+.taxonomy-download_tag .kalervo-download .hentry {
+	text-align: center;
+	border-bottom: none;
 	padding-bottom: 0;
 	position: relative;
 }
-
-.archive-portfolio_item .kalervo-portfolio .hentry  .entry-title,
-.taxonomy-portfolio .kalervo-portfolio .hentry  .entry-title {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	font-size: 1rem;
-	text-shadow: none;
-}
-
-.archive-portfolio_item .kalervo-portfolio .hentry .kalervo-portfolio-image-info,
-.taxonomy-portfolio .kalervo-portfolio .hentry .kalervo-portfolio-image-info {
-	padding: 0 4%;
+.archive-portfolio_item .kalervo-portfolio .hentry .entry-summary,
+.taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary ,
+.archive-download .kalervo-download .hentry .entry-summary,
+.taxonomy-download_category .kalervo-download .hentry .entry-summary,
+.taxonomy-download_tag .kalervo-download .hentry .entry-summary {
 	position: absolute;
-	top: 30%;
-	text-align: center;
+	top: 20%;
+	left: 0;
 	width: 100%;
 	opacity: 0;
 }
-.archive-portfolio_item .kalervo-portfolio .hentry .kalervo-portfolio-image-info p,
-.taxonomy-portfolio .kalervo-portfolio .hentry .kalervo-portfolio-image-info p {
+.archive-portfolio_item .kalervo-portfolio .hentry .entry-summary p,
+.taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary p,
+.archive-download .kalervo-download .hentry .entry-summary p,
+.taxonomy-download_category .kalervo-download .hentry .entry-summary p,
+.taxonomy-download_tag .kalervo-download .hentry .entry-summary p {
 	margin: 7px 0;
 }
-.archive-portfolio_item .kalervo-portfolio .hentry:hover .kalervo-portfolio-image-info,
-.archive-portfolio_item .kalervo-portfolio .hentry:focus .kalervo-portfolio-image-info,
-.taxonomy-portfolio .kalervo-portfolio .hentry:hover .kalervo-portfolio-image-info,
-.taxonomy-portfolio .kalervo-portfolio .hentry:focus .kalervo-portfolio-image-info {
+.archive-portfolio_item .kalervo-portfolio .hentry:hover .entry-summary,
+.archive-portfolio_item .kalervo-portfolio .hentry:focus .entry-summary,
+.taxonomy-portfolio .kalervo-portfolio .hentry:hover .entry-summary,
+.taxonomy-portfolio .kalervo-portfolio .hentry:focus .entry-summary,
+.archive-download .kalervo-download .hentry:hover .entry-summary,
+.archive-download .kalervo-download .hentry:focus .entry-summary,
+.taxonomy-download_category .kalervo-download .hentry:hover .entry-summary,
+.taxonomy-download_category .kalervo-download .hentry:focus .entry-summary,
+.taxonomy-download_tag .kalervo-download .hentry:hover .entry-summary,
+.taxonomy-download_tag .kalervo-download .hentry:focus .entry-summary {
 	opacity: 1;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry  img,
-.taxonomy-portfolio .kalervo-portfolio .hentry  img {
+.taxonomy-portfolio .kalervo-portfolio .hentry  img,
+.archive-download .kalervo-download .hentry  img,
+.taxonomy-download_category .kalervo-download .hentry  img,
+.taxonomy-download_tag .kalervo-download .hentry  img {
 	position: relative;
 	z-index: 10;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry  img:hover,
 .archive-portfolio_item .kalervo-portfolio .hentry  img:focus,
 .taxonomy-portfolio .kalervo-portfolio .hentry  img:hover,
-.taxonomy-portfolio .kalervo-portfolio .hentry  img:focus {
-	opacity: 0.20;
+.taxonomy-portfolio .kalervo-portfolio .hentry  img:focus,
+.archive-download .kalervo-download .hentry  img:hover,
+.taxonomy-download_category .kalervo-download .hentry  img:hover,
+.taxonomy-download_tag .kalervo-download .hentry  img:hover {
+	opacity: 0.30;
 }
 
 
@@ -1722,26 +1680,23 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
 }
 
 
-/* =WPML CSS.
--------------------------------------------------------------- */
+/**
+ * Easy Digital Downloads.
+ * --------------------------------------------------------------------------- */
 
-ul#kalervo-lan { 
-	list-style: none;
+.edd-submit.button.kalervo-theme-color {
+	border: none;
+	box-shadox: none;
+	border-radius: 0;
+	padding: 14px 22px;
+	padding: 1rem 1.57142857143rem;
 }
-ul#kalervo-lan li { 
-	display: inline;
+.edd-submit.button.kalervo-theme-color:hover {
+	background: #cc071e;
 }
-#kalervo-lan {
-	max-width: 1000px;
-	margin: 7px auto 4px;
-	text-align: right;
-}
-#kalervo-lan li.kalervo-flag-links a {
-	padding: 8px;
-	padding: 0.57142857142rem;
-}
-#kalervo-lan li:last-child.kalervo-flag-links a {
-	padding-right: 0;
+.kalervo-price {
+	font-size: 20px;
+	font-size: 1.42857142857rem;
 }
 
 
@@ -2117,8 +2072,8 @@ http://qrayg.com/experiment/cssmenus/
 /* Primary sidebar. */
 #sidebar-primary {
 	float: right;
-	padding: 0 0 14px 0;
-	padding:  0 0 1rem 0;
+	padding: 24px 0 14px 0;
+	padding:  1.71428571rem 0 1rem 0;
 	width: 30%;
 }
 
@@ -2220,8 +2175,9 @@ http://qrayg.com/experiment/cssmenus/
 	margin-left: 2%;
 }
 
-.layout-1c .hentry,
-.layout-1c #comments {
+.home.layout-1c .hentry,
+.singular.layout-1c .hentry ,
+.home.layout-1c #comments {
 	padding: 24px 10%;
 	padding: 1.71429rem 10%;
 }
@@ -2231,17 +2187,34 @@ http://qrayg.com/experiment/cssmenus/
 }
 
 
-/* =Portfolio and Front Page Layouts
+/* =Portfolio, Front Page Layouts and EDD Downloads
 -------------------------------------------------------------- */
 
-.page-template-front-page .kalervo-thumbnail-front-page {
-	float: left;
-	margin: -24px 21px -24px 0;
-	margin: -1.71429rem 1.5rem -1.71429rem 0;
+.archive-portfolio_item #content,
+.taxonomy-portfolio #content,
+.archive-download #content,
+.taxonomy-download_category #content,
+.taxonomy-download_tag #content,
+.taxonomy-portfolio #content,
+.page-template-front-page .kalervo-latest-wrap {
+	width: 103%;
 }
-.page-template-front-page .kalervo-thumbnail-front-page {
-	margin: -24px 21px 0 0;
-	margin: -1.71429rem 1.5rem 0 0;
+.archive-portfolio_item .hentry,
+.taxonomy-portfolio .hentry,
+.archive-download .hentry,
+.taxonomy-download_category .hentry,
+.taxonomy-download_tag .hentry {
+	margin-bottom: 0;
+}
+.archive-portfolio_item .kalervo-portfolio,
+.taxonomy-portfolio .kalervo-portfolio,
+.archive-download .kalervo-download,
+.taxonomy-download_category .kalervo-download,
+.taxonomy-download_tag .kalervo-download,
+.page-template-front-page .kalervo-front-page-latest {
+	float: left;
+	padding-right: 3%;
+	width: 50%;
 }
 
 /* Woocommerce. */
@@ -2405,6 +2378,16 @@ body.woocommerce-page #content div.product div.summary {
 
 /* Minimum width of 1512 pixels. */
 @media screen and (min-width: 108em) {
+
+/* Portfolio and Front Page Layouts. */
+.archive-portfolio_item .kalervo-portfolio,
+.taxonomy-portfolio .kalervo-portfolio,
+.archive-download .kalervo-download,
+.taxonomy-download_category .kalervo-download,
+.taxonomy-download_tag .kalervo-download,
+.page-template-front-page .kalervo-latest {
+	width: 33.33333333%;
+}
 
 html {
     font-size: 100%;
