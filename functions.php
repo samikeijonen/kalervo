@@ -134,6 +134,10 @@ function kalervo_theme_setup() {
 	/* Add new body class if there is attachments. */
 	add_filter( 'body_class', 'kalervo_add_body_attachments' );
 	
+	/* Add wrapper to porfolio and download archive. */
+	add_action( 'kalervo_before_loop', 'kalervo_add_wrapper' );
+	add_action( 'kalervo_after_loop', 'kalervo_end_wrapper' );
+	
 	/* Woocommerce stuff. @link http://docs.woothemes.com/document/third-party-custom-theme-compatibility/ */
 	add_theme_support( 'woocommerce' );
 	
@@ -604,6 +608,30 @@ function kalervo_add_body_attachments( $classes ) {
 
 	return $classes;
 	
+}
+
+/**
+* Add wrapper to download and portfolio archive
+*
+* @since  0.1.0
+*/
+function kalervo_add_wrapper() { 
+
+	if ( is_post_type_archive( 'portfolio_item' ) || is_post_type_archive( 'download' ) || is_tax( 'portfolio' ) || is_tax( 'download_tag' ) || is_tax( 'download_category' ) )
+		echo '<div class="kalervo-grid-wrapper">';
+
+}
+
+/**
+* Add wrapper to download and portfolio archive
+*
+* @since  0.1.0
+*/
+function kalervo_end_wrapper() {
+
+	if ( is_post_type_archive( 'portfolio_item' ) || is_post_type_archive( 'download' ) || is_tax( 'portfolio' ) || is_tax( 'download_tag' ) || is_tax( 'download_category' ) )
+		echo '</div>';
+
 }
 
 /**
