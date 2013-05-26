@@ -1,0 +1,4 @@
+/* One column. */
+.layout-1c #sidebar-primary {
+	display:none;
+}

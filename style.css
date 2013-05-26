@@ -1,0 +1,2422 @@
+/**
+ * Theme Name: Kalervo
+ * Theme URI: https://foxnet-themes.fi/downloads/kalervo
+ * Description: Basic theme with Woocommerce support.
+ * Version: 0.1
+ * Author: Sami Keijonen
+ * Author URI: https://foxnet-themes.fi
+ * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, orange, white, light
+ * License: GNU General Public License v2.0
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ */
+
+/* =Notes
+--------------------------------------------------------------
+Theme uses rem values with a pixel fallback. The rem
+values (and line heights) are calculated using two variables in the same way as Twenty Twelve theme:
+
+$rembase:     14;
+$line-height: 24;
+
+---------- Examples
+
+* Use a pixel value with a rem fallback for font-size, padding, margins, etc.
+	padding: 5px 0;
+	padding: 0.357142857rem 0; (5 / $rembase)
+
+* Set a font-size and then set a line-height based on the font-size
+	font-size: 16px
+	font-size: 1.142857143rem; (16 / $rembase)
+	line-height: 1.5; ($line-height / 16)
+
+---------- Further reading
+
+http://snook.ca/archives/html_and_css/font-size-with-rem
+http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
+ 
+
+/* =CSS Resets (Normalize v2.0.1). @link: https://raw.github.com/necolas/normalize.css/master/normalize.css
+-------------------------------------------------------------- */
+
+article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{ display:block}audio,canvas,video{ display:inline-block}audio:not([controls]){ display:none; height:0}[hidden]{ display:none}html{ font-family:sans-serif; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%}body{ margin:0}a:focus{ outline:thin dotted}a:active,a:hover{ outline:0}h1{ font-size:2em}abbr[title]{ border-bottom:1px dotted}b,strong{ font-weight:bold}dfn{ font-style:italic}mark{ background:#ff0; color:#000}code,kbd,pre,samp{ font-family:monospace,serif; font-size:1em}pre{ overflow:auto;}q{ quotes:"\201C""\201D""\2018""\2019"}small{ font-size:80%}sub,sup{ font-size:75%; line-height:0; position:relative; vertical-align:baseline}sup{ top:-0.5em}sub{ bottom:-0.25em}img{ border:0}svg:not(:root){ overflow:hidden}figure{ margin:0}fieldset{ border:1px solid #c0c0c0; margin:0 2px; padding:0.35em 0.625em 0.75em}legend{ border:0; padding:0}button,input,select,textarea{ font-family:inherit; font-size:100%; margin:0}button,input{ line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{ -webkit-appearance:button; cursor:pointer}button[disabled],input[disabled]{ cursor:default}input[type="checkbox"],input[type="radio"]{ box-sizing:border-box; padding:0}input[type="search"]{ -webkit-appearance:textfield; -moz-box-sizing:content-box; -webkit-box-sizing:content-box; box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{ -webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{ border:0; padding:0}textarea{ overflow:auto; vertical-align:top}table{ border-collapse:collapse; border-spacing:0}
+
+
+/* =Layout for all devices
+-------------------------------------------------------------- */
+
+/* Use box-sizing everywhere. */
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Gallery. */
+.gallery{display:block;clear:both;overflow:hidden;margin:0 auto}.gallery .gallery-row{display:block;clear:both;overflow:hidden;margin:0}.gallery .gallery-item{overflow:hidden;float:left;margin:0;text-align:center;list-style:none;padding:0}.gallery .gallery-item .gallery-icon img{width:auto;max-width:89%;height:auto;padding:1%;margin:0 auto}.gallery-caption{margin-left:0}.gallery .col-0{width:100%}.gallery .col-1{width:100%}.gallery .col-2{width:50%}.gallery .col-3{width:33.33%}.gallery .col-4{width:25%}.gallery .col-5{width:20%}.gallery .col-6{width:16.66%}.gallery .col-7{width:14.28%}.gallery .col-8{width:12.5%}.gallery .col-9{width:11.11%}.gallery .col-10{width:10%}.gallery .col-11{width:9.09%}.gallery .col-12{width:8.33%}.gallery .col-13{width:7.69%}.gallery .col-14{width:7.14%}.gallery .col-15{width:6.66%}.gallery .col-16{width:6.25%}.gallery .col-17{width:5.88%}.gallery .col-18{width:5.55%}.gallery .col-19{width:5.26%}.gallery .col-20{width:5%}.gallery .col-21{width:4.76%}.gallery .col-22{width:4.54%}.gallery .col-23{width:4.34%}.gallery .col-24{width:4.16%}.gallery .col-25{width:4%}.gallery .col-26{width:3.84%}.gallery .col-27{width:3.7%}.gallery .col-28{width:3.57%}.gallery .col-29{width:3.44%}.gallery .col-30{width:3.33%}
+
+/* Html, Body. */
+html {
+	font-size: 87.5%;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	color: #303030;
+	font-size: 14px;
+	font-size: 1rem;
+	line-height: 1.71428571;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    word-wrap: break-word;
+	padding: 0 3%;
+}
+
+/* Images, embed, video. */
+img,
+object,
+embed,
+iframe,
+video {
+	max-width: 100%;
+}
+img {
+	height: auto;
+}
+
+.page-template-front-page #content img:hover {
+	opacity: 0.7;
+}
+
+/* For IE 8. */
+.ie8 img {
+	width: auto;
+}
+
+/* Override the Twitter embed fixed width to make tweet responsive. */
+.entry-content .twitter-tweet-rendered {
+	max-width: 100% !important;
+}
+
+/* Links. */
+a,
+a:visited {
+	color: #cc071e;
+	text-decoration: none;
+}
+#footer a,
+#footer a:visited,
+.woocommerce-pagination a {
+	color: #aaa;
+	text-decoration: none;
+}
+#kalervo-header-title a,
+#kalervo-header-title a:visited {
+	color: #31424e;
+	text-decoration: none;
+}
+a:focus,
+a:active,
+a:hover,
+#footer a:focus,
+#footer a:active,
+#footer a:hover {
+	color: #191919;
+	text-decoration: underline;
+}
+#kalervo-header-title a:focus,
+#kalervo-header-title a:active,
+#kalervo-header-title a:hover {
+	color: #253038;
+	text-decoration: underline;
+}
+:focus {
+	outline: none;
+}
+
+/* Transitions. */
+a,
+input[type=submit],
+input[type=button],
+input[type=text],
+textarea,
+.page-template-front-page #content img,
+.archive-portfolio_item .kalervo-portfolio .hentry  img,
+.taxonomy-portfolio .kalervo-portfolio .hentry  img {
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/* Aligns. */
+.alignleft,
+.left {
+	float:left;
+	margin: 14px 18px 7px 0;
+	margin: 1rem 1.28571429rem 0.5rem 0;
+}
+.alignlefttop {
+	margin: 0 14px 7px 0;
+	margin: 0 1rem 0.5rem 0;
+}
+.alignright,
+.right {
+	float: right;
+	margin: 14px 0 7px 18px;
+	margin: 1rem 0 0.5rem 1.28571429rem;
+}
+.aligncenter,
+.center {
+	display: block;
+	margin: 14px auto;
+	margin: 1rem auto;
+	}
+.alignnone,
+.block { 
+	clear:both;
+	margin: 14px 0;
+	margin: 1rem 0;
+}
+.clear {
+	clear: both;
+}
+blockquote.alignleft,
+blockquote.alignright {
+	width: 33%;
+}
+
+/* Headers. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, Sans-serif;
+    font-style: normal;
+    font-weight: normal;
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+}
+
+/* Note: line-height is 30px. */
+h1 {
+	font-size: 32px;
+	font-size: 2.28571429rem;
+	line-height: 0.9375;
+}
+h2 {
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 1.07142857143;
+}
+h3 {
+	font-size: 24px;
+	font-size: 1.71428571rem;
+	line-height: 1.25;
+}
+h4 {
+	font-size: 22px;
+	font-size: 1.57142857rem;
+	line-height: 1.36363636364;
+}
+h5 {
+	font-size: 20px;
+	font-size: 1.42857143rem;
+	line-height: 1.5;
+}
+h6 {
+	font-size: 18px;
+	font-size: 1.28571429rem;
+	line-height: 1.66666666667;
+}
+
+/* Lists. */
+ul {
+	list-style-type: circle;
+}
+ul,
+ol {
+	padding: 0 0 0 28px;
+	padding: 0 0 0 2rem;
+}
+ol ol,
+ul ul {
+	margin: 0;
+	padding: 0 0 0 22px;
+	padding: 0 0 0 1.57142857rem;
+} 
+dl dt {
+	font-size: 13px;
+	font-size: 0.928571429rem;
+}
+dl dd {
+	color: #777;
+}
+
+/* Blockquotes. */
+blockquote {
+	border-left: 5px solid #191919;
+	color: #777;
+	font-size: 18px;
+	font-size: 1.14285714rem;
+	font-style: italic;
+	margin: 14px 0;
+	margin: 1rem 0;
+	padding: 1% 2%;
+}
+blockquote blockquote {
+	padding: 0.5% 2%;
+}
+
+/* Fieldset. */
+fieldset {
+    border: none;
+    margin: 0 2px;
+    padding: 0;
+}
+
+/* Code */
+code {
+	background: #f7f7f7;
+	color: #555;
+	padding: 0 0.1875em;
+}
+pre {
+	background: #f7f7f7;
+	border: 1px solid #e5e5e5;
+	color: #555;
+	font-size: .9375em;
+	padding: 3%;
+	word-break: normal;
+}
+pre code {
+	padding: 0;
+}
+
+/* Acronyms and abbreviations */
+acronym,
+abbr {
+	border-bottom: 1px dotted #999;
+}
+
+/* Tables. */
+table {
+	background: #fff;
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+	width: 100%;
+}
+th {
+	background: #fff;
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	color: #fff;
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+	text-align: left;
+}
+td,
+tbody th {
+	border-bottom: 1px solid #f2f2f2;
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+}
+tr:hover td {
+
+}
+thead th,
+tfoot th,
+thead tr:hover th,
+tfoot tr:hover th {
+	background: #535e72;
+	color: #fff;
+}
+
+/* Sticky posts. */
+.hfeed .sticky {
+	background: #f9f9f9;
+	padding: 4%;
+}
+
+/* WP calendar. */
+#wp-calendar th,
+#wp-calendar td {
+	font-size: 13px;
+	font-size: 0.92857142857rem;
+	line-height: 1.84615385;
+	font-weight: normal;
+	padding: 4px 1%;
+	padding: 0.28571428571rem 1%;
+	text-align: center;
+}
+#wp-calendar tr:hover td {
+	background: transparent;
+}
+#wp-calendar td.pad,
+#wp-calendar #prev,
+#wp-calendar #next {
+	background: transparent;
+}
+#wp-calendar #prev {
+	text-align: left;
+}
+#wp-calendar #next {
+	text-align: right;
+}
+
+/* Horizontal rule. */
+hr {
+	background: #363d40;
+	height: 1px;
+}
+
+
+/* =Images
+-------------------------------------------------------------- */
+
+.hfeed img,
+.avatar {
+	height: auto;
+}
+
+/* Avatars. */
+.avatar {
+	float: left;
+	margin: 0 1em .5em 0;
+}
+.format-status .avatar {
+	margin-bottom: 1.5em;
+	width: 80px;
+	height: 80px;
+}
+
+/* Captions. */
+.wp-caption {
+	max-width: 100%;
+	overflow: visible;
+	padding: 0;
+}
+.wp-caption img {
+	margin: 0;
+	width: 100%;
+}
+.wp-caption-text {
+	background: #f9f9f9;
+	border-bottom: 1px solid #e5e5e5;
+	color: #777;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	line-height: 1.84615385;
+	margin: -6px 0 0 0;
+	margin: -0.42857142857rem 0 0 0;
+	max-width: 100%;
+	padding: 7px 10px;
+	padding: 0.5rem 0.71428571428rem;
+	text-align: center;
+}
+
+/* Thumbnails. */
+.thumbnail {
+	float: left;
+	margin: 0 21px 7px 0;
+	margin: 0 1.5rem 0.5rem 0;
+	max-width: 150px;
+	max-height: 150px;
+}
+
+/* Galleries. */
+.gallery {
+	margin-bottom: 1.5em !important;
+}
+.gallery .gallery-row {
+	margin-bottom: 7px;
+	margin-bottom: 0.5rem;
+}
+.gallery-caption {
+	color: #555;
+	font-size: 12px;
+	font-size: 0.85714285714rem;
+	margin-bottom: 4px;
+	margin-bottom: 0.28571428571rem;
+}
+.singular-attachment .gallery-caption {
+	display: none; /* Hides gallery captions on singular-attachment views. */
+}
+.hentry .gallery .gallery-icon .attachment-thumbnail {
+	padding: 2%;
+}
+.singular-attachment .hentry .gallery .gallery-icon .attachment-thumbnail {
+	padding: 3%;
+}
+
+/* WP smiley. */
+img.wp-smiley {
+	background: transparent !important;
+	border: none !important;
+	margin: 0 !important;
+	max-height: 0.75em !important;
+	padding: 0 !important;
+}
+
+/* Container. */
+#container {
+	background: #fff;
+	margin: 16px auto;
+	margin: 1rem auto;
+	max-width: 1000px;
+}
+#content {
+	margin: 0 auto;
+	width: 100%;
+}
+#site-description-social-wrap:after,
+#container:after,
+#content:after,
+#header:after,
+#main .wrap:after,
+#sidebar-subsidiary:after,
+#sidebar-subsidiary .wrap:after,
+#sidebar-front-page:after,
+.hentry:after,
+#footer .wrap:after,
+.kalervo-latest-wrap:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* Header. */
+#header {
+	margin: 0 auto;
+	padding: 0;
+	padding: 0;
+	position: relative;
+	text-align: center;
+	z-index: 88;
+}
+
+/* Site title. */
+#site-title {
+	text-align: center;
+}
+#site-title a {
+	color: #191919;
+	font-size: 21px;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+#site-title a:hover {
+	text-decoration: none;
+}
+
+/* Header sidebar. */
+#sidebar-header {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+	padding: 0 4%;
+}
+
+/* Assistive. */
+.skip-link,
+.screen-reader-text,
+.assistive-text {
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+}
+
+/* Header image. */
+#kalervo-header-image {
+	background: #191919;
+	position: relative;
+	min-height: 0px;
+}
+.custom-header #kalervo-header-image {
+	background: none;
+}
+.home #kalervo-header-image {
+	margin-bottom: 28px;
+	margin-bottom: 2rem;
+}
+.home.page-template-front-page #kalervo-header-image {
+	margin-bottom: 21px;
+	margin-bottom: 1.5rem;
+}
+#kalervo-header-image #kalervo-header-title {
+	background: #535e72;
+	color: #fff;
+	padding: 14px 0;
+	padding: 1rem 0;
+	text-align: center;
+	width: 100%;
+}
+.page-template-front-page #kalervo-header-image #kalervo-header-title {
+	text-align: center;
+}
+
+#kalervo-header-image #kalervo-header-title p {
+	margin: 0;
+}
+
+#kalervo-header-image .wrap {
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* Callout URL. */
+#kalervo-callout-url {
+	background: #121212;
+	background: rgba(0,0,0,0.3);
+	padding: 1em 4%;
+	width: 100%;
+}
+#kalervo-callout-url #kalervo-callout-text {
+	color: #fff;
+}
+#kalervo-callout-url .kalervo-callout-button {
+	background: #303030;
+	color: #fff;
+	display: inline-block;
+	padding: 0.75em 1.25em;
+	width: 100%;
+}
+#kalervo-callout-url .kalervo-callout-button:hover,
+#kalervo-callout-url .kalervo-callout-button:focus {
+	background: #cc071e;
+}
+#kalervo-callout-url a:hover.kalervo-callout-button {
+	text-decoration: none;
+}
+
+/* Buttons. */
+.menu-toggle,
+input[type="submit"],
+#respond #submit {
+	background: #191919;
+	border: none;
+	color: #fff;
+	padding: 14px 20px;
+	padding: 1rem 1.42857143rem;
+	display: inline-block;
+	margin: 0 7px 14px;
+	margin: 0 0.5rem 1rem;
+}
+.menu-toggle {
+	background: #191919;
+	font-size: 14px;
+	font-size: 1rem;
+	margin-bottom: 0;
+	width: 150px;
+}
+input[type="submit"] {
+	display: inline-block;
+	margin: 14px 0 0 0;
+	margin: 1rem 0 0 0;
+}
+.menu-toggle,
+input[type="submit"],
+#respond #submit {
+	cursor: pointer;
+}
+.menu-toggle:hover,
+input[type="submit"]:hover,
+#respond #submit:hover {
+	background: #cc071e;
+	text-decoration: none;
+}
+.menu-toggle:active,
+.menu-toggle.toggled-on,
+input[type="submit"]:active,
+input[type="submit"].toggled-on {
+	background: #cc071e;
+}
+h3.menu-toggle {
+	font-family: "Helvetica Neue", Helvetica, Arial, Sans-serif;
+}
+
+/* select. */
+select {
+	border: 1px solid #f2f2f2;
+	padding: 4px 0;
+	padding: 0.285714286rem 0;
+}
+
+/* Navigation Menu for narrow screens. */
+div.menu li, nav.menu li {
+	float: none;
+}
+#menu-primary ul {
+	padding: 0;
+	margin: 0;
+}
+#menu-primary {
+	text-align: center;
+}
+#menu-primary li {
+	margin-top: 14px;
+	margin-top: 1rem;
+	margin-bottom: 4px;
+	margin-bottom: 0.285714286rem;
+	line-height:  1.71428571;
+	display: block;
+}
+#menu-primary a {
+}
+#menu-primary li a {
+	padding: 14px 12px;
+	padding: 1rem 0.857142857rem;
+}
+#menu-primary a:hover {
+}
+#menu-primary ul.menu-items,
+#menu-primary div.menu-items > ul {
+	display: none;
+}
+#menu-primary.toggled-on ul.menu-items,
+.menu-toggle {
+	display: inline-block;
+}
+#menu-primary.toggled-on ul.menu-items {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+
+/* Secondary menu. */
+#menu-secondary ul {
+	list-style: none;
+	padding-left: 0;
+}
+#menu-secondary ul li {
+	display: inline-block;
+}
+#menu-secondary {
+	text-align: center;
+}
+#menu-secondary li:first-child  a {
+	margin-left: 0;
+}
+#menu-secondary li a {
+	color: #777;
+	margin-left: 0.5em;
+}
+#menu-secondary li a:hover {
+	color: #222;
+}
+#menu-secondary li.current-menu-item a {
+    color: #222;
+}
+#menu-secondary li a:after {
+	content: "|";
+	padding-left: 0.5em;
+}
+#menu-secondary li:last-child a:after {
+	content: "";
+}
+#menu-secondary li:last-child a:after {
+	padding-left: 0;
+}
+
+/* Site description. */
+#site-description-social-wrap {
+	color: #363d40;
+	font-size: 14px;
+	font-size: 1rem;
+	padding: 10px 0;
+	padding: 0.71428571428rem 0;	
+	width: 100%
+}
+#site-description {
+	color: #777777;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-size: 1rem;
+	font-style: italic;
+	line-height: 1.1;
+	margin: 5px 0;
+	margin: 0.35714285714rem 0;
+	text-align: center;
+}
+
+/* Social links. */
+#kalervo-social-links {
+	text-align: center;
+}
+ul#kalervo-social-link-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+ul#kalervo-social-link-list li {
+	display: inline;
+}
+#kalervo-social-links a.kalervo-social-link {
+	padding: 0 8px;
+	padding: 0 0.57142857142rem;
+}
+#kalervo-social-links a.kalervo-social-link:hover {
+	text-decoration: none;
+}
+
+/* Main. */
+#main {
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+/* Breadcrumbs. */
+.breadcrumbs {
+	display: block;
+	margin: 10px 0;
+	margin: 0.714285714rem 0;
+}
+.breadcrumbs .trail-before {
+	margin-right: 7px;
+	margin-right: 0.5rem;
+}
+.breadcrumbs .trail-end {
+	color: #999;
+	font-style: italic;
+}
+
+
+/* =Posts
+-------------------------------------------------------------- */
+
+#site-description-social-wrap .wrap,
+#menu-primary .wrap,
+#main .wrap,
+#kalervo-header-title .wrap,
+#footer .wrap {
+	padding: 0 4%;
+}
+
+.hentry,
+#comments-template {
+	background: #fff;
+	border-bottom: 2px solid #303030;
+	margin-bottom: 24px;
+	margin-bottom: 1.71428571rem;
+	padding: 24px 0;
+	padding: 1.71428571rem 0;
+}
+.archive-product .hentry,
+.taxonomy-product_cat .hentry,
+.taxonomy-product_tag .hentry,
+.products .hentry {
+	border-bottom: none;
+}
+.singular .hentry {
+	margin-bottom: 28px;
+	margin-bottom: 2rem;
+}
+.singular-post .hentry {
+	border-top: 1px dashed #e6e6e6;
+	padding-top: 14px;
+	padding-top: 1rem;
+}
+.singular-attachment .hentry {
+	text-align: center;
+}
+
+/* Post titles. */
+.entry-title a,
+.entry-title {
+	color: #191919;
+	text-transform: uppercase;
+}
+.entry-title { 
+	margin-bottom: 7px;
+	margin-bottom: 0.5rem;
+}
+
+/* Bylines. */
+.byline {
+	color: #777;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+.singular .byline {
+	border-bottom: 1px dashed #e6e6e6;
+	margin-top: 14px;
+	margin-top: 1rem;
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
+}
+.byline .published-date:before {
+	content: "\1f554";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.byline .author:before {
+	content: "\1f464";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.byline .kalervo-comments-link:before {
+	content: "\f0e5";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.byline .edit:before {
+	content: "\270d";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+
+/* Entry footer. */
+.entry-footer {
+	clear: both;
+}
+	
+/* Entry meta. */
+.entry-meta {
+	color: #777;
+	padding: 7px 0;
+	padding: 0.5rem 0;
+}
+.entry-meta .category,
+.entry-meta .post_tag {
+	display: block;
+}
+
+/* Loop meta. */
+.blog .loop-meta {
+	border-bottom: none;
+	margin-bottom: 0;
+}
+.loop-meta .loop-title {
+	color: #fff;
+	margin-top: 5px;
+	margin-top: 0.35714285714rem;
+}
+.loop-meta .loop-description {
+	color: #f9e7e0;
+	font-style: italic;
+}
+.loop-meta .loop-description p {
+	margin: 7px 0 0 0;
+	margin: 0.5rem 0 0 0;
+}
+
+/* Post formats. */
+.format-video .kalervo-video,
+.format-image .kalervo-image {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+.format-gallery .kalervo-gallery .gallery-caption  {
+	display: none;
+}
+.format-gallery .gallery .gallery-item .gallery-icon img {
+	max-width: 100%;
+	padding: 0;
+}
+.format-gallery .image-count {
+	color: #777;
+	font-style: italic;
+}
+a.post-format-link .kalervo-post-format-icon:hover {
+	text-decoration: none;
+} 
+.format-chat .chat-author {
+	font-weight: bold;
+}
+.format-chat .chat-text {
+	margin-left: 14px;
+	margin-left: 1rem;
+}
+.format-chat .chat-text p {
+	margin-top: 0;
+}
+
+/* Icons. */
+.format-chat .post-format-link:before {
+	content: "\f086";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-gallery .post-format-link:before {
+	content: "\f03e";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-status .post-format-link:before {
+	content: "\f007";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-audio .post-format-link:before {
+	content: "\f01d";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-aside .post-format-link:before {
+	content: "\f06e";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-link .post-format-link:before {
+	content: "\f0c1";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-quote .post-format-link:before {
+	content: "\f10e";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-video .post-format-link:before {
+	content: "\f008";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+.format-image .post-format-link:before {
+	content: "\f030";
+	font-family: FontAwesome;
+	margin-right: 3px;
+	margin-right: 0.21428571428rem;
+}
+
+.hentry  .entry-header .published,
+.hentry  .entry-header .author,
+.hentry .entry-header .comments-link,
+.hentry .entry-header .post-format-link {
+	margin-right: 14px;
+	margin-right: 1rem;
+}
+
+/* =Pagination and prev/next links
+-------------------------------------------------------------- */
+
+.loop-nav,
+.pagination,
+.page-links,
+.comment-pagination {
+	clear: both;
+	float: left;
+	margin: 0 0 14px;
+	margin: 0 0 1rem;
+	text-align: center;
+	width: 100%;
+}
+.page-links {
+	padding: 0;
+	text-align: left;
+	width: 100%;
+}
+.loop-nav a,
+.pagination .page-numbers,
+.page-links a,
+a.more-link,
+a.kalervo-portfolio-item-link,
+a.kalervo-button {
+	background: #303030;
+	color: #fff;
+	display: inline-block;
+	margin: 0 5px 18px;
+	margin: 0 0.357142857rem 1.28571429rem;
+	padding: 8px 19px;
+	padding: 0.571428571rem 1.35714286rem;
+}
+a.more-link,
+a.kalervo-portfolio-item-link {
+	margin-left: 0;
+}
+#kalervo-header-title a.kalervo-button {
+	color: #fff;
+	background: #31424e;
+	margin: 0;
+}
+#kalervo-header-title a.kalervo-button:hover,
+#kalervo-header-title a.kalervo-button:focus {
+	background: #253038;
+	text-decoration: none;
+}
+
+.loop-nav a {
+	width: 44px;
+	width: 3.14285714286rem;
+}
+.loop-nav .icon-chevron-left:before {
+	margin-left: -3px;
+}
+.loop-nav .icon-chevron-right:before {
+	margin-left: 0;
+}
+.loop-nav a:hover,
+.page-links a:hover ,
+.pagination  a.page-numbers:hover,
+a.more-link:hover,
+a.kalervo-portfolio-item-link:hover {
+	background: #cc071e;
+	text-decoration: none;
+}
+.loop-nav rel.prev {
+	float: left;
+}
+.loop-nav rel.next {
+	float: right;
+}
+.pagination .current {
+	background: #cc071e;
+	color: #fff;
+}
+
+/* Sidebars. */
+#sidebar-subsidiary .wrap {
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+	padding: 14px 4%;
+	padding: 1rem 4%;
+}
+#sidebar-front-page {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+#sidebar-subsidiary {
+	background: #fff;
+	margin: 14px 0 0 0;
+	margin: 1rem 0 0 0;
+}
+#sidebar-header .widget,
+#sidebar-primary .widget,
+#sidebar-subsidiary .widget,
+#sidebar-front-page .widget {
+	color: #777;
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+}
+#sidebar-subsidiary .widget,
+#sidebar-front-page .widget {
+	padding: 14px 0 0 0;
+	padding: 1rem 0 0 0;
+}
+
+
+/* =Widgets
+-------------------------------------------------------------- */
+
+.widget-title {
+	color: #555;
+}
+.widget img {
+	max-width: 100%;
+}
+
+/* Search widget. */
+.widget-search,
+.widget_product_search {
+	padding-bottom: 1.5em !important;
+}
+.widget-search input[type="text"],
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+	background: #f9f9f9; 
+	border: 1px solid #e5e5e5;
+	color: #555;
+	display: block;
+	padding: 7px;
+	padding: 0.5rem;
+	width: 100%;
+}
+.widget-search input[type="text"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+	background: #fff;
+	border: 1px solid #191919;
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+}
+.widget-search input[type="submit"],
+.widget_product_search input[type="submit"],
+.widget-search label {
+	display: none;
+}
+
+
+/* =Comments
+-------------------------------------------------------------- */
+
+#comments-number {
+	border-bottom: 1px dashed #e6e6e6;
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
+}
+
+/* Comments closed. */
+.comments-closed {
+	color: #555;
+	padding: 0 14px;
+	padding: 0 1rem;
+}
+
+/* Comment pagination. */
+.comments-nav {
+	line-height: 28px;
+	line-height: 2rem;
+	margin: 0 0 14px 0;
+	margin: 0 0 1rem 0;
+	position: relative;
+	text-align: center;
+}
+
+/* Comment list. */
+.comment-list,
+.comment-list ol.children {
+	list-style: none;
+	margin: 0 0 2em 0;
+}
+ol.comment-list {
+	padding: 0;
+}
+ol.comment-list ul,
+ol.comment-list ol,
+ol.comment-list dl {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+ol.comment-list ul ul,
+ol.comment-list ol ol,
+ol.comment-list dl dl {
+	margin-bottom: 0;
+}
+.comment-list ol.children {
+	margin-left: 1%;
+	margin-bottom: 0;
+	padding: 0;
+}
+.comment-list li.comment,
+.comment-list li.pingback,
+.comment-list li.trackback {
+	border-bottom: 1px dashed #e6e6e6;
+	clear: both;
+	margin-bottom: 20px;
+	margin-bottom: 1.42857143rem;
+	overflow: hidden;
+}
+.comment-list li li.comment {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding: 20px 0 0 0;
+	padding: 1.42857143rem 0 0 0;
+	overflow: hidden; /* IE7 */
+}
+
+/* Avatars. */
+.comment-list .avatar,
+.format-status  .avatar,
+.loop-description .avatar {
+	float: none;
+	margin: 6px 20px 20px 4px;
+	margin: 0.428571429rem 1.42857143rem 1.42857143rem 0.28571428571rem;
+	width: 80px;
+	height: 80px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px;
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.30);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.30);
+	box-shadow: 0 0 3px rgba(0,0,0,0.30);
+}
+.format-status  .avatar,
+.loop-description .avatar {
+	float: left;
+}
+.loop-description .avatar {
+	margin-bottom: 0;
+}
+.comment-list li li .avatar {
+	margin-bottom: 10px;
+	margin-bottom: 0.714285714rem;
+	width: 60px;
+	height: 60px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+
+/* Comment meta. */
+.comment-meta {
+	color: #555;
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+}
+.comment-list li.pingback .comment-meta,
+.comment-list li.trackback .comment-meta {
+	margin-bottom: 20px;
+	margin-bottom: 1.42857143rem;
+}
+.comment-meta .published abbr {
+	font-style: italic;
+}
+.comment-author {
+	display: block;
+}
+.comment-author cite {
+	font-weight: bold;
+}
+.pingback .comment-author cite,
+.trackback .comment-author cite {
+	font-style: italic;
+}
+.comment-reply-link {
+}
+
+/* Comment text. */
+.comment-content {
+	overflow: hidden;
+}
+.comment-list li li.comment .comment-text {
+	overflow: visible;
+}
+.comment-list li li.has-avatar .comment-text {
+	margin-left: 0;
+}
+.comment-text .moderation {
+	font-style: italic;
+	color: #555;
+}
+
+/* Comment note. */
+.comment-note {
+	font-weight: bold;
+}
+
+
+/* =Comment form
+-------------------------------------------------------------- */
+
+#respond {
+	margin-bottom: 20px;
+	margin-bottom: 1.42857143rem;
+	overflow: hidden;
+}
+
+/* Cancel reply link. */
+#reply-title small a {
+	font: bold 0.875em/1.2 "Helvetica Neue", Helvetica, sans-serif;
+	margin-left: 14px;
+	margin-left: 1rem;
+}
+
+/* Comment form labels. */
+#respond p.form-email label {
+	padding: 0;
+}
+#respond span.required {
+	font-weight: bold;
+}
+
+/* Comment form inputs and textarea elements. */
+#respond input[type="text"],
+#respond textarea {
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	color: #555;
+	display: block;
+	padding: 0.5em;
+	width: 100%;
+}
+#respond input[type="text"]:focus,
+#respond textarea:focus {
+	background: #fff;
+	border: 1px solid #191919;
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+}
+
+/* Submit button. */
+#respond #submit {
+	float: right;
+	margin: 0 0 14px 14px;
+	margin: 0 0 1rem 1rem;
+}
+
+
+/* =Footer area
+-------------------------------------------------------------- */
+
+/* Footer. */
+#footer {
+	margin: 0;
+}
+
+/* Copyright and credit in footer. */
+#footer .copyright,
+#footer .credit {
+	text-align: center;
+}
+
+/* Subsidiary menu. */
+#menu-subsidiary {
+	position: relative;
+	margin: 0;
+	width: 100%;
+	z-index: 98;
+}
+#menu-subsidiary .wrap {
+	margin: 0 auto;
+	width: 100%;
+}
+#menu-subsidiary .menu {
+    /*display: table;
+    margin: 0 auto;*/
+}
+#menu-subsidiary ul {
+	padding: 0;
+	text-align: center;
+}
+#menu-subsidiary li {
+	float: none;
+	display: inline-block;
+}
+#menu-subsidiary li a {
+	padding: 14px;
+	padding: 1rem;
+}
+#menu-subsidiary li.current-menu-item a,
+#menu-subsidiary li a:hover {
+	color: #5c6f7c; 
+}
+
+
+/* =Portfolio and Front Page Layouts
+-------------------------------------------------------------- */
+
+.archive-portfolio_item .kalervo-portfolio .hentry,
+.taxonomy-portfolio .kalervo-portfolio .hentry {
+	text-align: center;
+}
+
+.archive-portfolio_item .kalervo-portfolio .hentry,
+.taxonomy-portfolio .kalervo-portfolio .hentry,
+.page-template-front-page .hentry {
+	padding-bottom: 0;
+	position: relative;
+}
+
+.archive-portfolio_item .kalervo-portfolio .hentry  .entry-title,
+.taxonomy-portfolio .kalervo-portfolio .hentry  .entry-title {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	font-size: 1rem;
+	text-shadow: none;
+}
+
+.archive-portfolio_item .kalervo-portfolio .hentry .kalervo-portfolio-image-info,
+.taxonomy-portfolio .kalervo-portfolio .hentry .kalervo-portfolio-image-info {
+	padding: 0 4%;
+	position: absolute;
+	top: 30%;
+	text-align: center;
+	width: 100%;
+	opacity: 0;
+}
+.archive-portfolio_item .kalervo-portfolio .hentry .kalervo-portfolio-image-info p,
+.taxonomy-portfolio .kalervo-portfolio .hentry .kalervo-portfolio-image-info p {
+	margin: 7px 0;
+}
+.archive-portfolio_item .kalervo-portfolio .hentry:hover .kalervo-portfolio-image-info,
+.archive-portfolio_item .kalervo-portfolio .hentry:focus .kalervo-portfolio-image-info,
+.taxonomy-portfolio .kalervo-portfolio .hentry:hover .kalervo-portfolio-image-info,
+.taxonomy-portfolio .kalervo-portfolio .hentry:focus .kalervo-portfolio-image-info {
+	opacity: 1;
+}
+.archive-portfolio_item .kalervo-portfolio .hentry  img,
+.taxonomy-portfolio .kalervo-portfolio .hentry  img {
+	position: relative;
+	z-index: 10;
+}
+.archive-portfolio_item .kalervo-portfolio .hentry  img:hover,
+.archive-portfolio_item .kalervo-portfolio .hentry  img:focus,
+.taxonomy-portfolio .kalervo-portfolio .hentry  img:hover,
+.taxonomy-portfolio .kalervo-portfolio .hentry  img:focus {
+	opacity: 0.20;
+}
+
+
+/* =Messages: alert, note, success	
+-------------------------------------------------------------- */
+
+.kalervo-message {
+	padding: 3%;
+	margin-bottom: 21px;
+	margin-bottom: 1.5rem;
+}
+.kalervo-message p {
+	margin-top: 0;
+}
+.kalervo-message:before {
+	font-family: FontAwesome;
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 0.85714285714;
+	float: left;
+	margin: 7px 14px 14px 0;
+	margin: 0.5rem 1rem 1rem 0;
+}
+.kalervo-message:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+.kalervo-alert {
+	background: #fff7f7;
+	border: 1px solid #fddcdc;
+}
+.kalervo-alert:before {
+	content: "\f00d";
+	color: #c74343;
+}
+
+.kalervo-note {
+	background: #fcfbe4;
+	border: 1px solid #efebbc;
+}
+.kalervo-note:before {
+	content: "\f071";
+	color: #efdf23;
+}
+
+.kalervo-success {
+	background: #f1f9ea;
+	border: 1px solid #d0eeac;
+}
+.kalervo-success:before {
+	content: "\f087";
+	color: #72b423;
+}
+
+/* Ok list. */
+ul.kalervo-ok-list {
+	list-style-type: none;
+	padding: 0 0 0 14px;
+	padding: 0 0 0 1rem;
+}
+ul.kalervo-ok-list li:before {
+	content: "\f00c";
+	color: #72b423;
+	font-family: FontAwesome;
+	margin-right: 4px;
+	margin-right: 0.28571428571rem;
+}
+
+
+/* =Gravity Forms CSS. @link: http://www.rocketgenius.com/gravity-forms-css-targeting-specific-elements/
+-------------------------------------------------------------- */
+
+.gform_wrapper ul {
+	background: transparent;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+body .gform_wrapper .gform_heading {
+	margin-bottom: 14px;
+	margin-bottom: 1rem;
+	width: 100%;
+}
+body .gform_wrapper .gform_heading .gform_title,
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_title {
+	font-weight: normal;
+	margin: 7px 0;
+	margin: 0.5rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description,
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_description,
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex label,
+body .gform_wrapper .instruction {
+	color: #555;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 7px 0;
+	padding: 0.5rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex label {
+	padding: 4px 0 7px;
+	padding: 0.285714286rem 0 0.5rem;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input.medium {
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	color: #555;
+	display: block;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 7px;
+	padding: 0.5rem;
+	width: 100%;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield textarea:focus {
+	background: #fff;
+	border: 1px solid #191919;
+} 
+body .gform_wrapper .gform_body .gform_fields .gfield select {
+	border: 1px solid #e5e5e5;
+	font-size: 13px;
+	font-size: 0.928571429rem;
+	padding: 4px 0;
+	padding: 0.285714286rem 0;
+}
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_checkbox li input[type=checkbox],
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_radio li input[type=radio] {
+	margin-top: 4px;
+	margin-top: 0.285714286rem;
+}
+body .gform_wrapper table.gfield_list th,
+body .gform_wrapper table.gfield_list td {
+	padding: 7px 2%;
+	padding: 0.5rem 2%;
+}
+body .gform_wrapper table.gfield_list tr:hover td {
+	background: none;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button {
+	background: #191919;
+	border: none;
+	color: #fff;
+	padding: 14px 20px;
+	padding: 1rem 1.42857143rem;
+	display: inline-block;
+	margin: 0 7px 14px;
+	margin: 0 0.5rem 1rem;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button {
+	float: right;
+}
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover {
+	background: #cc071e;
+}
+body .gform_wrapper .gf_progressbar_wrapper h3.gf_progressbar_title {
+	font-size: 1.1em;
+}
+body .gform_wrapper .gform_page_footer .button.gform_button {
+	float: right;
+	margin-top: 0;
+}
+body #gforms_confirmation_message {
+	background: #f9f9f9;
+	border: 1px solid #e5e5e5;
+	padding: 3%;
+}
+body .gform_wrapper .gform_footer {
+	margin: 7px 0 0;
+	margin: 0.5rem 0 0;
+	padding: 7px 0;
+	padding: 0.5rem 0;
+}
+
+body .ui-datepicker-div,
+body .ui-datepicker-inline,
+body #ui-datepicker-div {
+	font: normal normal bold 0.875em/1.2 "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+/* =Woocommerce CSS.
+-------------------------------------------------------------- */
+
+body.woocommerce ul.products li.product,
+body.woocommerce-page ul.products li.product,
+body.woocommerce div.product div.images,
+body.woocommerce #content div.product div.images,
+body.woocommerce-page div.product div.images,
+body.woocommerce-page #content div.product div.images,
+body.woocommerce div.product div.summary,
+body.woocommerce #content div.product div.summary,
+body.woocommerce-page div.product div.summary,
+body.woocommerce-page #content div.product div.summary {
+	float: none;
+	width: 100%;
+}
+body.woocommerce ul.products li.product a img,
+body.woocommerce-page ul.products li.product a img,
+body.woocommerce div.product div.images img,
+body.woocommerce #content div.product div.images img,
+body.woocommerce-page div.product div.images img,
+body.woocommerce-page #content div.product div.images img,
+body.woocommerce .related ul.products li.product img, 
+body.woocommerce .related ul li.product img,
+body.woocommerce .upsells.products ul.products li.product img,
+body.woocommerce .upsells.products ul li.product img,
+body.woocommerce-page .related ul.products li.product img,
+body.woocommerce-page .related ul li.product img,
+body.woocommerce-page .upsells.products ul.products li.product img,
+body.woocommerce-page .upsells.products ul li.product img {
+	max-width: 100%;
+	width: auto;
+}
+body.woocommerce ul.products li.product a img,
+body.woocommerce-page ul.products li.product a img {
+	box-shadow: none;
+}
+body.woocommerce nav.woocommerce-pagination ul li a,
+body.woocommerce nav.woocommerce-pagination ul li span,
+body.woocommerce #content nav.woocommerce-pagination ul li a,
+body.woocommerce #content nav.woocommerce-pagination ul li span,
+body.woocommerce-page nav.woocommerce-pagination ul li a,
+body.woocommerce-page nav.woocommerce-pagination ul li span,
+body.woocommerce-page #content nav.woocommerce-pagination ul li a,
+body.woocommerce-page #content nav.woocommerce-pagination ul li span {
+	padding: 0.75em
+}
+body.woocommerce #customer_login.col2-set .col-1, 
+body.woocommerce-page #customer_login.col2-set .col-1,
+body.woocommerce  #customer_login.col2-set .col-2,
+body.woocommerce-page  #customer_login.col2-set .col-2 {
+	float: none;
+	width: 100%;
+}
+
+
+/* =Soliloquy CSS.
+-------------------------------------------------------------- */
+
+body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
+	bottom: 24%;
+}
+
+#sidebar-header ul {
+	list-style-type: none;
+	margin-top: 0;
+}
+
+
+/* =WPML CSS.
+-------------------------------------------------------------- */
+
+ul#kalervo-lan { 
+	list-style: none;
+}
+ul#kalervo-lan li { 
+	display: inline;
+}
+#kalervo-lan {
+	max-width: 1000px;
+	margin: 7px auto 4px;
+	text-align: right;
+}
+#kalervo-lan li.kalervo-flag-links a {
+	padding: 8px;
+	padding: 0.57142857142rem;
+}
+#kalervo-lan li:last-child.kalervo-flag-links a {
+	padding-right: 0;
+}
+
+
+/* === Clearfix. @link http://nicolasgallagher.com/micro-clearfix-hack === */
+
+.page-template-front-page .hentry:before,
+.page-template-front-page .hentry:after  {
+	content: " "; /* 1 */
+	display: table; /* 2 */
+}
+.page-template-front-page .hentry:after {
+	clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.page-template-front-page .hentry {
+	*zoom: 1;
+}
+
+/* =FontAwesome
+-------------------------------------------------------------- */
+
+@font-face {
+  font-family: 'fontawesome';
+  src: url("fonts/fontawesome/fontello.eot?58303276");
+  src: url("fonts/fontawesome/fontello.eot?58303276#iefix") format('embedded-opentype'), url("fonts/fontawesome/fontello.woff?58303276") format('woff'), url("fonts/fontawesome/fontello.ttf?58303276") format('truetype'), url("fonts/fontawesome/fontello.svg?58303276#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('font/fontawesome/fontello.svg?58303276#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'fontawesome';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+/* opacity .8 */
+/* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+/* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+/* Animation center compensation - magrins should be symmetric */
+/* remove if not needed */
+  margin-left: 0.2em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-right-hand:before { content: '\261e'; } /* '☞' */
+.icon-mail:before { content: '\2709'; } /* '✉' */
+.icon-edit:before { content: '\270d'; } /* '✍' */
+.icon-chat:before { content: '\e720'; } /* '' */
+.icon-chevron-left:before { content: '\e75d'; } /* '' */
+.icon-chevron-right:before { content: '\e75e'; } /* '' */
+.icon-twitter:before { content: '\f099'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-github:before { content: '\f09b'; } /* '' */
+.icon-rss:before { content: '\f09e'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
+.icon-pinterest:before { content: '\f0d2'; } /* '' */
+.icon-google-plus:before { content: '\f0d5'; } /* '' */
+.icon-linkedin:before { content: '\f0e1'; } /* '' */
+.icon-comment-empty:before { content: '\f0e5'; } /* '' */
+.icon-angle-right:before { content: '\f105'; } /* '' */
+.icon-picture:before { content: '\1f304'; } /* '\1f304' */
+.icon-user:before { content: '\1f464'; } /* '\1f464' */
+.icon-phone:before { content: '\1f4de'; } /* '\1f4de' */
+.icon-clock:before { content: '\1f554'; } /* '\1f554' */
+
+
+/* =Media queries
+-------------------------------------------------------------- */
+
+/* Minimum width of 308 pixels. */
+@media screen and (min-width: 22em) {
+#site-title a {
+	font-size: 28px;
+}
+
+}
+
+/* Minimum width of 686 pixels. */
+@media screen and (min-width: 49em) {
+
+#container {
+	margin: 32px auto;
+	margin: 2rem auto;
+}
+
+/* Container max-width. */
+#site-description-social-wrap .wrap,
+#header .wrap,
+#menu-primary .wrap,
+#main .wrap,
+#sidebar-subsidiary .wrap,
+#footer .wrap {
+	margin: 0 auto;
+}
+
+#site-title a {
+	font-size: 42px;
+	font-size: 3rem;
+}
+
+/* Header title. */
+.custom-header #kalervo-header-image {
+    min-height: 279px;
+}
+#kalervo-header-image #kalervo-header-title {
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 1.25;
+}
+.custom-header #kalervo-header-image #kalervo-header-title {
+	background: #535e72;
+	background: rgba(83, 94, 114, 0.84);
+	position: absolute;
+	bottom: 7px;
+}
+#kalervo-header-image #kalervo-header-title .loop-meta {
+	font-size: 14px;
+	font-size: 1rem;
+}
+
+/* Callout URL. */
+#kalervo-callout-url {
+	padding: 1em;
+	position: absolute;
+	bottom: 40%;
+	right: 10%;
+	width: 60%;
+}
+#kalervo-callout-url .kalervo-callout-button {
+	font-size: 1.25em;
+}
+
+/* Content. */
+#content {
+	float: left;
+	width: 66%;
+}
+
+
+/* =Menu Primary
+-------------------------------------------------------------- */
+
+/* Hide menu toggle. */
+.menu-toggle {
+	display: none;
+}
+
+#menu-primary ul.menu-items,
+#menu-primary div.menu-items > ul {
+	display: block;
+}
+
+/* Reset mobile menu settings. */
+#menu-primary {
+	background: #303030;
+	margin-top: 0;
+}
+#menu-primary li {
+	margin: 0;
+}
+
+/* Navigation. */
+#menu-primary {
+	clear: both;
+	display: block;
+	text-align: left;
+}
+
+/*
+Original Author: Craig Erskine
+Description: Dynamic Menu System - Horizontal/Vertical
+http://qrayg.com/experiment/cssmenus/
+*/
+
+#menu-primary {
+	clear: both;
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+#menu-primary .wrap {
+	margin: 0 auto;
+	height: auto;
+	position: relative;
+	overflow: visible;
+}
+
+#menu-primary:after,
+#menu-primary .wrap:after {
+	content: ".";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+#menu-primary li a {
+	font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 2.18181818;
+	letter-spacing: 1px;
+}
+#menu-primary .menu-item-parent > a:after {
+	content: "\f105";
+	float: right;
+	font-family: 'FontAwesome';
+	padding-left: 8px;
+	padding-left: 0.5rem;
+}
+
+#menu-primary ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	text-transform: uppercase;
+}
+
+#menu-primary ul ul {
+	width: 180px; /* Sub Menu Width */
+	width: 12.8571428571rem;
+	margin: 0;
+	list-style: none;
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 99999;
+	text-transform: none;
+}
+
+#menu-primary ul ul ul,
+#menu-primary ul ul ul ul {
+	top: 0;
+	left: 100%;
+}
+
+#menu-primary ul li {
+	float: left;
+	display: inline;
+	position: relative;
+}
+
+#menu-primary ul ul li {
+	width: 100%;
+	display: block;
+}
+
+/* Root Menu. */
+#menu-primary ul a {
+	color: #fff;
+	float: left;
+	display: block;
+	text-decoration: none;
+	padding: 6px 12px;
+	padding: 0.428571429rem 0.857142857rem;
+	height: 1%;
+}
+
+/* Root Menu Hover Persistence. */
+#menu-primary ul a:hover,
+#menu-primary ul li:hover a,
+#menu-primary li.current-menu-item a,
+#menu-primary ul li.iehover a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 2nd Menu */
+#menu-primary ul li:hover li a,
+#menu-primary ul li.iehover li a {
+	float: none;
+	background: #303030;
+	color: #fff;
+}
+
+/* Current menu item in sub menu. */
+#menu-primary ul.sub-menu li.current-menu-item a,
+#menu-primary ul li.iehover li.current-menu-item a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 2nd Menu Hover Persistence */
+#menu-primary ul li:hover li a:hover,
+#menu-primary ul li:hover li:hover a,
+#menu-primary ul li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 3rd Menu */
+#menu-primary ul li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li a {
+	background: #303030;
+	color: #fff;
+}
+#menu-primary ul li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.current-menu-item a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 3rd Menu Hover Persistence */
+#menu-primary ul li:hover li:hover li a:hover,
+#menu-primary ul li:hover li:hover li:hover a,
+#menu-primary ul li.iehover li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 4th Menu */
+#menu-primary ul li:hover li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li.iehover li a {
+	background: #303030;
+	color: #fff;
+}
+#menu-primary ul li:hover li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.iehover li.current-menu-item a {
+	background: #121212;
+	color: #fff;
+}
+
+/* 4th Menu Hover */
+#menu-primary ul li:hover li:hover li:hover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover li a:hover {
+	background: #121212;
+	color: #fff;
+}
+
+/* Hover Function - Do Not Move */
+#menu-primary ul li:hover ul ul,
+#menu-primary ul li:hover ul ul ul,
+#menu-primary ul li.iehover ul ul,
+#menu-primary ul li.iehover ul ul ul {
+	display: none;
+}
+
+#menu-primary ul li:hover ul,
+#menu-primary ul ul li:hover ul,
+#menu-primary ul ul ul li:hover ul,
+#menu-primary ul li.iehover ul,
+#menu-primary ul ul li.iehover ul,
+#menu-primary ul ul ul li.iehover ul {
+	display: block;
+}
+
+/* Primary sidebar. */
+#sidebar-primary {
+	float: right;
+	padding: 0 0 14px 0;
+	padding:  0 0 1rem 0;
+	width: 30%;
+}
+
+#footer .kalervo-have-subsidiary-menu .footer-content {
+	float: left;
+	margin-right: 4%;
+	width: 46%;
+}
+#footer .kalervo-have-subsidiary-menu .copyright,
+#footer .kalervo-have-subsidiary-menu .credit {
+	float: none;
+	text-align: left;
+}
+
+/* Menu subsidiary. */
+#menu-subsidiary {
+	padding-top: 10px;
+	padding-top: 0.71428571428rem;
+	float: left;
+	width: 50%;
+}
+#menu-subsidiary ul {
+    text-align: right;
+}
+#menu-subsidiary li a {
+	padding: 7px;
+	padding: 0.5rem;
+}
+
+#comments-number {
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
+}
+
+/* Sidebars. */
+#sidebar-subsidiary .wrap-inside,
+#sidebar-front-page {
+	margin-left: -3%;
+}
+#sidebar-subsidiary .widget,
+#sidebar-front-page .widget {
+	float: left;
+	padding-left: 3%;
+}
+
+#sidebar-front-page {
+	padding: 0;
+}
+
+/* 1 widget in sidebar. */
+.sidebar-subsidiary-1 #sidebar-subsidiary .widget,
+.sidebar-front-page-1 #sidebar-front-page .widget {
+	width: 100%;
+}
+/* 2 widgets in sidebar. */
+.sidebar-subsidiary-2 #sidebar-subsidiary .widget,
+.sidebar-front-page-2 #sidebar-front-page .widget {
+	width: 50%;
+}
+/* 3 widgets in sidebar. */
+.sidebar-subsidiary-3 #sidebar-subsidiary .widget,
+.sidebar-front-page-3 #sidebar-front-page .widget {
+	width: 33.333333333%;
+}
+/* 4 widgets in sidebar. */
+.sidebar-subsidiary-4 #sidebar-subsidiary .widget,
+.sidebar-front-page-4 #sidebar-front-page .widget {
+	width: 50%;
+}
+/* Clear left for 3th widget. */
+.sidebar-subsidiary-4 #sidebar-subsidiary .widget:nth-child(3),
+.sidebar-front-page-4 #sidebar-front-page .widget:nth-child(3) {
+	clear: left;
+}
+
+
+/* =Layouts
+-------------------------------------------------------------- */
+
+/* One column. */
+.layout-1c #content {
+	float: none;
+	width: 100%;
+}
+
+/* Two columns. */
+.layout-2c-l #content,
+.layout-default #content,
+.layout-2c-r #sidebar-primary {
+	float: left;
+}
+
+.layout-2c-r #content {
+    float: right;
+}
+
+/* Comments. */
+.comment-list ol.children {
+	margin-left: 2%;
+}
+
+.layout-1c .hentry,
+.layout-1c #comments {
+	padding: 24px 10%;
+	padding: 1.71429rem 10%;
+}
+.woocommerce-page .hentry {
+	padding: 24px 0;
+	padding: 1.71429rem 0;
+}
+
+
+/* =Portfolio and Front Page Layouts
+-------------------------------------------------------------- */
+
+.page-template-front-page .kalervo-thumbnail-front-page {
+	float: left;
+	margin: -24px 21px -24px 0;
+	margin: -1.71429rem 1.5rem -1.71429rem 0;
+}
+.page-template-front-page .kalervo-thumbnail-front-page {
+	margin: -24px 21px 0 0;
+	margin: -1.71429rem 1.5rem 0 0;
+}
+
+/* Woocommerce. */
+body.woocommerce ul.products li.product,
+body.woocommerce-page ul.products li.product {
+	float: left;
+	width: 22.05%;
+}
+body.woocommerce div.product div.images,
+body.woocommerce #content div.product div.images,
+body.woocommerce-page div.product div.images,
+body.woocommerce-page #content div.product div.images,
+body.woocommerce div.product div.summary,
+body.woocommerce #content div.product div.summary,
+body.woocommerce-page div.product div.summary,
+body.woocommerce-page #content div.product div.summary {
+	float: left;
+	width: 48%;
+}
+body.woocommerce div.product div.summary,
+body.woocommerce #content div.product div.summary,
+body.woocommerce-page div.product div.summary,
+body.woocommerce-page #content div.product div.summary {
+	float: right;
+}
+
+}
+
+
+/* Minimum width of 896 pixels. */
+@media screen and (min-width: 64em) {
+
+/* Container max-width. */
+#site-description-social-wrap .wrap,
+#header .wrap,
+#menu-primary .wrap,
+#kalervo-header-image .wrap,
+#main .wrap,
+#sidebar-subsidiary .wrap,
+#footer .wrap {
+
+}
+
+#comments-number {
+	padding-bottom: 14px;
+	padding-bottom: 1rem;
+}
+
+/* Sidebar front-page-callout. */
+#sidebar-front-page-callout {
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 1.21428571; /* 34px / 28px = 1.21428571. */
+}
+
+/* Site description. */
+#site-description-social-wrap {
+	padding-top: 1.25em;
+}
+#site-description {
+	float: left;
+	width: 46%;
+	text-align: left;
+}
+
+/* Social links. */
+#kalervo-social-links {
+	float: right;
+	width: 30%;
+	text-align: right;
+}
+#kalervo-social-links a.kalervo-social-link {
+	padding: 0 4px;
+	padding: 0 0.28571428571rem;
+}
+
+/* Site title. */
+#site-title {
+	float: left;
+	margin: 0 4% 14px 4%;
+	margin: 0 4% 1rem 4%;
+	text-align: left;
+	width: 42%;
+}
+
+/* Secondary menu. */
+#menu-secondary {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+#menu-secondary ul {
+	margin-top: 0;
+}
+
+/* Header widget. */
+#sidebar-header {
+	float: right;
+	text-align: right;
+	width: 42%;
+}
+#sidebar-header .widget-search,
+#sidebar-header .widget_product_search {
+	margin-top: 16px;
+}
+
+/* 4 widgets in subsidiary sidebar. */
+.sidebar-subsidiary-4 #sidebar-subsidiary .widget,
+.sidebar-front-page-4 #sidebar-front-page .widget {
+	width: 25%;
+}
+/* Don't clear left for 3th widget. */
+.sidebar-subsidiary-4 #sidebar-subsidiary .widget:nth-child(3),
+.sidebar-front-page-4 #sidebar-front-page .widget:nth-child(3) {
+	clear: none;
+	padding-left: 3%;
+}
+
+/* Comments for desktop. */
+.comment-list .avatar {
+	float: left;
+}
+.comment-list li li.has-avatar .comment-text {
+	margin-left: 60px;
+	margin-left: 4.28571429rem;
+	overflow: hidden;
+}
+
+/* Button. */
+.kalervo-callout-text.kalervo-callout-text-link {
+	float: left;
+	width: 66%;
+}
+.kalervo-callout-link {
+	float: right;
+	padding-left: 7px;
+	padding-left: 0.5rem;
+	text-align: right;
+	width: 30%;
+}
+.kalervo-callout-text-link {
+	padding-top: 8px;
+	padding-top: 0.571428571rem;
+}
+.page-template-front-page #kalervo-header-image #kalervo-header-title {
+	text-align: left;
+}
+
+}
+
+
+/* Minimum width of 1036 pixels. */
+@media screen and (min-width: 74em) {
+
+/* Comments. */
+.comment-list ol.children {
+	margin-left: 4%;
+}
+
+}
+
+/* Minimum width of 1512 pixels. */
+@media screen and (min-width: 108em) {
+
+html {
+    font-size: 100%;
+}
+
+}
+
+/* Minimum width of 1932 pixels. */
+@media screen and (min-width: 138em) {
+
+html {
+    font-size: 110%;
+}
+
+}
