@@ -1703,11 +1703,14 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
 /* === Clearfix. @link http://nicolasgallagher.com/micro-clearfix-hack === */
 
 .page-template-front-page .hentry:before,
-.page-template-front-page .hentry:after  {
+.page-template-front-page .hentry:after,
+.kalervo-grid-wrapper:before,
+.kalervo-grid-wrapper:after  {
 	content: " "; /* 1 */
 	display: table; /* 2 */
 }
-.page-template-front-page .hentry:after {
+.page-template-front-page .hentry:after,
+.kalervo-grid-wrapper:after {
 	clear: both;
 }
 
@@ -1715,7 +1718,8 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
  * For IE 6/7 only
  * Include this rule to trigger hasLayout and contain floats.
  */
-.page-template-front-page .hentry {
+.page-template-front-page .hentry,
+.kalervo-grid-wrapper {
 	*zoom: 1;
 }
 
@@ -2190,12 +2194,12 @@ http://qrayg.com/experiment/cssmenus/
 /* =Portfolio, Front Page Layouts and EDD Downloads
 -------------------------------------------------------------- */
 
-.archive-portfolio_item #content,
-.taxonomy-portfolio #content,
-.archive-download #content,
-.taxonomy-download_category #content,
-.taxonomy-download_tag #content,
-.taxonomy-portfolio #content,
+.archive-portfolio_item .kalervo-grid-wrapper,
+.taxonomy-portfolio .kalervo-grid-wrapper,
+.archive-download .kalervo-grid-wrapper,
+.taxonomy-download_category .kalervo-grid-wrapper,
+.taxonomy-download_tag .kalervo-grid-wrapper,
+.taxonomy-portfolio .kalervo-grid-wrapper,
 .page-template-front-page .kalervo-latest-wrap {
 	width: 103%;
 }
