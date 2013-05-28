@@ -2383,16 +2383,6 @@ body.woocommerce-page #content div.product div.summary {
 /* Minimum width of 1512 pixels. */
 @media screen and (min-width: 108em) {
 
-/* Portfolio and Front Page Layouts. */
-.archive-portfolio_item .kalervo-portfolio,
-.taxonomy-portfolio .kalervo-portfolio,
-.archive-download .kalervo-download,
-.taxonomy-download_category .kalervo-download,
-.taxonomy-download_tag .kalervo-download,
-.page-template-front-page .kalervo-latest {
-	width: 33.33333333%;
-}
-
 html {
     font-size: 100%;
 }
