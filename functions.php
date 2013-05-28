@@ -62,9 +62,11 @@ function kalervo_theme_setup() {
 	/* Add support for auto-feed links. */
 	add_theme_support( 'automatic-feed-links' );
 
-	/* Add theme support for post formats. */
-	add_theme_support( 'structured-post-formats', array( 'video' ) );
-	add_theme_support( 'post-formats', array( 'aside', 'audio', 'chat', 'image', 'gallery', 'link', 'quote', 'status' ) );
+	/* Add theme support for post formats. Note: rest of the post formats are handeld by Hybrid Core andd WordPress. */
+	add_theme_support( 
+		'structured-post-formats',
+		array( 'audio', 'image', 'link', 'video' ) 
+	);
 	
 	/* Add custom background feature. */
 	add_theme_support( 
