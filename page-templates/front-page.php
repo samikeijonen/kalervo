@@ -11,6 +11,8 @@ get_header(); // Loads the header.php template. ?>
 
 	<div id="content" class="hfeed" role="main">
 	
+		<?php get_sidebar( 'front-page' ); // Loads the sidebar-front-page.php template. ?>
+	
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -40,8 +42,6 @@ get_header(); // Loads the header.php template. ?>
 			<?php get_template_part( 'loop-error' ); // Loads the loop-error.php template. ?>
 
 		<?php endif; ?>
-			
-		<?php get_sidebar( 'front-page' ); // Loads the sidebar-front-page.php template. ?>
 
 	</div><!-- #content -->
 
