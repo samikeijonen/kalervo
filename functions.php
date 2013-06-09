@@ -62,10 +62,10 @@ function kalervo_theme_setup() {
 	/* Add support for auto-feed links. */
 	add_theme_support( 'automatic-feed-links' );
 
-	/* Add theme support for post formats. Note: rest of the post formats are handeld by Hybrid Core andd WordPress. */
+	/* Post formats. */
 	add_theme_support( 
-		'structured-post-formats',
-		array( 'audio', 'image', 'link', 'video' ) 
+		'post-formats',
+		array( 'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) 
 	);
 	
 	/* Add custom background feature. */
@@ -534,7 +534,9 @@ function kalervo_soliloquy_no_id_string( $strings ) {
  */
 function kalervo_get_link_url() {
 
-	$kalervo_url = get_the_post_format_url();
+	$kalervo_content = get_the_content();
+
+	$kalervo_url = get_content_url( $kalervo_content );
 
 	return ( $kalervo_url ) ? $kalervo_url : apply_filters( 'the_permalink', get_permalink() );
 

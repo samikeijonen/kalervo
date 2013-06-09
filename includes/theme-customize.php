@@ -51,33 +51,6 @@ function kalervo_customize_register_logo( $wp_customize ) {
 		) 
 	);
 	
-	/* Add the portfolio layout setting. */
-	$wp_customize->add_setting(
-		'portfolio_layout',
-		array(
-			'default'           => '3',
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'absint',
-			//'transport'         => 'postMessage'
-		)
-	);
-	
-	/* Add the portfolio layout control. */
-	$wp_customize->add_control(
-		'portfolio-layout-control',
-		array(
-			'label'    => esc_html__( 'Portfolio Layout', 'kalervo' ),
-			'section'  => 'layout',
-			'settings' => 'portfolio_layout',
-			'type'     => 'radio',
-			'choices'  => array(
-				'3' => esc_html__( 'Three Columns', 'kalervo' ),
-				'4' => esc_html__( 'Four Columns', 'kalervo' )
-			)
-		)
-	);
-	
 	/* == Show header image or Soliloque Slider == */
 	
 	/* Add setting do you want to show header image or Soliloque Slider. */
@@ -116,7 +89,7 @@ function kalervo_customize_register_logo( $wp_customize ) {
 	$wp_customize->add_setting(
 		'soliloquy_slider',
 		array(
-			'default'           => '',
+			'default'           => 'default',
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'absint',
@@ -456,52 +429,6 @@ function kalervo_get_soliloquy_slider_choices() {
 	
 	/* Return array. */
 	return $kalervo_slider_data;
-	
-}
-
-/**
-* Return social links
-*
-* @since 0.1.0
-*/
-function kalervo_social_links() {
-
-	/* Return if there is social links. */
-	
-	if ( get_theme_mod( 'twitter_link' ) || get_theme_mod( 'facebook_link' ) || get_theme_mod( 'rss_link' ) || get_theme_mod( 'linkedin_link' ) || get_theme_mod( 'google_plus_link' ) || get_theme_mod( 'github_link' ) || get_theme_mod( 'pinterest_link' ) ) {
-
-		$kalervo_output_links = '';
-		
-		$kalervo_output_links .= '<div id="kalervo-social-links">';
-		
-		$kalervo_output_links .= '<ul id="kalervo-social-link-list">';
-
-		if ( get_theme_mod( 'twitter_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'twitter_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_twitter', 'icon-twitter' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-		
-		if ( get_theme_mod( 'facebook_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'facebook_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_facebook', 'icon-facebook' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-			
-		if ( get_theme_mod( 'rss_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'rss_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_rss', 'icon-rss' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-		
-		if ( get_theme_mod( 'linkedin_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'linkedin_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_linkedin', 'icon-linkedin' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-
-		if ( get_theme_mod( 'google_plus_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'google_plus_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_google_plus', 'icon-google-plus' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-
-		if ( get_theme_mod( 'github_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'github_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_github', 'icon-github' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-	
-		if ( get_theme_mod( 'pinterest_link' ) )
-			$kalervo_output_links .= '<li class="kalervo-social-links"><a class="kalervo-social-link" href="' . esc_url( get_theme_mod( 'pinterest_link' ) ) . '"><i class="' . esc_attr( apply_filters( 'kalervo_link_pinterest', 'icon-pinterest' ) ) . ' ' . get_theme_mod( 'icon_size' ) . '"></i></a></li>';
-		
-		$kalervo_output_links .= '</ul></div>';
-		
-	return $kalervo_output_links;
-	
-	}
 	
 }
 

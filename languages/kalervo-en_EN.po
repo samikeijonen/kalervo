@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-25 23:51+0200\n"
+"POT-Creation-Date: 2013-06-09 14:00+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team:  <sami.keijonen@foxnet.fi>\n"
@@ -27,16 +27,14 @@ msgid ""
 "You tried going to %s, which doesn't exist. You can try navigate or search."
 msgstr ""
 
-#: attachment-image.php:28 bbpress.php:29 buddypress.php:29
-#: content-aside.php:12 content-aside.php:23 content-attachment.php:12
-#: content-attachment.php:28 content-audio.php:18 content-audio.php:47
-#: content-chat.php:18 content-chat.php:41 content-download.php:12
-#: content-download.php:29 content-gallery.php:12 content-gallery.php:33
-#: content-image.php:16 content-link.php:12 content-link.php:31
-#: content-page.php:11 content-page.php:27 content-portfolio_item.php:17
-#: content-portfolio_item.php:31 content-quote.php:12 content-quote.php:23
-#: content-status.php:13 content-status.php:30 content-video.php:16
-#: content-video.php:43 content.php:12 content.php:29
+#: attachment-image.php:28 content-aside.php:12 content-aside.php:23
+#: content-attachment.php:12 content-attachment.php:28 content-audio.php:25
+#: content-chat.php:18 content-chat.php:41 content-download.php:17
+#: content-gallery.php:12 content-gallery.php:33 content-image.php:23
+#: content-link.php:12 content-link.php:31 content-page.php:11
+#: content-page.php:27 content-portfolio_item.php:17 content-quote.php:12
+#: content-quote.php:23 content-status.php:13 content-status.php:30
+#: content-video.php:16 content-video.php:43 content.php:12 content.php:29
 msgid "Pages:"
 msgstr ""
 
@@ -76,22 +74,21 @@ msgstr ""
 msgid "% Responses"
 msgstr ""
 
-#: content-aside.php:7 content-gallery.php:7 content-image.php:11
+#: content-aside.php:7 content-gallery.php:7 content-image.php:13
 #: content-link.php:7 content-video.php:11
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
 "before=\" | \"] [entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: content-aside.php:16 content-download.php:16 content.php:16 content.php:33
+#: content-aside.php:16 content.php:16 content.php:33
 msgid ""
 "[entry-terms before=\"Posted in \" taxonomy=\"category\"] [entry-terms "
 "before=\"| Tagged \"]"
 msgstr ""
 
-#: content-aside.php:22 content-audio.php:46 content-chat.php:40
-#: content-link.php:30 content-quote.php:22 content-status.php:29
-#: content-video.php:42
+#: content-aside.php:22 content-chat.php:40 content-link.php:30
+#: content-quote.php:22 content-status.php:29 content-video.php:42
 msgid "Read more &rarr;"
 msgstr ""
 
@@ -99,14 +96,14 @@ msgstr ""
 msgid "Published on [entry-published] [entry-edit-link before=\"| \"]"
 msgstr ""
 
-#: content-audio.php:13
+#: content-audio.php:15
 msgid ""
 "[post-format-link] file published on [entry-published] [entry-comments-link "
 "before=\" | \"] [entry-edit-link before=\"| \"]"
 msgstr ""
 
-#: content-audio.php:22 content-chat.php:22 content-gallery.php:16
-#: content-image.php:20 content-link.php:16 content-quote.php:16
+#: content-audio.php:29 content-chat.php:22 content-gallery.php:16
+#: content-image.php:27 content-link.php:16 content-quote.php:16
 #: content-video.php:20
 msgid ""
 "[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms "
@@ -125,14 +122,14 @@ msgid ""
 "before=\" | \"] [entry-edit-link before=\"| \"]"
 msgstr ""
 
-#: content-chat.php:47 content-gallery.php:42 content-image.php:40
+#: content-chat.php:47 content-gallery.php:42 content-image.php:47
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
 "before=\"| \"] [entry-edit-link before=\"| \"]"
 msgstr ""
 
-#: content-download.php:7 content-download.php:28
-msgid "Price:"
+#: content-download.php:10 content-download.php:35
+msgid "Type:"
 msgstr ""
 
 #: content-gallery.php:37
@@ -148,7 +145,7 @@ msgid ""
 "\"| \"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
 msgstr ""
 
-#: content-portfolio_item.php:10 content-portfolio_item.php:30
+#: content-portfolio_item.php:10 content-portfolio_item.php:35
 msgid "Work:"
 msgstr ""
 
@@ -171,26 +168,26 @@ msgid ""
 "\" | \"] [entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: functions.php:431
+#: functions.php:454
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:432
+#: functions.php:455
 msgid "Front Page widget area."
 msgstr ""
 
-#: functions.php:494
+#: functions.php:517
 #, php-format
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
 "Appearance &gt; Customize &gt; Layout</a>."
 msgstr ""
 
-#: functions.php:530
+#: functions.php:553
 msgid "Visit site"
 msgstr ""
 
-#: header.php:90
+#: header.php:60
 msgid "&#8764;"
 msgstr ""
 
@@ -254,42 +251,6 @@ msgstr ""
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: members-loop.php:21
-#, php-format
-msgid "%s on Twitter"
-msgstr ""
-
-#: members-loop.php:21
-msgid "Twitter"
-msgstr ""
-
-#: members-loop.php:25
-#, php-format
-msgid "%s on Facebook"
-msgstr ""
-
-#: members-loop.php:25
-msgid "Facebook"
-msgstr ""
-
-#: members-loop.php:29
-#, php-format
-msgid "%s on Google+"
-msgstr ""
-
-#: members-loop.php:29
-msgid "Google+"
-msgstr ""
-
-#: members-loop.php:32
-#, php-format
-msgid "Subscribe to the feed for %s"
-msgstr ""
-
-#: members-loop.php:32
-msgid "Subscribe"
-msgstr ""
-
 #: menu-primary.php:12 menu-secondary.php:13
 msgid "Skip to content"
 msgstr ""
@@ -303,6 +264,14 @@ msgstr ""
 msgid "[entry-published] &mdash; <code>%s</code>"
 msgstr ""
 
+#: includes/edd-functions.php:14
+msgid "Kalervo Theme Color"
+msgstr ""
+
+#: includes/edd-functions.php:28
+msgid "From:"
+msgstr ""
+
 #: includes/theme-customize.php:24
 msgid "Logo Upload"
 msgstr ""
@@ -311,107 +280,95 @@ msgstr ""
 msgid "Upload custom logo. Recommended max width is 300px."
 msgstr ""
 
-#: includes/theme-customize.php:70
-msgid "Portfolio Layout"
-msgstr ""
-
-#: includes/theme-customize.php:75
-msgid "Three Columns"
-msgstr ""
-
-#: includes/theme-customize.php:76
-msgid "Four Columns"
-msgstr ""
-
-#: includes/theme-customize.php:99
+#: includes/theme-customize.php:72
 msgid "Choose whether to show Header Image or Soliloque Slider in Header?"
 msgstr ""
 
-#: includes/theme-customize.php:105
+#: includes/theme-customize.php:78
 msgid "Show Header image"
 msgstr ""
 
-#: includes/theme-customize.php:106
+#: includes/theme-customize.php:79
 msgid "Show Slider"
 msgstr ""
 
-#: includes/theme-customize.php:131
+#: includes/theme-customize.php:104
 msgid "Select Soliloquy Slider"
 msgstr ""
 
-#: includes/theme-customize.php:143
+#: includes/theme-customize.php:116
 msgid "Social Links"
 msgstr ""
 
-#: includes/theme-customize.php:165
+#: includes/theme-customize.php:138
 msgid "Twitter URL"
 msgstr ""
 
-#: includes/theme-customize.php:189
+#: includes/theme-customize.php:162
 msgid "Facebook URL"
 msgstr ""
 
-#: includes/theme-customize.php:213
+#: includes/theme-customize.php:186
 msgid "RSS URL"
 msgstr ""
 
-#: includes/theme-customize.php:237
+#: includes/theme-customize.php:210
 msgid "Linkedin URL"
 msgstr ""
 
-#: includes/theme-customize.php:261
+#: includes/theme-customize.php:234
 msgid "Google Plus URL"
 msgstr ""
 
-#: includes/theme-customize.php:285
+#: includes/theme-customize.php:258
 msgid "Github URL"
 msgstr ""
 
-#: includes/theme-customize.php:309
+#: includes/theme-customize.php:282
 msgid "Pinterest URL"
 msgstr ""
 
-#: includes/theme-customize.php:333
+#: includes/theme-customize.php:306
 msgid "Choose icon size"
 msgstr ""
 
-#: includes/theme-customize.php:339
+#: includes/theme-customize.php:312
 msgid "Normal"
 msgstr ""
 
-#: includes/theme-customize.php:340
+#: includes/theme-customize.php:313
 msgid "Icon large"
 msgstr ""
 
-#: includes/theme-customize.php:341
+#: includes/theme-customize.php:314
 msgid "Icon 2x"
 msgstr ""
 
-#: includes/theme-customize.php:342
+#: includes/theme-customize.php:315
 msgid "Icon 3x"
 msgstr ""
 
-#: includes/theme-customize.php:343
+#: includes/theme-customize.php:316
 msgid "Icon 4x"
 msgstr ""
 
-#: includes/theme-customize.php:352
+#: includes/theme-customize.php:325
 msgid "Front Page Callout"
 msgstr ""
 
-#: includes/theme-customize.php:374
+#: includes/theme-customize.php:347
 msgid "Callout text"
 msgstr ""
 
-#: includes/theme-customize.php:398
+#: includes/theme-customize.php:371
 msgid "Callout URL"
 msgstr ""
 
-#: includes/theme-customize.php:422
+#: includes/theme-customize.php:395
 msgid "Callout URL text"
 msgstr ""
 
-#: includes/theme-customize.php:441
+#: includes/theme-customize.php:414
 msgid "Select Slider"
 msgstr ""
 
@@ -918,7 +875,7 @@ msgstr ""
 #: library/extensions/breadcrumb-trail.php:1151
 #: library/extensions/breadcrumb-trail.php:1168
 #: library/extensions/breadcrumb-trail.php:1199
-#: library/functions/shortcodes.php:271 library/functions/shortcodes.php:528
+#: library/functions/shortcodes.php:272 library/functions/shortcodes.php:594
 msgid "Edit"
 msgstr ""
 
@@ -1040,17 +997,17 @@ msgstr ""
 msgid "Three Columns, Center"
 msgstr ""
 
-#: library/extensions/theme-layouts.php:421
-#: library/extensions/theme-layouts.php:531
-#: library/extensions/theme-layouts.php:616
+#: library/extensions/theme-layouts.php:428
+#: library/extensions/theme-layouts.php:538
+#: library/extensions/theme-layouts.php:623
 msgid "Layout"
 msgstr ""
 
-#: library/extensions/theme-layouts.php:447
+#: library/extensions/theme-layouts.php:454
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr ""
 
-#: library/extensions/theme-layouts.php:649
+#: library/extensions/theme-layouts.php:656
 msgid "Global Layout"
 msgstr ""
 
@@ -1147,8 +1104,8 @@ msgstr ""
 msgid "Copyright (c) %1$s"
 msgstr ""
 
-#: library/functions/core-seo.php:116 library/functions/shortcodes.php:285
-#: library/functions/shortcodes.php:458
+#: library/functions/core-seo.php:116 library/functions/shortcodes.php:304
+#: library/functions/shortcodes.php:518 library/functions/shortcodes.php:522
 msgid "l, F jS, Y, g:i a"
 msgstr ""
 
@@ -1178,39 +1135,39 @@ msgctxt "nav menu location"
 msgid "Subsidiary"
 msgstr ""
 
-#: library/functions/post-formats.php:135
+#: library/functions/post-formats.php:119
 msgid "Asides"
 msgstr ""
 
-#: library/functions/post-formats.php:136
+#: library/functions/post-formats.php:120
 msgid "Audio"
 msgstr ""
 
-#: library/functions/post-formats.php:137
+#: library/functions/post-formats.php:121
 msgid "Chats"
 msgstr ""
 
-#: library/functions/post-formats.php:138
+#: library/functions/post-formats.php:122
 msgid "Images"
 msgstr ""
 
-#: library/functions/post-formats.php:139
+#: library/functions/post-formats.php:123
 msgid "Galleries"
 msgstr ""
 
-#: library/functions/post-formats.php:140
+#: library/functions/post-formats.php:124
 msgid "Links"
 msgstr ""
 
-#: library/functions/post-formats.php:141
+#: library/functions/post-formats.php:125
 msgid "Quotes"
 msgstr ""
 
-#: library/functions/post-formats.php:142
+#: library/functions/post-formats.php:126
 msgid "Status Updates"
 msgstr ""
 
-#: library/functions/post-formats.php:143
+#: library/functions/post-formats.php:127
 msgid "Videos"
 msgstr ""
 
@@ -1252,54 +1209,54 @@ msgstr ""
 msgid "This page loaded in %1$s seconds with %2$s database queries."
 msgstr ""
 
-#: library/functions/shortcodes.php:271 library/functions/shortcodes.php:528
+#: library/functions/shortcodes.php:272 library/functions/shortcodes.php:594
 #, php-format
 msgid "Edit %1$s"
 msgstr ""
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:324
 msgid "Leave a response"
 msgstr ""
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:325
 #, php-format
 msgid "%1$s Response"
 msgstr ""
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:326
 #, php-format
 msgid "%1$s Responses"
 msgstr ""
 
-#: library/functions/shortcodes.php:308 library/functions/shortcodes.php:310
-#: library/functions/shortcodes.php:312
+#: library/functions/shortcodes.php:341 library/functions/shortcodes.php:343
+#: library/functions/shortcodes.php:345
 #, php-format
 msgid "Comment on %1$s"
 msgstr ""
 
-#: library/functions/shortcodes.php:406
+#: library/functions/shortcodes.php:452
 msgid "Shortlink"
 msgstr ""
 
-#: library/functions/shortcodes.php:430 library/functions/shortcodes.php:507
+#: library/functions/shortcodes.php:477 library/functions/shortcodes.php:573
 msgid "Permalink"
 msgstr ""
 
-#: library/functions/shortcodes.php:458
+#: library/functions/shortcodes.php:522
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: library/functions/shortcodes.php:507
+#: library/functions/shortcodes.php:573
 #, php-format
 msgid "Permalink to comment %1$s"
 msgstr ""
 
-#: library/functions/shortcodes.php:547
+#: library/functions/shortcodes.php:613
 msgid "Reply"
 msgstr ""
 
-#: library/functions/shortcodes.php:548
+#: library/functions/shortcodes.php:614
 msgid "Log in to reply."
 msgstr ""
 

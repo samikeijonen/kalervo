@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-25 23:47+0200\n"
-"PO-Revision-Date: 2013-05-25 23:50+0200\n"
+"POT-Creation-Date: 2013-06-09 14:00+0200\n"
+"PO-Revision-Date: 2013-06-09 14:02+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -31,16 +31,14 @@ msgstr ""
 "Yritit mennä sivulle %s mutta sitä ei enää ole. Koita navigoida tai etsiä "
 "haluamasi sivu."
 
-#: attachment-image.php:28 bbpress.php:29 buddypress.php:29
-#: content-aside.php:12 content-aside.php:23 content-attachment.php:12
-#: content-attachment.php:28 content-audio.php:18 content-audio.php:47
-#: content-chat.php:18 content-chat.php:41 content-download.php:12
-#: content-download.php:29 content-gallery.php:12 content-gallery.php:33
-#: content-image.php:16 content-link.php:12 content-link.php:31
-#: content-page.php:11 content-page.php:27 content-portfolio_item.php:17
-#: content-portfolio_item.php:31 content-quote.php:12 content-quote.php:23
-#: content-status.php:13 content-status.php:30 content-video.php:16
-#: content-video.php:43 content.php:12 content.php:29
+#: attachment-image.php:28 content-aside.php:12 content-aside.php:23
+#: content-attachment.php:12 content-attachment.php:28 content-audio.php:25
+#: content-chat.php:18 content-chat.php:41 content-download.php:17
+#: content-gallery.php:12 content-gallery.php:33 content-image.php:23
+#: content-link.php:12 content-link.php:31 content-page.php:11
+#: content-page.php:27 content-portfolio_item.php:17 content-quote.php:12
+#: content-quote.php:23 content-status.php:13 content-status.php:30
+#: content-video.php:16 content-video.php:43 content.php:12 content.php:29
 msgid "Pages:"
 msgstr "Sivut:"
 
@@ -82,7 +80,7 @@ msgstr "Yksi Kommentti"
 msgid "% Responses"
 msgstr "% Kommenttia"
 
-#: content-aside.php:7 content-gallery.php:7 content-image.php:11
+#: content-aside.php:7 content-gallery.php:7 content-image.php:13
 #: content-link.php:7 content-video.php:11
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
@@ -91,7 +89,7 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\" | \"]"
 
-#: content-aside.php:16 content-download.php:16 content.php:16 content.php:33
+#: content-aside.php:16 content.php:16 content.php:33
 msgid ""
 "[entry-terms before=\"Posted in \" taxonomy=\"category\"] [entry-terms "
 "before=\"| Tagged \"]"
@@ -99,9 +97,8 @@ msgstr ""
 "[entry-terms before=\"Artikkeli kategoriassa \" taxonomy=\"category\"] "
 "[entry-terms before=\"| Avainsanat \"]"
 
-#: content-aside.php:22 content-audio.php:46 content-chat.php:40
-#: content-link.php:30 content-quote.php:22 content-status.php:29
-#: content-video.php:42
+#: content-aside.php:22 content-chat.php:40 content-link.php:30
+#: content-quote.php:22 content-status.php:29 content-video.php:42
 msgid "Read more &rarr;"
 msgstr "Lue lisää &rarr;"
 
@@ -109,7 +106,7 @@ msgstr "Lue lisää &rarr;"
 msgid "Published on [entry-published] [entry-edit-link before=\"| \"]"
 msgstr "Julkaistu [entry-published] [entry-edit-link before=\"| \"]"
 
-#: content-audio.php:13
+#: content-audio.php:15
 msgid ""
 "[post-format-link] file published on [entry-published] [entry-comments-link "
 "before=\" | \"] [entry-edit-link before=\"| \"]"
@@ -117,8 +114,8 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\"| \"]"
 
-#: content-audio.php:22 content-chat.php:22 content-gallery.php:16
-#: content-image.php:20 content-link.php:16 content-quote.php:16
+#: content-audio.php:29 content-chat.php:22 content-gallery.php:16
+#: content-image.php:27 content-link.php:16 content-quote.php:16
 #: content-video.php:20
 msgid ""
 "[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms "
@@ -143,7 +140,7 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\"| \"]"
 
-#: content-chat.php:47 content-gallery.php:42 content-image.php:40
+#: content-chat.php:47 content-gallery.php:42 content-image.php:47
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
 "before=\"| \"] [entry-edit-link before=\"| \"]"
@@ -151,9 +148,9 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\"| \"] [entry-edit-link before=\"| \"]"
 
-#: content-download.php:7 content-download.php:28
-msgid "Price:"
-msgstr "Hinta:"
+#: content-download.php:10 content-download.php:35
+msgid "Type:"
+msgstr "Tyyppi:"
 
 #: content-gallery.php:37
 #, php-format
@@ -170,7 +167,7 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-permalink before=\"| "
 "\"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
 
-#: content-portfolio_item.php:10 content-portfolio_item.php:30
+#: content-portfolio_item.php:10 content-portfolio_item.php:35
 msgid "Work:"
 msgstr "Tehdyt työt:"
 
@@ -200,15 +197,15 @@ msgstr ""
 "[entry-author]  [entry-published] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 
-#: functions.php:431
+#: functions.php:454
 msgid "Front Page"
 msgstr "Etusivu"
 
-#: functions.php:432
+#: functions.php:455
 msgid "Front Page widget area."
 msgstr "Etusivun vimpainalue."
 
-#: functions.php:494
+#: functions.php:517
 #, php-format
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
@@ -217,11 +214,11 @@ msgstr ""
 "Slideria ei ole vielä valitta. Valitse Slider <a href=\"%s\"> Ulkoasu &gt; "
 "Mukauta &gt; Ulkoasu</a>."
 
-#: functions.php:530
+#: functions.php:553
 msgid "Visit site"
 msgstr "Vieraile sivulla"
 
-#: header.php:90
+#: header.php:60
 msgid "&#8764;"
 msgstr "&#8764;"
 
@@ -285,42 +282,6 @@ msgstr "<span class=\"meta-nav\">&larr;</span> Edellinen"
 msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Seuraava <span class=\"meta-nav\">&rarr;</span>"
 
-#: members-loop.php:21
-#, php-format
-msgid "%s on Twitter"
-msgstr "%s Twitter"
-
-#: members-loop.php:21
-msgid "Twitter"
-msgstr "Twitter"
-
-#: members-loop.php:25
-#, php-format
-msgid "%s on Facebook"
-msgstr "%s Facebook"
-
-#: members-loop.php:25
-msgid "Facebook"
-msgstr "Facebook"
-
-#: members-loop.php:29
-#, php-format
-msgid "%s on Google+"
-msgstr "%s Google+"
-
-#: members-loop.php:29
-msgid "Google+"
-msgstr "Google+"
-
-#: members-loop.php:32
-#, php-format
-msgid "Subscribe to the feed for %s"
-msgstr "Tilaa RSS-syöte %s"
-
-#: members-loop.php:32
-msgid "Subscribe"
-msgstr "Liity"
-
 #: menu-primary.php:12 menu-secondary.php:13
 msgid "Skip to content"
 msgstr "Hyppää sisältöön"
@@ -334,6 +295,14 @@ msgstr "Valikko"
 msgid "[entry-published] &mdash; <code>%s</code>"
 msgstr "[entry-published] &mdash; <code>%s</code>"
 
+#: includes/edd-functions.php:14
+msgid "Kalervo Theme Color"
+msgstr "Kalervo-teeman väri"
+
+#: includes/edd-functions.php:28
+msgid "From:"
+msgstr "Alkaen:"
+
 #: includes/theme-customize.php:24
 msgid "Logo Upload"
 msgstr "Logon lataus"
@@ -342,107 +311,95 @@ msgstr "Logon lataus"
 msgid "Upload custom logo. Recommended max width is 300px."
 msgstr "Lataa logo. Suositeltu maksimileveys on 300px."
 
-#: includes/theme-customize.php:70
-msgid "Portfolio Layout"
-msgstr "Portfolion ulkoasu"
-
-#: includes/theme-customize.php:75
-msgid "Three Columns"
-msgstr "Kolme saraketta"
-
-#: includes/theme-customize.php:76
-msgid "Four Columns"
-msgstr "Neljä sarake"
-
-#: includes/theme-customize.php:99
+#: includes/theme-customize.php:72
 msgid "Choose whether to show Header Image or Soliloque Slider in Header?"
 msgstr "Valitse käytätkö otsake-kuvaa vai slider-kuvia?"
 
-#: includes/theme-customize.php:105
+#: includes/theme-customize.php:78
 msgid "Show Header image"
 msgstr "Näytä otsake-kuva"
 
-#: includes/theme-customize.php:106
+#: includes/theme-customize.php:79
 msgid "Show Slider"
 msgstr "Näytä Slider"
 
-#: includes/theme-customize.php:131
+#: includes/theme-customize.php:104
 msgid "Select Soliloquy Slider"
 msgstr "Valitse Soliloquy Slider"
 
-#: includes/theme-customize.php:143
+#: includes/theme-customize.php:116
 msgid "Social Links"
 msgstr "Sosiaalisen median linkit"
 
-#: includes/theme-customize.php:165
+#: includes/theme-customize.php:138
 msgid "Twitter URL"
 msgstr "Twitter URL-linkki"
 
-#: includes/theme-customize.php:189
+#: includes/theme-customize.php:162
 msgid "Facebook URL"
 msgstr "Facebook URL-linkki"
 
-#: includes/theme-customize.php:213
+#: includes/theme-customize.php:186
 msgid "RSS URL"
 msgstr "RSS URL-linkki"
 
-#: includes/theme-customize.php:237
+#: includes/theme-customize.php:210
 msgid "Linkedin URL"
 msgstr "Linkedin URL-linkki"
 
-#: includes/theme-customize.php:261
+#: includes/theme-customize.php:234
 msgid "Google Plus URL"
 msgstr "Google Plus URL-linkki"
 
-#: includes/theme-customize.php:285
+#: includes/theme-customize.php:258
 msgid "Github URL"
 msgstr "Github URL-linkki"
 
-#: includes/theme-customize.php:309
+#: includes/theme-customize.php:282
 msgid "Pinterest URL"
 msgstr "Pinterest URL-linkki"
 
-#: includes/theme-customize.php:333
+#: includes/theme-customize.php:306
 msgid "Choose icon size"
 msgstr "Valitse ikonin koko"
 
-#: includes/theme-customize.php:339
+#: includes/theme-customize.php:312
 msgid "Normal"
 msgstr "Normaali"
 
-#: includes/theme-customize.php:340
+#: includes/theme-customize.php:313
 msgid "Icon large"
 msgstr "Isompi ikoni"
 
-#: includes/theme-customize.php:341
+#: includes/theme-customize.php:314
 msgid "Icon 2x"
 msgstr "Ikoni 2x"
 
-#: includes/theme-customize.php:342
+#: includes/theme-customize.php:315
 msgid "Icon 3x"
 msgstr "Ikoni 3x"
 
-#: includes/theme-customize.php:343
+#: includes/theme-customize.php:316
 msgid "Icon 4x"
 msgstr "Ikoni 4x"
 
-#: includes/theme-customize.php:352
+#: includes/theme-customize.php:325
 msgid "Front Page Callout"
 msgstr "Etusivun Callout-teksti"
 
-#: includes/theme-customize.php:374
+#: includes/theme-customize.php:347
 msgid "Callout text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:398
+#: includes/theme-customize.php:371
 msgid "Callout URL"
 msgstr "Callout URL-linkki"
 
-#: includes/theme-customize.php:422
+#: includes/theme-customize.php:395
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:441
+#: includes/theme-customize.php:414
 msgid "Select Slider"
 msgstr "Valitse Slider"
 
@@ -951,7 +908,7 @@ msgstr "Näkymä"
 #: library/extensions/breadcrumb-trail.php:1151
 #: library/extensions/breadcrumb-trail.php:1168
 #: library/extensions/breadcrumb-trail.php:1199
-#: library/functions/shortcodes.php:271 library/functions/shortcodes.php:528
+#: library/functions/shortcodes.php:272 library/functions/shortcodes.php:594
 msgid "Edit"
 msgstr "Editoi"
 
@@ -1073,17 +1030,17 @@ msgstr "Kolme  saraketta, sisältö oikealla"
 msgid "Three Columns, Center"
 msgstr "Kolme saraketta, sisältö keskellä"
 
-#: library/extensions/theme-layouts.php:421
-#: library/extensions/theme-layouts.php:531
-#: library/extensions/theme-layouts.php:616
+#: library/extensions/theme-layouts.php:428
+#: library/extensions/theme-layouts.php:538
+#: library/extensions/theme-layouts.php:623
 msgid "Layout"
 msgstr "Ulkoasu"
 
-#: library/extensions/theme-layouts.php:447
+#: library/extensions/theme-layouts.php:454
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr "Tällä voi vaihtaa yksittäisen sivun tai artikkelin ulkoasua."
 
-#: library/extensions/theme-layouts.php:649
+#: library/extensions/theme-layouts.php:656
 msgid "Global Layout"
 msgstr "Globaali ulkoasu"
 
@@ -1182,8 +1139,8 @@ msgstr "%1$s Sivu %2$s"
 msgid "Copyright (c) %1$s"
 msgstr "Copyright (c) %1$s"
 
-#: library/functions/core-seo.php:116 library/functions/shortcodes.php:285
-#: library/functions/shortcodes.php:458
+#: library/functions/core-seo.php:116 library/functions/shortcodes.php:304
+#: library/functions/shortcodes.php:518 library/functions/shortcodes.php:522
 msgid "l, F jS, Y, g:i a"
 msgstr "l j.m.Y, G:i"
 
@@ -1215,39 +1172,39 @@ msgctxt "nav menu location"
 msgid "Subsidiary"
 msgstr "Kolmas menu"
 
-#: library/functions/post-formats.php:135
+#: library/functions/post-formats.php:119
 msgid "Asides"
 msgstr "Sivuhuomautukset"
 
-#: library/functions/post-formats.php:136
+#: library/functions/post-formats.php:120
 msgid "Audio"
 msgstr "Audio"
 
-#: library/functions/post-formats.php:137
+#: library/functions/post-formats.php:121
 msgid "Chats"
 msgstr "Keskustelut"
 
-#: library/functions/post-formats.php:138
+#: library/functions/post-formats.php:122
 msgid "Images"
 msgstr "Kuvat"
 
-#: library/functions/post-formats.php:139
+#: library/functions/post-formats.php:123
 msgid "Galleries"
 msgstr "Galleriat"
 
-#: library/functions/post-formats.php:140
+#: library/functions/post-formats.php:124
 msgid "Links"
 msgstr "Linkit"
 
-#: library/functions/post-formats.php:141
+#: library/functions/post-formats.php:125
 msgid "Quotes"
 msgstr "Lainaukset"
 
-#: library/functions/post-formats.php:142
+#: library/functions/post-formats.php:126
 msgid "Status Updates"
 msgstr "Tilapäivitykset"
 
-#: library/functions/post-formats.php:143
+#: library/functions/post-formats.php:127
 msgid "Videos"
 msgstr "Videot"
 
@@ -1290,54 +1247,54 @@ msgid "This page loaded in %1$s seconds with %2$s database queries."
 msgstr ""
 "Sivu ladattiin %1$s sekunnissa, aikaa meni %2$s tietokannan kyselyihin."
 
-#: library/functions/shortcodes.php:271 library/functions/shortcodes.php:528
+#: library/functions/shortcodes.php:272 library/functions/shortcodes.php:594
 #, php-format
 msgid "Edit %1$s"
 msgstr "Editoi %1$s"
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:324
 msgid "Leave a response"
 msgstr "Jätä kommentti"
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:325
 #, php-format
 msgid "%1$s Response"
 msgstr "%1$s Kommentti"
 
-#: library/functions/shortcodes.php:301
+#: library/functions/shortcodes.php:326
 #, php-format
 msgid "%1$s Responses"
 msgstr "%1$s Kommenttia"
 
-#: library/functions/shortcodes.php:308 library/functions/shortcodes.php:310
-#: library/functions/shortcodes.php:312
+#: library/functions/shortcodes.php:341 library/functions/shortcodes.php:343
+#: library/functions/shortcodes.php:345
 #, php-format
 msgid "Comment on %1$s"
 msgstr "Kommentti %1$s"
 
-#: library/functions/shortcodes.php:406
+#: library/functions/shortcodes.php:452
 msgid "Shortlink"
 msgstr "Pikalinkki"
 
-#: library/functions/shortcodes.php:430 library/functions/shortcodes.php:507
+#: library/functions/shortcodes.php:477 library/functions/shortcodes.php:573
 msgid "Permalink"
 msgstr "Pikalinkki"
 
-#: library/functions/shortcodes.php:458
+#: library/functions/shortcodes.php:522
 #, php-format
 msgid "%1$s at %2$s"
-msgstr "%1$s / %2$s"
+msgstr "%1$s klo %2$s"
 
-#: library/functions/shortcodes.php:507
+#: library/functions/shortcodes.php:573
 #, php-format
 msgid "Permalink to comment %1$s"
 msgstr "Pikalinkki kommenttiin %1$s"
 
-#: library/functions/shortcodes.php:547
+#: library/functions/shortcodes.php:613
 msgid "Reply"
 msgstr "Vastaa"
 
-#: library/functions/shortcodes.php:548
+#: library/functions/shortcodes.php:614
 msgid "Log in to reply."
 msgstr "Kirjaudu sisään vastataksesi."
 
@@ -1413,6 +1370,42 @@ msgstr ""
 #: library/functions/utility.php:227
 msgid "(Untitled)"
 msgstr "(Ei otsikkoa)"
+
+#~ msgid "Price:"
+#~ msgstr "Hinta:"
+
+#~ msgid "%s on Twitter"
+#~ msgstr "%s Twitter"
+
+#~ msgid "Twitter"
+#~ msgstr "Twitter"
+
+#~ msgid "%s on Facebook"
+#~ msgstr "%s Facebook"
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "%s on Google+"
+#~ msgstr "%s Google+"
+
+#~ msgid "Google+"
+#~ msgstr "Google+"
+
+#~ msgid "Subscribe to the feed for %s"
+#~ msgstr "Tilaa RSS-syöte %s"
+
+#~ msgid "Subscribe"
+#~ msgstr "Liity"
+
+#~ msgid "Portfolio Layout"
+#~ msgstr "Portfolion ulkoasu"
+
+#~ msgid "Three Columns"
+#~ msgstr "Kolme saraketta"
+
+#~ msgid "Four Columns"
+#~ msgstr "Neljä sarake"
 
 #~ msgid "Twitter Username"
 #~ msgstr "Twitterin käyttäjänimi"
@@ -1509,9 +1502,6 @@ msgstr "(Ei otsikkoa)"
 
 #~ msgid "Voices: "
 #~ msgstr "Osallistujia:"
-
-#~ msgid "Eino Theme Color"
-#~ msgstr "Eino-teeman väri"
 
 #~ msgid "Show Logo"
 #~ msgstr "Näytä logo"
