@@ -305,7 +305,7 @@ function kalervo_one_column() {
 	elseif ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 
-	elseif ( is_page_template( 'page-templates/front-page.php' ) )
+	elseif ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 		
 	elseif ( kalervo_check_attachments() )
@@ -362,7 +362,7 @@ function kalervo_subsidiary_classes( $classes ) {
  */
 function kalervo_front_page_classes( $classes ) {
 	
-	if ( is_active_sidebar( 'front-page' ) && is_page_template( 'page-templates/front-page.php' ) ) {
+	if ( is_active_sidebar( 'front-page' ) && ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) ) ) {
 		
 		$the_sidebars = wp_get_sidebars_widgets();
 		$num = count( $the_sidebars['front-page'] );

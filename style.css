@@ -149,7 +149,10 @@ input[type=text],
 textarea,
 .page-template-front-page #content img,
 .archive-portfolio_item  .kalervo-portfolio .hentry  img,
-.taxonomy-portfolio .kalervo-portfolio .hentry  img {
+.taxonomy-portfolio .kalervo-portfolio .hentry  img,
+.page-template-post-page .kalervo-post .hentry img,
+.page-template-download-page .kalervo-download .hentry img,
+.page-template-portfolio-page .kalervo-portfolio .hentry img {
 	-webkit-transition: all 0.2s ease-out;
     -moz-transition: all 0.2s ease-out;
     -ms-transition: all 0.2s ease-out;
@@ -616,8 +619,8 @@ input[type="submit"],
 	background: #191919;
 	font-size: 14px;
 	font-size: 1rem;
-	margin-bottom: 0;
-	width: 150px;
+	margin: 0;
+	width: 100%;
 }
 input[type="submit"] {
 	display: inline-block;
@@ -656,11 +659,29 @@ select {
 div.menu li, nav.menu li {
 	float: none;
 }
-#menu-primary ul {
+#menu-primary.toggled-on ul {
 	padding: 0;
 	margin: 0;
 }
-#menu-primary {
+#menu-primary.toggled-on li a {
+	padding-left: 0;
+}
+#menu-primary.toggled-on ul ul {
+	padding-left: 5%;
+}
+#menu-primary.toggled-on ul ul ul {
+	padding-left: 8%;
+}
+#menu-primary.toggled-on ul ul ul ul  {
+	padding-left: 11%;
+}
+#menu-primary.toggled-on ul ul ul ul ul {
+	padding-left: 14%;
+}
+#menu-primary.toggled-on {
+	text-align: left;
+}
+#menu-primary.toggled-on .menu-toggle {
 	text-align: center;
 }
 #menu-primary li {
@@ -671,11 +692,11 @@ div.menu li, nav.menu li {
 	line-height:  1.71428571;
 	display: block;
 }
-#menu-primary a {
-}
-#menu-primary li a {
-	padding: 14px 12px;
-	padding: 1rem 0.857142857rem;
+#menu-primary.toggled-on li a {
+	border-bottom: 1px solid #f2f2f2;
+	display: block;
+	padding: 7px 0;
+	padding: 0.5rem 0;
 }
 #menu-primary a:hover {
 }
@@ -690,6 +711,7 @@ div.menu li, nav.menu li {
 #menu-primary.toggled-on ul.menu-items {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
+	width: 100%;
 }
 
 /* Secondary and Subsidiary menu. */
@@ -1334,7 +1356,10 @@ ol.comment-list dl dl {
 .taxonomy-portfolio .kalervo-portfolio .hentry,
 .archive-download .kalervo-download .hentry,
 .taxonomy-download_category .kalervo-download .hentry,
-.taxonomy-download_tag .kalervo-download .hentry {
+.taxonomy-download_tag .kalervo-download .hentry,
+.page-template-post-page .kalervo-post .hentry,
+.page-template-download-page .kalervo-download .hentry,
+.page-template-portfolio-page .kalervo-portfolio .hentry {
 	text-align: center;
 	border-bottom: none;
 	padding-bottom: 0;
@@ -1344,7 +1369,11 @@ ol.comment-list dl dl {
 .taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary ,
 .archive-download .kalervo-download .hentry .entry-summary,
 .taxonomy-download_category .kalervo-download .hentry .entry-summary,
-.taxonomy-download_tag .kalervo-download .hentry .entry-summary {
+.taxonomy-download_tag .kalervo-download .hentry .entry-summary,
+.page-template-post-page .kalervo-post .hentry .entry-summary,
+.page-template-download-page .kalervo-download .hentry .entry-summary,
+.page-template-portfolio-page .kalervo-portfolio .hentry .entry-summary {
+	padding: 0 2%;
 	position: absolute;
 	top: 20%;
 	left: 0;
@@ -1355,8 +1384,12 @@ ol.comment-list dl dl {
 .taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary p,
 .archive-download .kalervo-download .hentry .entry-summary p,
 .taxonomy-download_category .kalervo-download .hentry .entry-summary p,
-.taxonomy-download_tag .kalervo-download .hentry .entry-summary p {
+.taxonomy-download_tag .kalervo-download .hentry .entry-summary p,
+.page-template-post-page .kalervo-post .hentry .entry-summary p,
+.page-template-download-page .kalervo-download .hentry .entry-summary p,
+.page-template-portfolio-page .kalervo-portfolio .hentry .entry-summary p {
 	margin: 7px 0;
+	margin: 0.5rem 0;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry:hover .entry-summary,
 .archive-portfolio_item .kalervo-portfolio .hentry:focus .entry-summary,
@@ -1367,16 +1400,26 @@ ol.comment-list dl dl {
 .taxonomy-download_category .kalervo-download .hentry:hover .entry-summary,
 .taxonomy-download_category .kalervo-download .hentry:focus .entry-summary,
 .taxonomy-download_tag .kalervo-download .hentry:hover .entry-summary,
-.taxonomy-download_tag .kalervo-download .hentry:focus .entry-summary {
+.taxonomy-download_tag .kalervo-download .hentry:focus .entry-summary,
+.page-template-post-page .kalervo-post .hentry:hover .entry-summary,
+.page-template-post-page .kalervo-post .hentry:focus .entry-summary,
+.page-template-download-page .kalervo-download .hentry:hover .entry-summary,
+.page-template-download-page .kalervo-download .hentry:focus .entry-summary,
+.page-template-portfolio-page .kalervo-portfolio .hentry:hover .entry-summary,
+.page-template-portfolio-page .kalervo-portfolio .hentry:focus .entry-summary {
 	opacity: 1;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry  img,
 .taxonomy-portfolio .kalervo-portfolio .hentry  img,
 .archive-download .kalervo-download .hentry  img,
 .taxonomy-download_category .kalervo-download .hentry  img,
-.taxonomy-download_tag .kalervo-download .hentry  img {
+.taxonomy-download_tag .kalervo-download .hentry  img,
+.page-template-post-page .kalervo-post .hentry img,
+.page-template-download-page .kalervo-download .hentry img,
+.page-template-portfolio-page .kalervo-portfolio .hentry img  {
 	position: relative;
 	z-index: 10;
+	width: 100%;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry  img:hover,
 .archive-portfolio_item .kalervo-portfolio .hentry  img:focus,
@@ -1384,7 +1427,10 @@ ol.comment-list dl dl {
 .taxonomy-portfolio .kalervo-portfolio .hentry  img:focus,
 .archive-download .kalervo-download .hentry  img:hover,
 .taxonomy-download_category .kalervo-download .hentry  img:hover,
-.taxonomy-download_tag .kalervo-download .hentry  img:hover {
+.taxonomy-download_tag .kalervo-download .hentry  img:hover,
+.page-template-post-page .kalervo-post .hentry  img:hover,
+.page-template-download-page .kalervo-download .hentry  img:hover,
+.page-template-portfolio-page .kalervo-portfolio .hentry  img:hover {
 	opacity: 0.30;
 }
 
@@ -2019,11 +2065,18 @@ http://qrayg.com/experiment/cssmenus/
 	padding: 1.71429rem 10%;
 }
 .singular-attachment.layout-1c  .hentry,
-.woocommerce-page .hentry {
+.woocommerce-page .hentry,
+.page-template-post-page.layout-1c .hentry,
+.page-template-download-page.layout-1c .hentry,
+.page-template-portfolio-page.layout-1c .hentry {
 	padding: 24px 0;
 	padding: 1.71429rem 0;
 }
-
+.page-template-post-page.layout-1c .hentry,
+.page-template-download-page.layout-1c .hentry,
+.page-template-portfolio-page.layout-1c .hentry {
+	padding-bottom: 0;
+}
 
 /* =Portfolio, Front Page Layouts and EDD Downloads
 -------------------------------------------------------------- */
@@ -2034,14 +2087,19 @@ http://qrayg.com/experiment/cssmenus/
 .taxonomy-download_category .kalervo-grid-wrapper,
 .taxonomy-download_tag .kalervo-grid-wrapper,
 .taxonomy-portfolio .kalervo-grid-wrapper,
-.page-template-front-page .kalervo-latest-wrap {
+.page-template-post-page .kalervo-latest-wrap,
+.page-template-download-page .kalervo-latest-wrap,
+.page-template-portfolio-page .kalervo-latest-wrap {
 	width: 103%;
 }
 .archive-portfolio_item .hentry,
 .taxonomy-portfolio .hentry,
 .archive-download .hentry,
 .taxonomy-download_category .hentry,
-.taxonomy-download_tag .hentry {
+.taxonomy-download_tag .hentry,
+.page-template-post-page .kalervo-post .hentry,
+.page-template-download-page .kalervo-download .hentry,
+.page-template-portfolio-page .kalervo-portfolio .hentry {
 	margin-bottom: 0;
 }
 .archive-portfolio_item .kalervo-portfolio,
@@ -2049,7 +2107,9 @@ http://qrayg.com/experiment/cssmenus/
 .archive-download .kalervo-download,
 .taxonomy-download_category .kalervo-download,
 .taxonomy-download_tag .kalervo-download,
-.page-template-front-page .kalervo-front-page-latest {
+.page-template-post-page .kalervo-post,
+.page-template-download-page .kalervo-download,
+.page-template-portfolio-page .kalervo-portfolio {
 	float: left;
 	padding-right: 3%;
 	width: 50%;

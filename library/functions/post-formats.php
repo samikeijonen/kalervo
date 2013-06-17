@@ -38,12 +38,12 @@ function hybrid_structured_post_formats() {
 		add_filter( 'the_content', 'hybrid_aside_infinity', 9 ); // run before wpautop
 
 	/* Add audio to audio posts. */
-	if ( current_theme_supports( 'post-formats', 'audio' ) )
-		add_filter( 'the_content', 'hybrid_audio_content', 7 ); // run before WP_Embed
+	//if ( current_theme_supports( 'post-formats', 'audio' ) )
+	//	add_filter( 'the_content', 'hybrid_audio_content', 7 ); // run before WP_Embed
 
 	/* Add audio to audio posts. */
-	if ( current_theme_supports( 'post-formats', 'video' ) )
-		add_filter( 'the_content', 'hybrid_video_content', 7 ); // run before WP_Embed
+	//if ( current_theme_supports( 'post-formats', 'video' ) )
+	//	add_filter( 'the_content', 'hybrid_video_content', 7 ); // run before WP_Embed
 
 	/* Add image to content if the user didn't add it. */
 	if ( current_theme_supports( 'post-formats', 'image' ) )
@@ -491,7 +491,7 @@ function hybrid_chat_content( $content ) {
 		foreach ( $stanza as $row ) {
 
 			/* Get the chat author and message. */
-			$chat_author = $row['author'];
+			$chat_author = !empty( $row['author'] ) ? $row['author'] : '';
 			$chat_text   = $row['message'];
 
 			/* Get the speaker/row ID. */
@@ -504,7 +504,8 @@ function hybrid_chat_content( $content ) {
 			$chat_output .= "\n\t\t\t\t" . '<div class="chat-row ' . sanitize_html_class( "chat-speaker-{$speaker_id}" ) . '">';
 
 			/* Add the chat row author. */
-			$chat_output .= "\n\t\t\t\t\t" . '<div class="chat-author ' . sanitize_html_class( strtolower( "chat-author-{$chat_author}" ) ) . ' vcard">' . $time . '<cite class="fn">' . apply_filters( 'post_format_chat_author', $chat_author, $speaker_id ) . '</cite>:</div>';
+			if ( !empty( $chat_author ) )
+				$chat_output .= "\n\t\t\t\t\t" . '<div class="chat-author ' . sanitize_html_class( strtolower( "chat-author-{$chat_author}" ) ) . ' vcard">' . $time . '<cite class="fn">' . apply_filters( 'post_format_chat_author', $chat_author, $speaker_id ) . '</cite>:</div>';
 
 			/* Add the chat row text. */
 			$chat_output .= "\n\t\t\t\t\t" . '<div class="chat-text">' . str_replace( array( "\r", "\n", "\t" ), '', apply_filters( 'post_format_chat_text', $chat_text, $chat_author, $speaker_id ) ) . '</div>';
