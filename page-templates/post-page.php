@@ -6,6 +6,9 @@
  * @subpackage Template
  * @since 0.1.0
  */
+ 
+ /* For translating page template name. */
+ __( 'Post Page', 'kalervo' ); 
 
 get_header(); // Loads the header.php template. ?>
 
