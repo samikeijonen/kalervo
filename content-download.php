@@ -32,7 +32,6 @@
 				<div class="entry-summary">
 					<?php the_title( '<h2 class="entry-title"><a href="' . get_permalink() . '">', '</a></h2>' ); ?>
 					<?php kalervo_download_price(); // echo download price. ?>
-					<p class="kalervo-download-item"><?php echo hybrid_entry_terms_shortcode( array( 'taxonomy' => 'download_tag', 'before' => __( 'Type:', 'kalervo' ) . ' ' ) ); ?></p>
 				</div><!-- .entry-summary -->
 				
 			</article><!-- .hentry -->
