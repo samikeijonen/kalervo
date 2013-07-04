@@ -1,0 +1,424 @@
+/**
+* If you are not satisfied with theme customizer and want to roll your own styles using child theme style.css,
+* here is all the basic colors, backgrounds, borders and box shadows for you.
+*
+* Just copy all the styles below in your child theme style.css and make modifications in there.
+*/
+
+
+/* === Body === */
+
+body {
+color: #303030;
+}
+
+/* === Links === */
+
+a,
+a:visited {
+	color: #cc071e;
+}
+
+#menu-secondary li a,
+#menu-subsidiary li a,
+.woocommerce-pagination a,
+#menu-secondary li a:visited,
+#menu-subsidiary li a:visited,
+.woocommerce-pagination a:visited {
+	color: #777;
+}
+
+#site-title a,
+a:focus,
+a:active,
+a:hover,
+#footer a:focus,
+#footer a:active,
+#footer a:hover,
+#menu-secondary li a:hover,
+#menu-subsidiary li a:hover,
+#menu-secondary li.current-menu-item a,
+#menu-subsidiary li.current-menu-item a,
+.entry-title a,
+.entry-title {
+	color: #191919;
+}
+#kalervo-header-title a:focus,
+#kalervo-header-title a:active,
+#kalervo-header-title a:hover {
+	color: #253038;
+}
+
+
+/* === Colors === */
+
+#site-description,
+.breadcrumbs .trail-end,
+.entry-byline,
+.entry-meta,
+.loop-meta .loop-description,
+.format-gallery .kalervo-image-count,
+#sidebar-header .widget,
+#sidebar-primary .widget,
+#sidebar-subsidiary .widget,
+#sidebar-front-page .widget,
+.gallery-caption,
+.comments-closed,
+dl dd,
+blockquote {
+	color: #777;
+}
+
+code,
+pre,
+.wp-caption-text,
+.widget-title,
+.comment-meta,
+.comment-text .moderation,
+#respond input[type="text"],
+#respond textarea,
+.widget-search input[type="text"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+body #edd_checkout_form_wrap input[type="text"],
+body #edd_checkout_form_wrap input[type="email"],
+body #edd_checkout_form_wrap input[type="password"],
+body .gform_wrapper .gform_body .gform_fields .gfield .gfield_description,
+body .gform_wrapper .gform_body .gform_fields .gsection .gsection_description,
+body .gform_wrapper .gform_body .gform_fields .gfield .ginput_complex label,
+body .gform_wrapper .instruction,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input.medium {
+	color: #555;
+}
+
+thead th,
+tfoot th,
+thead tr:hover th,
+tfoot tr:hover th,
+#kalervo-header-image #kalervo-header-title,
+#kalervo-callout-url #kalervo-callout-text,
+#kalervo-callout-url .kalervo-callout-button,
+#kalervo-header-title a.kalervo-button,
+.menu-toggle,
+input[type="submit"],
+#respond #submit,
+.loop-nav a,
+.loop-nav a:visited,
+.pagination .page-numbers,
+.page-links a,
+a.more-link,
+a.kalervo-portfolio-item-link,
+a.kalervo-button,
+.edd-submit.button.kalervo-theme-color,
+.pagination .current,
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button,
+#menu-primary ul a,
+#menu-primary ul a:hover,
+#menu-primary ul li:hover a,
+#menu-primary li.current-menu-item a,
+#menu-primary ul li.iehover a,
+#menu-primary ul li:hover li a,
+#menu-primary ul li.iehover li a,
+#menu-primary ul.sub-menu li.current-menu-item a,
+#menu-primary ul li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li a:hover,
+#menu-primary ul li:hover li:hover a,
+#menu-primary ul li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover a,
+#menu-primary ul li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li a,
+#menu-primary ul li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li:hover li a:hover,
+#menu-primary ul li:hover li:hover li:hover a,
+#menu-primary ul li.iehover li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover a,
+#menu-primary ul li:hover li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li.iehover li a,
+#menu-primary ul li:hover li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li:hover li:hover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover li a:hover {
+	color: #fff;
+}
+
+
+/* === Background Colors === */
+
+.menu-toggle,
+input[type="submit"],
+#respond #submit,
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button,
+#kalervo-header-image {
+	background: #191919;
+}
+
+#menu-primary,
+#menu-primary ul li:hover li a,
+#menu-primary ul li.iehover li a,
+#menu-primary ul li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li a,
+#menu-primary ul li:hover li:hover li:hover li a,
+#menu-primary ul li.iehover li.iehover li.iehover li a,
+#kalervo-callout-url .kalervo-callout-button, 
+.loop-nav a,
+.pagination .page-numbers,
+.page-links a,
+a.more-link,
+a.kalervo-portfolio-item-link,
+a.kalervo-button,
+.edd-submit.button.kalervo-theme-color {
+	background: #303030;
+}
+
+#kalervo-callout-url,
+#menu-primary ul a:hover,
+#menu-primary ul li:hover a,
+#menu-primary li.current-menu-item a,
+#menu-primary ul li.iehover a,
+#menu-primary ul.sub-menu li.current-menu-item a,
+#menu-primary ul li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li a:hover,
+#menu-primary ul li:hover li:hover a,
+#menu-primary ul li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover a,
+#menu-primary ul li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li:hover li a:hover,
+#menu-primary ul li:hover li:hover li:hover a,
+#menu-primary ul li.iehover li.iehover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover a,
+#menu-primary ul li:hover li:hover li:hover li.current-menu-item a,
+#menu-primary ul li.iehover li.iehover li.iehover li.current-menu-item a,
+#menu-primary ul li:hover li:hover li:hover li a:hover,
+#menu-primary ul li.iehover li.iehover li.iehover li a:hover {
+	background: #121212;
+}
+
+/* Minimum width of 686 pixels. */
+@media screen and (min-width: 49em) {
+
+/* Callout URL. */
+#kalervo-callout-url {
+	background: #121212;
+	background: rgba(0,0,0,0.3);
+}
+
+}
+
+.hfeed .sticky,
+.widget-search input[type="text"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+body #edd_checkout_form_wrap input[type="text"],
+body #edd_checkout_form_wrap input[type="email"],
+body #edd_checkout_form_wrap input[type="password"],
+#respond input[type="text"],
+#respond textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input.medium,
+body #gforms_confirmation_message,
+.wp-caption-text,
+code,
+pre {
+	background: #f9f9f9;
+}
+
+#container,
+.widget-search input[type="text"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+body #edd_checkout_form_wrap input[type="text"]:focus,
+body #edd_checkout_form_wrap input[type="email"]:focus,
+body #edd_checkout_form_wrap input[type="password"]:focus,
+#respond input[type="text"]:focus,
+#respond textarea:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield textarea:focus,
+table,
+th {
+	background: #fff;
+}
+
+#kalervo-callout-url .kalervo-callout-button:hover,
+#kalervo-callout-url .kalervo-callout-button:focus,
+.menu-toggle:hover,
+input[type="submit"]:hover,
+#respond #submit:hover,
+.menu-toggle:active,
+.menu-toggle.toggled-on,
+input[type="submit"]:active,
+input[type="submit"].toggled-on,
+.loop-nav a:hover,
+.page-links a:hover ,
+.pagination  a.page-numbers:hover,
+a.more-link:hover,
+a.kalervo-portfolio-item-link:hover,
+.pagination .current,
+body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover,
+body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover,
+.edd-submit.button.kalervo-theme-color:hover {
+	background: #cc071e;
+}
+
+
+/* === Borders === */
+
+blockquote {
+	border-left: 5px solid #191919;
+}
+
+pre {
+	border: 1px solid #e5e5e5;
+}
+
+acronym,
+abbr {
+	border-bottom: 1px dotted #777;
+}
+
+th {
+	border-top: 1px solid #f2f2f2;
+	border-bottom: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+}
+td,
+tbody th {
+	border-bottom: 1px solid #f2f2f2;
+	border-left: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2;
+}
+
+.wp-caption-text {
+	border-bottom: 1px solid #e5e5e5;
+}
+
+select {
+	border: 1px solid #f2f2f2;
+}
+
+body .gform_wrapper .gform_body .gform_fields .gfield select {
+	border: 1px solid #e5e5e5;
+}
+
+#menu-primary.toggled-on li a {
+	border-bottom: 1px solid #ececec;
+}
+
+.hentry,
+#comments-template {
+	border-bottom: 2px solid #303030;
+}
+
+.singular .entry-byline,
+#comments-number,
+.comment-list li.comment,
+.comment-list li.pingback,
+.comment-list li.trackback  {
+	border-bottom: 1px dashed #e5e5e5;
+}
+
+.widget-search input[type="text"],
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea,
+body #edd_checkout_form_wrap input[type="text"],
+body #edd_checkout_form_wrap input[type="email"],
+body #edd_checkout_form_wrap input[type="password"],
+#respond input[type="text"],
+#respond textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number],
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password],
+body .gform_wrapper .gform_body .gform_fields .gfield textarea,
+body .gform_wrapper .gform_body .gform_fields .gfield input.medium,
+body #gforms_confirmation_message {
+	border: 1px solid #e5e5e5;
+}
+
+.widget-search input[type="text"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+body #edd_checkout_form_wrap input[type="text"]:focus,
+body #edd_checkout_form_wrap input[type="email"]:focus,
+body #edd_checkout_form_wrap input[type="password"]:focus,
+#respond input[type="text"]:focus,
+#respond textarea:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=email]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=url]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=number]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield input[type=password]:focus,
+body .gform_wrapper .gform_body .gform_fields .gfield textarea:focus {
+	border: 1px solid #191919;
+}
+
+/* === Box Shadows === */
+
+.widget-search input[type="text"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+body #edd_checkout_form_wrap input[type="text"]:focus,
+body #edd_checkout_form_wrap input[type="email"]:focus,
+body #edd_checkout_form_wrap input[type="password"]:focus,
+#respond input[type="text"]:focus,
+#respond textarea:focus {
+	-moz-box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+	-webkit-box-shadow: 0 0 rgba(131, 171, 35, 0.3);
+	box-shadow: 0 0 3px rgba(131, 171, 35, 0.3);
+}
+
+.comment-list .avatar,
+.format-status  .avatar,
+.loop-description .avatar {
+	-moz-box-shadow: 0 0 3px rgba(0,0,0,0.30);
+	-webkit-box-shadow: 0 0 3px rgba(0,0,0,0.30);
+	box-shadow: 0 0 3px rgba(0,0,0,0.30);
+}
