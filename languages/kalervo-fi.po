@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-09 14:00+0200\n"
-"PO-Revision-Date: 2013-06-09 14:02+0200\n"
+"POT-Creation-Date: 2013-07-03 20:11+0200\n"
+"PO-Revision-Date: 2013-07-03 20:11+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -32,13 +32,14 @@ msgstr ""
 "haluamasi sivu."
 
 #: attachment-image.php:28 content-aside.php:12 content-aside.php:23
-#: content-attachment.php:12 content-attachment.php:28 content-audio.php:25
-#: content-chat.php:18 content-chat.php:41 content-download.php:17
-#: content-gallery.php:12 content-gallery.php:33 content-image.php:23
-#: content-link.php:12 content-link.php:31 content-page.php:11
-#: content-page.php:27 content-portfolio_item.php:17 content-quote.php:12
-#: content-quote.php:23 content-status.php:13 content-status.php:30
-#: content-video.php:16 content-video.php:43 content.php:12 content.php:29
+#: content-attachment.php:12 content-attachment.php:28 content-audio.php:12
+#: content-audio.php:27 content-chat.php:18 content-chat.php:41
+#: content-download.php:17 content-gallery.php:12 content-gallery.php:33
+#: content-image.php:12 content-image.php:27 content-link.php:12
+#: content-link.php:31 content-page.php:11 content-page.php:27
+#: content-portfolio_item.php:17 content-quote.php:12 content-quote.php:23
+#: content-status.php:13 content-status.php:30 content-video.php:12
+#: content-video.php:27 content.php:12 content.php:29
 msgid "Pages:"
 msgstr "Sivut:"
 
@@ -80,8 +81,8 @@ msgstr "Yksi Kommentti"
 msgid "% Responses"
 msgstr "% Kommenttia"
 
-#: content-aside.php:7 content-gallery.php:7 content-image.php:13
-#: content-link.php:7 content-video.php:11
+#: content-aside.php:7 content-gallery.php:7 content-image.php:7
+#: content-link.php:7 content-video.php:7
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
 "before=\" | \"] [entry-edit-link before=\" | \"]"
@@ -97,8 +98,10 @@ msgstr ""
 "[entry-terms before=\"Artikkeli kategoriassa \" taxonomy=\"category\"] "
 "[entry-terms before=\"| Avainsanat \"]"
 
-#: content-aside.php:22 content-chat.php:40 content-link.php:30
-#: content-quote.php:22 content-status.php:29 content-video.php:42
+#: content-aside.php:22 content-audio.php:11 content-audio.php:26
+#: content-chat.php:40 content-image.php:11 content-image.php:26
+#: content-link.php:30 content-quote.php:22 content-status.php:29
+#: content-video.php:11 content-video.php:26
 msgid "Read more &rarr;"
 msgstr "Lue lisää &rarr;"
 
@@ -106,7 +109,7 @@ msgstr "Lue lisää &rarr;"
 msgid "Published on [entry-published] [entry-edit-link before=\"| \"]"
 msgstr "Julkaistu [entry-published] [entry-edit-link before=\"| \"]"
 
-#: content-audio.php:15
+#: content-audio.php:7
 msgid ""
 "[post-format-link] file published on [entry-published] [entry-comments-link "
 "before=\" | \"] [entry-edit-link before=\"| \"]"
@@ -114,9 +117,9 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\"| \"]"
 
-#: content-audio.php:29 content-chat.php:22 content-gallery.php:16
-#: content-image.php:27 content-link.php:16 content-quote.php:16
-#: content-video.php:20
+#: content-audio.php:16 content-chat.php:22 content-gallery.php:16
+#: content-image.php:16 content-link.php:16 content-quote.php:16
+#: content-video.php:16
 msgid ""
 "[entry-terms taxonomy=\"category\" before=\"Posted in \"] [entry-terms "
 "before=\"Tagged \"]"
@@ -124,7 +127,7 @@ msgstr ""
 "[entry-terms taxonomy=\"category\" before=\"Artikkeli kategoriassa \"] "
 "[entry-terms before=\"Avainsanat \"]"
 
-#: content-audio.php:53
+#: content-audio.php:31
 msgid ""
 "[post-format-link] file published on [entry-published] [entry-comments-link "
 "before=\"| \"] [entry-edit-link before=\"| \"]"
@@ -140,7 +143,7 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\" | \"] [entry-edit-link before=\"| \"]"
 
-#: content-chat.php:47 content-gallery.php:42 content-image.php:47
+#: content-chat.php:47 content-gallery.php:42 content-image.php:31
 msgid ""
 "[post-format-link] published on [entry-published] [entry-comments-link "
 "before=\"| \"] [entry-edit-link before=\"| \"]"
@@ -148,7 +151,7 @@ msgstr ""
 "[post-format-link] julkaistu [entry-published] [entry-comments-link before="
 "\"| \"] [entry-edit-link before=\"| \"]"
 
-#: content-download.php:10 content-download.php:35
+#: content-download.php:10
 msgid "Type:"
 msgstr "Tyyppi:"
 
@@ -159,7 +162,7 @@ msgid_plural "This gallery contains %d images."
 msgstr[0] "Kuvagalleriassa on %d kuva."
 msgstr[1] "Kuvagalleriassa on %d kuvaa."
 
-#: content-link.php:37 content-quote.php:27 content-video.php:49
+#: content-link.php:37 content-quote.php:27 content-video.php:31
 msgid ""
 "[post-format-link] published on [entry-published] [entry-permalink before="
 "\"| \"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
@@ -168,6 +171,7 @@ msgstr ""
 "\"] [entry-comments-link before=\"| \"] [entry-edit-link before=\"| \"]"
 
 #: content-portfolio_item.php:10 content-portfolio_item.php:35
+#: page-templates/portfolio-page.php:47
 msgid "Work:"
 msgstr "Tehdyt työt:"
 
@@ -197,15 +201,19 @@ msgstr ""
 "[entry-author]  [entry-published] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 
-#: functions.php:454
+#: functions.php:256
+msgid "Portfolio Thumbnail"
+msgstr "Portfolion pikkukuva"
+
+#: functions.php:456 page-templates/front-page.php:11
 msgid "Front Page"
 msgstr "Etusivu"
 
-#: functions.php:455
+#: functions.php:457
 msgid "Front Page widget area."
 msgstr "Etusivun vimpainalue."
 
-#: functions.php:517
+#: functions.php:519
 #, php-format
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
@@ -214,7 +222,7 @@ msgstr ""
 "Slideria ei ole vielä valitta. Valitse Slider <a href=\"%s\"> Ulkoasu &gt; "
 "Mukauta &gt; Ulkoasu</a>."
 
-#: functions.php:553
+#: functions.php:557
 msgid "Visit site"
 msgstr "Vieraile sivulla"
 
@@ -303,103 +311,231 @@ msgstr "Kalervo-teeman väri"
 msgid "From:"
 msgstr "Alkaen:"
 
-#: includes/theme-customize.php:24
+#: includes/theme-customize.php:30
 msgid "Logo Upload"
 msgstr "Logon lataus"
 
-#: includes/theme-customize.php:47
+#: includes/theme-customize.php:53
 msgid "Upload custom logo. Recommended max width is 300px."
 msgstr "Lataa logo. Suositeltu maksimileveys on 300px."
 
-#: includes/theme-customize.php:72
+#: includes/theme-customize.php:78
+msgid "Choose Body Font Size (pixels)"
+msgstr "Valitse fontin koko (px)"
+
+#: includes/theme-customize.php:83
+msgid "13"
+msgstr "13"
+
+#: includes/theme-customize.php:84
+msgid "14"
+msgstr "14"
+
+#: includes/theme-customize.php:85
+msgid "15"
+msgstr "15"
+
+#: includes/theme-customize.php:86
+msgid "16"
+msgstr "16"
+
+#: includes/theme-customize.php:87
+msgid "17"
+msgstr "17"
+
+#: includes/theme-customize.php:88
+msgid "18"
+msgstr "18"
+
+#: includes/theme-customize.php:89
+msgid "19"
+msgstr "19"
+
+#: includes/theme-customize.php:112
 msgid "Choose whether to show Header Image or Soliloque Slider in Header?"
 msgstr "Valitse käytätkö otsake-kuvaa vai slider-kuvia?"
 
-#: includes/theme-customize.php:78
+#: includes/theme-customize.php:118
 msgid "Show Header image"
 msgstr "Näytä otsake-kuva"
 
-#: includes/theme-customize.php:79
+#: includes/theme-customize.php:119
 msgid "Show Slider"
 msgstr "Näytä Slider"
 
-#: includes/theme-customize.php:104
+#: includes/theme-customize.php:144
 msgid "Select Soliloquy Slider"
 msgstr "Valitse Soliloquy Slider"
 
-#: includes/theme-customize.php:116
+#: includes/theme-customize.php:156
 msgid "Social Links"
 msgstr "Sosiaalisen median linkit"
 
-#: includes/theme-customize.php:138
+#: includes/theme-customize.php:178
 msgid "Twitter URL"
 msgstr "Twitter URL-linkki"
 
-#: includes/theme-customize.php:162
+#: includes/theme-customize.php:202
 msgid "Facebook URL"
 msgstr "Facebook URL-linkki"
 
-#: includes/theme-customize.php:186
+#: includes/theme-customize.php:226
 msgid "RSS URL"
 msgstr "RSS URL-linkki"
 
-#: includes/theme-customize.php:210
+#: includes/theme-customize.php:250
 msgid "Linkedin URL"
 msgstr "Linkedin URL-linkki"
 
-#: includes/theme-customize.php:234
+#: includes/theme-customize.php:274
 msgid "Google Plus URL"
 msgstr "Google Plus URL-linkki"
 
-#: includes/theme-customize.php:258
+#: includes/theme-customize.php:298
 msgid "Github URL"
 msgstr "Github URL-linkki"
 
-#: includes/theme-customize.php:282
+#: includes/theme-customize.php:322
 msgid "Pinterest URL"
 msgstr "Pinterest URL-linkki"
 
-#: includes/theme-customize.php:306
+#: includes/theme-customize.php:346
 msgid "Choose icon size"
 msgstr "Valitse ikonin koko"
 
-#: includes/theme-customize.php:312
+#: includes/theme-customize.php:352
 msgid "Normal"
 msgstr "Normaali"
 
-#: includes/theme-customize.php:313
+#: includes/theme-customize.php:353
 msgid "Icon large"
 msgstr "Isompi ikoni"
 
-#: includes/theme-customize.php:314
+#: includes/theme-customize.php:354
 msgid "Icon 2x"
 msgstr "Ikoni 2x"
 
-#: includes/theme-customize.php:315
+#: includes/theme-customize.php:355
 msgid "Icon 3x"
 msgstr "Ikoni 3x"
 
-#: includes/theme-customize.php:316
+#: includes/theme-customize.php:356
 msgid "Icon 4x"
 msgstr "Ikoni 4x"
 
-#: includes/theme-customize.php:325
+#: includes/theme-customize.php:365
 msgid "Front Page Callout"
 msgstr "Etusivun Callout-teksti"
 
-#: includes/theme-customize.php:347
+#: includes/theme-customize.php:387
 msgid "Callout text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:371
+#: includes/theme-customize.php:411
 msgid "Callout URL"
 msgstr "Callout URL-linkki"
 
-#: includes/theme-customize.php:395
+#: includes/theme-customize.php:435
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:414
+#: includes/theme-customize.php:520
+msgid "Body Font"
+msgstr "Fontti"
+
+#: includes/theme-customize.php:530
+msgid "Headline Font"
+msgstr "Otsikon fontti"
+
+#: includes/theme-customize.php:541
+msgid "Trebuchet (font stack)"
+msgstr "Trebuchet"
+
+#: includes/theme-customize.php:549
+msgid "Arial (font stack)"
+msgstr "Arial"
+
+#: includes/theme-customize.php:557
+msgid "Lucida Sans Unicode (font stack)"
+msgstr "Lucida Sans Unicode"
+
+#: includes/theme-customize.php:565
+msgid "Georgia (font stack)"
+msgstr "Georgia"
+
+#: includes/theme-customize.php:573
+msgid "Helvetica (font stack)"
+msgstr "Helvetica"
+
+#: includes/theme-customize.php:581
+msgid "Merriweather Sans"
+msgstr "Merriweather Sans"
+
+#: includes/theme-customize.php:591
+msgid "Roboto Condensed"
+msgstr "Roboto Condensed"
+
+#: includes/theme-customize.php:601
+msgid "Arvo"
+msgstr "Arvo"
+
+#: includes/theme-customize.php:611
+msgid "Muli"
+msgstr "Muli"
+
+#: includes/theme-customize.php:621
+msgid "Open Sans"
+msgstr "Open Sans"
+
+#: includes/theme-customize.php:631
+msgid "Open Sans Condensed (700)"
+msgstr "Open Sans Condensed (700)"
+
+#: includes/theme-customize.php:654
+#, fuzzy
+msgid "Body color"
+msgstr "Sivuston väri"
+
+#: includes/theme-customize.php:658
+#, fuzzy
+msgid "Container color"
+msgstr "Sisällön väri"
+
+#: includes/theme-customize.php:662
+msgid "Primary menu color"
+msgstr ""
+
+#: includes/theme-customize.php:666
+msgid "Primary menu hover color"
+msgstr ""
+
+#: includes/theme-customize.php:670
+msgid "Primary menu link color"
+msgstr ""
+
+#: includes/theme-customize.php:674
+#, fuzzy
+msgid "Link color"
+msgstr "Linkin väri"
+
+#: includes/theme-customize.php:678
+#, fuzzy
+msgid "Link color hover"
+msgstr "Vaalea väri \"hover\""
+
+#: includes/theme-customize.php:682
+msgid "Site title and entry title color"
+msgstr ""
+
+#: includes/theme-customize.php:686
+msgid "Widget title and forms text color"
+msgstr ""
+
+#: includes/theme-customize.php:690
+msgid "Byline, meta, widget, secondary/subsidiary menu links etc. color"
+msgstr ""
+
+#: includes/theme-customize.php:780
 msgid "Select Slider"
 msgstr "Valitse Slider"
 
@@ -1371,6 +1507,37 @@ msgstr ""
 msgid "(Untitled)"
 msgstr "(Ei otsikkoa)"
 
+#: page-templates/download-page.php:11
+msgid "Download Page"
+msgstr "Latauksien sivu"
+
+#: page-templates/download-page.php:27
+msgid "Latest Downloads"
+msgstr "Viimeisimmät lataukset"
+
+#: page-templates/download-page.php:29 page-templates/portfolio-page.php:29
+#: page-templates/post-page.php:47
+#, php-format
+msgid "%1$s"
+msgstr "%1$s"
+
+#: page-templates/portfolio-page.php:11
+msgid "Portfolio Page"
+msgstr "Portfolion sivu"
+
+#: page-templates/portfolio-page.php:27
+msgid "Latest Portfolios"
+msgstr "Viimeisimmät portfoliot"
+
+#: page-templates/post-page.php:11
+msgid "Post Page"
+msgstr "Artikkeleiden sivu"
+
+#: page-templates/post-page.php:45
+#, fuzzy
+msgid "Latest articles"
+msgstr "Viimeisimmät portfoliot"
+
 #~ msgid "Price:"
 #~ msgstr "Hinta:"
 
@@ -1398,9 +1565,6 @@ msgstr "(Ei otsikkoa)"
 #~ msgid "Subscribe"
 #~ msgstr "Liity"
 
-#~ msgid "Portfolio Layout"
-#~ msgstr "Portfolion ulkoasu"
-
 #~ msgid "Three Columns"
 #~ msgstr "Kolme saraketta"
 
@@ -1412,57 +1576,6 @@ msgstr "(Ei otsikkoa)"
 
 #~ msgid "Google+ URL"
 #~ msgstr "Google+ URL-linkki"
-
-#~ msgid "Body Font"
-#~ msgstr "Fontti"
-
-#~ msgid "Headline Font"
-#~ msgstr "Otsikon fontti"
-
-#~ msgid "Trebuchet (font stack)"
-#~ msgstr "Trebuchet"
-
-#~ msgid "Arial (font stack)"
-#~ msgstr "Arial"
-
-#~ msgid "Lucida Sans Unicode (font stack)"
-#~ msgstr "Lucida Sans Unicode"
-
-#~ msgid "Georgia (font stack)"
-#~ msgstr "Georgia"
-
-#~ msgid "Helvetica (font stack)"
-#~ msgstr "Helvetica"
-
-#~ msgid "Merriweather Sans"
-#~ msgstr "Merriweather Sans"
-
-#~ msgid "Roboto Condensed"
-#~ msgstr "Roboto Condensed"
-
-#~ msgid "Arvo"
-#~ msgstr "Arvo"
-
-#~ msgid "Muli"
-#~ msgstr "Muli"
-
-#~ msgid "Open Sans"
-#~ msgstr "Open Sans"
-
-#~ msgid "Open Sans Condensed (700)"
-#~ msgstr "Open Sans Condensed (700)"
-
-#~ msgid "Body Color"
-#~ msgstr "Sivuston väri"
-
-#~ msgid "Entry Color"
-#~ msgstr "Sisällön väri"
-
-#~ msgid "Link Color"
-#~ msgstr "Linkin väri"
-
-#~ msgid "Link Color Hover"
-#~ msgstr "Vaalea väri \"hover\""
 
 #~ msgid "Light Color"
 #~ msgstr "Vaalea väri"
@@ -1569,30 +1682,6 @@ msgstr "(Ei otsikkoa)"
 #~ msgid "Use random background"
 #~ msgstr "Käytä satunnaista taustakuvaa"
 
-#~ msgid "Choose Body Font Size (pixels)"
-#~ msgstr "Valitse fontin koko (px)"
-
-#~ msgid "13"
-#~ msgstr "13"
-
-#~ msgid "14"
-#~ msgstr "14"
-
-#~ msgid "15"
-#~ msgstr "15"
-
-#~ msgid "16"
-#~ msgstr "16"
-
-#~ msgid "17"
-#~ msgstr "17"
-
-#~ msgid "18"
-#~ msgstr "18"
-
-#~ msgid "19"
-#~ msgstr "19"
-
 #~ msgid "Choose whether to use full width header image or not."
 #~ msgstr "Valitse käytätkö koko sivun levyistä otsakekuvaa vai et."
 
@@ -1605,20 +1694,11 @@ msgstr "(Ei otsikkoa)"
 #~ msgid "Upload image for Callout. Recommended max width is 770px."
 #~ msgstr "Lataa Callout-kuva. Suositeltu maksimileveys on 770px."
 
-#~ msgid "Latest Downloads"
-#~ msgstr "Viimeisimmät lataukset"
-
-#~ msgid "%1$s"
-#~ msgstr "%1$s"
-
 #~ msgid "View Details"
 #~ msgstr "Näytä lisää"
 
 #~ msgid "Checkout"
 #~ msgstr "Kassalle"
-
-#~ msgid "Latest Portfolios"
-#~ msgstr "Viimeisimmät portfoliot"
 
 #~ msgid "%d topic"
 #~ msgid_plural "%d topics"
