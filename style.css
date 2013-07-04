@@ -5,6 +5,7 @@
  * Version: 0.1
  * Author: Sami Keijonen
  * Author URI: https://foxnet-themes.fi
+ * Text Domain: kalervo
  * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, editor-style, orange, white, light
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -534,6 +535,9 @@ textarea,
 .page-template-front-page #content img,
 .archive-portfolio_item  .kalervo-portfolio .hentry  img,
 .taxonomy-portfolio .kalervo-portfolio .hentry  img,
+.archive-download  .kalervo-download .hentry  img,
+.taxonomy-download_category .kalervo-download .hentry  img,
+.taxonomy-download_tag .kalervo-download .hentry  img,
 .page-template-post-page .kalervo-post .hentry img,
 .page-template-download-page .kalervo-download .hentry img,
 .page-template-portfolio-page .kalervo-portfolio .hentry img {
@@ -1039,6 +1043,7 @@ select {
 }
 
 /* Navigation Menu for narrow screens. */
+
 div.menu li, nav.menu li {
 	float: none;
 }
@@ -1076,12 +1081,13 @@ div.menu li, nav.menu li {
 	display: block;
 }
 #menu-primary.toggled-on li a {
-	border-bottom: 1px solid #f2f2f2;
+	border-bottom: 1px solid #ececec;
 	display: block;
 	padding: 7px 0;
 	padding: 0.5rem 0;
 }
-#menu-primary a:hover {
+.custom-colors #menu-primary.toggled-on li a {
+	border-bottom: 1px solid #191919;
 }
 #menu-primary ul.menu-items,
 #menu-primary div.menu-items > ul {
@@ -1095,6 +1101,41 @@ div.menu li, nav.menu li {
 	margin-bottom: 14px;
 	margin-bottom: 1rem;
 	width: 100%;
+}
+
+/* For custom colors don't use hover on narrow screens. */
+@media screen and (max-width: 49em) {
+
+.custom-colors #menu-primary.toggled-on ul a:hover,
+.custom-colors #menu-primary.toggled-on ul a:hover,
+.custom-colors #menu-primary.toggled-on ul li:hover a,
+.custom-colors #menu-primary.toggled-on li.current-menu-item a,
+.custom-colors #menu-primary.toggled-on ul li.iehover a,
+.custom-colors #menu-primary.toggled-on ul.sub-menu li.current-menu-item a, /* Current menu item in sub menu. */
+.custom-colors #menu-primary.toggled-on ul li.iehover li.current-menu-item a,
+.custom-colors #menu-primary.toggled-on ul li:hover li a:hover, /* 2nd Menu Hover Persistence */
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover a,
+.custom-colors #menu-primary.toggled-on ul li.iehover li a:hover,
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover a,
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover li.current-menu-item a, /* Current menu item in sub sub menu. */
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover li.current-menu-item a,
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover li a:hover, /* 3rd Menu Hover Persistence */
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover li:hover a,
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover li a:hover,
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover li.iehover a,
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover li:hover li.current-menu-item a, /* Current menu item in sub sub sub menu. */
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover li.iehover li.current-menu-item a,
+.custom-colors #menu-primary.toggled-on ul li:hover li:hover li:hover li a:hover, /* 4th Menu Hover */
+.custom-colors #menu-primary.toggled-on ul li.iehover li.iehover li.iehover li a:hover,
+.custom-colors #menu-primary.toggled-on ul li:hover li a,
+.custom-colors #menu-primary.toggled-on  ul li.iehover li a,
+.custom-colors #menu-primary.toggled-on  ul li:hover li:hover li a, /* 3rd Menu */
+.custom-colors #menu-primary.toggled-on  ul li.iehover li.iehover li a,
+.custom-colors #menu-primary.toggled-on  ul li:hover li:hover li:hover li a, /* 4th Menu */
+.custom-colors #menu-primary.toggled-on  ul li.iehover li.iehover li.iehover li a {
+	background: none;
+}
+
 }
 
 /* Secondary and Subsidiary menu. */
@@ -1124,9 +1165,12 @@ div.menu li, nav.menu li {
 }
 #menu-secondary li a:hover,
 #menu-subsidiary li a:hover,
+#menu-secondary li a:active,
+#menu-subsidiary li a:active,
 #menu-secondary li.current-menu-item a,
 #menu-subsidiary li.current-menu-item a {
 	color: #191919;
+	text-decoration: underline;
 }
 #menu-secondary li a:after,
 #menu-subsidiary li a:after {
@@ -1261,7 +1305,7 @@ ul#kalervo-social-link-list li {
 	margin-bottom: 1rem;
 }
 .singular .entry-byline {
-	border-bottom: 1px dashed #e6e6e6;
+	border-bottom: 1px dashed #e5e5e5;
 	margin-top: 14px;
 	margin-top: 1rem;
 	padding-bottom: 14px;
@@ -1351,6 +1395,7 @@ a.post-format-link .kalervo-post-format-icon:hover {
 	width: 100%;
 }
 .loop-nav a,
+.loop-nav a:visited,
 .pagination .page-numbers,
 .page-links a,
 a.more-link,
@@ -1488,7 +1533,7 @@ body #edd_checkout_form_wrap input[type="password"]:focus {
 -------------------------------------------------------------- */
 
 #comments-number {
-	border-bottom: 1px dashed #e6e6e6;
+	border-bottom: 1px dashed #e5e5e5;
 	padding-bottom: 14px;
 	padding-bottom: 1rem;
 }
@@ -1538,7 +1583,7 @@ ol.comment-list dl dl {
 .comment-list li.comment,
 .comment-list li.pingback,
 .comment-list li.trackback {
-	border-bottom: 1px dashed #e6e6e6;
+	border-bottom: 1px dashed #e5e5e5;
 	clear: both;
 	margin-bottom: 20px;
 	margin-bottom: 1.42857143rem;
@@ -1753,6 +1798,17 @@ ol.comment-list dl dl {
 	left: 0;
 	width: 100%;
 	opacity: 0;
+}
+.archive-portfolio_item .kalervo-portfolio .hentry .entry-summary h2,
+.taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary h2,
+.archive-download .kalervo-download .hentry .entry-summary h2,
+.taxonomy-download_category .kalervo-download .hentry .entry-summary h2,
+.taxonomy-download_tag .kalervo-download .hentry .entry-summary h2,
+.page-template-post-page .kalervo-post .hentry .entry-summary h2,
+.page-template-download-page .kalervo-download .hentry .entry-summary h2,
+.page-template-portfolio-page .kalervo-portfolio .hentry .entry-summary h2 {
+	font-size: 18px;
+	font-size: 1.28571428571rem;
 }
 .archive-portfolio_item .kalervo-portfolio .hentry .entry-summary p,
 .taxonomy-portfolio .kalervo-portfolio .hentry .entry-summary p,
@@ -2019,8 +2075,8 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
 	background: #cc071e;
 }
 .kalervo-price {
-	font-size: 20px;
-	font-size: 1.42857142857rem;
+	font-size: 16px;
+	font-size: 1.14285714286rem;
 }
 
 
@@ -2418,6 +2474,7 @@ http://qrayg.com/experiment/cssmenus/
 }
 
 .home.layout-1c .hentry,
+.blog.layout-1c .hentry,
 .singular.layout-1c .hentry ,
 .singular.layout-1c #comments {
 	padding: 24px 10%;
