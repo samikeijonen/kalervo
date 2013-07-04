@@ -57,6 +57,12 @@ function kalervo_theme_setup() {
 	add_theme_support( 'cleaner-caption' );
 	add_theme_support( 'featured-header' );
 	
+	/* Add theme support for theme fonts. */
+	add_theme_support( 'theme-fonts',   array( 'callback' => 'kalervo_register_headlines_fonts', 'customizer' => true ) );
+	
+	/* Add theme support for theme color palette. */
+	add_theme_support( 'color-palette', array( 'callback' => 'kalervo_register_colors' ) );
+	
 	/* Add theme support for WordPress features. */
 	
 	/* Add support for auto-feed links. */
@@ -72,7 +78,8 @@ function kalervo_theme_setup() {
 	add_theme_support( 
 		'custom-background',
 		array(
-			'default-color' => 'f2f2f2' // Background default color
+			'default-color' => 'ececec', // Background default color
+			'wp-head-callback' => 'kalervo_custom_background_callback'
 		)
 	);
 	
@@ -100,6 +107,9 @@ function kalervo_theme_setup() {
 	
 	/* Add custom image sizes. */
 	add_action( 'init', 'kalervo_add_image_sizes' );
+	
+	/* Add custom names for custom image sizes. */
+	add_filter( 'image_size_names_choose', 'kalervo_custom_name_image_sizes' );
 	
 	/* Enqueue scripts. */
 	add_action( 'wp_enqueue_scripts', 'kalervo_scripts_styles' );
@@ -133,9 +143,6 @@ function kalervo_theme_setup() {
 	/* Add menu-item-parent class to parent menu items.  */
 	add_filter( 'wp_nav_menu_objects', 'kalervo_add_menu_parent_class' );
 	
-	/* Add new body class if there is attachments. */
-	add_filter( 'body_class', 'kalervo_add_body_attachments' );
-	
 	/* Add wrapper to porfolio and download archive. */
 	add_action( 'kalervo_before_loop', 'kalervo_add_wrapper' );
 	add_action( 'kalervo_after_loop', 'kalervo_end_wrapper' );
@@ -155,6 +162,45 @@ function kalervo_theme_setup() {
 	
 	/* Filter no_id string in soliloquy. */
 	add_filter( 'tgmsp_strings', 'kalervo_soliloquy_no_id_string' );
+
+}
+
+/**
+ * This is a fix for when a user sets a custom background color with no custom background image.  What 
+ * happens is the theme's background image hides the user-selected background color.  If a user selects a 
+ * background image, we'll just use the WordPress custom background callback.
+ *
+ * @author Justin Tadlock <justin@justintadlock.com>
+ * @copyright Copyright (c) 2013, Justin Tadlock
+ * @since  0.1.0
+ * @access public
+ * @link http://core.trac.wordpress.org/ticket/16919
+ * @return void
+ */
+function kalervo_custom_background_callback() {
+
+	/* Get the background image. */
+	$image = get_background_image();
+
+	/* If there's an image, just call the normal WordPress callback. We won't do anything here. */
+	if ( !empty( $image ) ) {
+		_custom_background_cb();
+		return;
+	}
+
+	/* Get the background color. */
+	$color = get_background_color();
+
+	/* If no background color, return. */
+	if ( empty( $color ) )
+		return;
+
+	/* Use 'background' instead of 'background-color'. */
+	$style = "background: #{$color};";
+
+?>
+<style type="text/css">body.custom-background { <?php echo trim( $style ); ?> }</style>
+<?php
 
 }
 
@@ -237,8 +283,19 @@ function kalervo_respond_html5shiv() {
 function kalervo_add_image_sizes() {
 
 	add_image_size( 'kalervo-thumbnail-portfolio', 450, 309, true );
-	add_image_size( 'kalervo-portfolio', 764, 472, true );
 	
+}
+
+/**
+ * Adds custom names for custom image sizes.
+ *
+ * @since 0.1.0
+ */
+function kalervo_custom_name_image_sizes( $sizes ) {
+
+    $sizes['kalervo-thumbnail-portfolio'] = __( 'Portfolio Thumbnail', 'kalervo' );
+	
+    return $sizes;
 }
 
 /**
@@ -253,18 +310,6 @@ function kalervo_scripts_styles() {
 		
 		/* Enqueue Kalervo settings. */
 		wp_enqueue_script( 'kalervo-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings/kalervo-settings.js', array( 'jquery', 'kalervo-fitvids' ), '20130525', true );
-	
-		/* Add google font. */
-		wp_enqueue_style( 'kalervo-fonts-1', 'http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700', false, '20130502', 'all' );
-		
-		/* Add flexslider js and css to singular portfolio page. */
-		if ( is_singular( 'portfolio_item' ) ) {
-			
-			wp_enqueue_script( 'kalervo-flexslider',  trailingslashit( get_template_directory_uri() ) . 'js/flexslider/jquery.flexslider-min.js', array( 'jquery' ), '20130525', true );
-			wp_enqueue_script( 'kalervo-flexslider-settings', trailingslashit( get_template_directory_uri() ) . 'js/flexslider/settings.flexslider.js', array( 'kalervo-flexslider' ), '20130525', true );
-			wp_enqueue_style( 'kalervo-flexslider-styles', trailingslashit( get_template_directory_uri() ) . 'css/flexslider/flexslider.min.css', false, '20130525', 'all' );
-	
-		}
 	
 }
 
@@ -306,9 +351,6 @@ function kalervo_one_column() {
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 
 	elseif ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) )
-		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
-		
-	elseif ( kalervo_check_attachments() )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 	
 	elseif ( function_exists( 'woocommerce_list_pages' ) && ( is_shop() || is_product_category() || is_product_tag() ) )
@@ -601,20 +643,6 @@ function kalervo_display_slides() {
 }
 
 /**
-* Add new body class if there is attachments in singular portfolio item.
-*
-* @since  0.1.0
-*/
-function kalervo_add_body_attachments( $classes ) {
-
-	if ( kalervo_check_attachments() )
-		$classes[] = 'kalervo-portfolio-1';
-
-	return $classes;
-	
-}
-
-/**
 * Add wrapper to download and portfolio archive
 *
 * @since  0.1.0
@@ -636,33 +664,6 @@ function kalervo_end_wrapper() {
 	if ( is_post_type_archive( 'portfolio_item' ) || is_post_type_archive( 'download' ) || is_tax( 'portfolio' ) || is_tax( 'download_tag' ) || is_tax( 'download_category' ) )
 		echo '</div>';
 
-}
-
-/**
-* Check if there is attachment in portfolio item.
-*
-* @since  0.1.0
-*/
-function kalervo_check_attachments() {
-
-	if ( is_singular( 'portfolio_item' ) ) {
-
-		$args = array(
-			'post_type'      => 'attachment',
-			'post_parent'    => get_the_ID(),
-			'post_mime_type' => 'image',
-			'post_status'    => null
-		);
-
-		$attachments = get_posts( $args );
-
-		if ( $attachments )
-			return true;
-		else
-			return false;
-
-	}
-	
 }
 
 ?>
