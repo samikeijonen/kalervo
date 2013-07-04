@@ -30,7 +30,7 @@
 									
 					<img src="<?php echo esc_url( $kalervo_header_image ); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 									
-					<?php if ( ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) ) || is_page_template( 'page-templates/portfolio-page.php' ) && ( get_theme_mod( 'callout_url' ) && get_theme_mod( 'callout_url_text' ) || get_theme_mod( 'callout_text' ) ) ) {
+					<?php if ( ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) ) && ( get_theme_mod( 'callout_url' ) && get_theme_mod( 'callout_url_text' ) || get_theme_mod( 'callout_text' ) ) ) {
 							/* Callout link in Front Page template. */
 							echo '<div id="kalervo-callout-url"><h2 id="kalervo-callout-text">' . esc_attr( get_theme_mod( 'callout_text' ) ) . '</h2><a class="kalervo-callout-button" href="' . esc_url( get_theme_mod( 'callout_url' ) ) . '">' . esc_attr( get_theme_mod( 'callout_url_text' ) ) . '</a></div>';
 						} 			
