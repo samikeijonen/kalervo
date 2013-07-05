@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:22+0200\n"
-"PO-Revision-Date: 2013-07-05 12:27+0200\n"
+"POT-Creation-Date: 2013-07-05 18:54+0200\n"
+"PO-Revision-Date: 2013-07-05 18:58+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -316,8 +316,9 @@ msgid "License Key"
 msgstr "Lisenssiavain"
 
 #: admin/functions-admin.php:50
-msgid "Enter your license key"
-msgstr "Kirjoita lisenssiavain"
+msgid "Enter your license key for receiving automatic upgrades"
+msgstr ""
+"Kirjoita lisenssiavain, jotta saat automaattisesti päivityksiä teemaan."
 
 #: admin/functions-admin.php:56 admin/functions-admin.php:65
 msgid "Activate License"
@@ -549,15 +550,15 @@ msgstr "Sisällön väri"
 
 #: includes/theme-customize.php:716
 msgid "Primary menu color"
-msgstr ""
+msgstr "Päämenu väri"
 
 #: includes/theme-customize.php:720
 msgid "Primary menu hover color"
-msgstr ""
+msgstr "Päämenu väri \"hover\""
 
 #: includes/theme-customize.php:724
 msgid "Primary menu link color"
-msgstr ""
+msgstr "Päämenun linkin väri"
 
 #: includes/theme-customize.php:728
 msgid "Link color"
@@ -565,19 +566,19 @@ msgstr "Linkin väri"
 
 #: includes/theme-customize.php:732
 msgid "Link color hover"
-msgstr ""
+msgstr "Linkin väri \"hover\""
 
 #: includes/theme-customize.php:736
 msgid "Site title and entry title color"
-msgstr ""
+msgstr "Otsikkojen väri"
 
 #: includes/theme-customize.php:740
 msgid "Widget title and forms text color"
-msgstr ""
+msgstr "Vimpaimien otsikkojen väri"
 
 #: includes/theme-customize.php:744
 msgid "Byline, meta, widget, secondary/subsidiary menu links etc. color"
-msgstr ""
+msgstr "Vimpaimien, toisen ja kolmannen menun jne väri."
 
 #: includes/theme-customize.php:835
 msgid "Select Slider"
@@ -1580,6 +1581,9 @@ msgstr "Artikkeleiden sivu"
 #: page-templates/post-page.php:45
 msgid "Latest articles"
 msgstr "Viimeisimmät artikkelit"
+
+#~ msgid "Enter your license key"
+#~ msgstr "Kirjoita lisenssiavain"
 
 #~ msgid "Price:"
 #~ msgstr "Hinta:"

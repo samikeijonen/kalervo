@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:22+0200\n"
+"POT-Creation-Date: 2013-07-05 18:54+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team:  <sami.keijonen@foxnet.fi>\n"
@@ -285,7 +285,7 @@ msgid "License Key"
 msgstr ""
 
 #: admin/functions-admin.php:50
-msgid "Enter your license key"
+msgid "Enter your license key for receiving automatic upgrades"
 msgstr ""
 
 #: admin/functions-admin.php:56 admin/functions-admin.php:65
