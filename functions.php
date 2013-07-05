@@ -155,11 +155,11 @@ function kalervo_theme_setup() {
 	/* Add css to customize. */
 	add_action( 'wp_enqueue_scripts', 'kalervo_customize_preview_css' );
 	
-	/* Use same taxonomy template. */
-	add_filter( 'taxonomy_template', 'kalervo_taxonomy_template', 11 );
-	
 	/* Register additional sidebar to 'front page' page template. */
 	add_action( 'widgets_init', 'kalervo_register_sidebars' );
+	
+	/* Remove the "Theme Settings" submenu. */
+	add_action( 'admin_menu', 'kalervo_remove_theme_settings_submenu', 11 );
 	
 	/* Add menu-item-parent class to parent menu items.  */
 	add_filter( 'wp_nav_menu_objects', 'kalervo_add_menu_parent_class' );
@@ -519,20 +519,6 @@ function kalervo_customize_preview_css() {
 }
 
 /**
- * Use template 'archive-portfolio_item.php' in taxonomy 'portfolio' so that we don't need to duplicate same template content.
- * 
- * @since 0.1.0
- */
-function kalervo_taxonomy_template( $template  ) {
-
-	if ( is_tax( 'portfolio' ) )
-		$template = locate_template( array( 'archive-portfolio_item.php' ) );
-
-	return $template;
-	
-}
-
-/**
  * Register additional sidebar to 'front page' page template.
  * 
  * @since 0.1.0
@@ -552,6 +538,17 @@ function kalervo_register_sidebars() {
 		)
 	);
 
+}
+
+/**
+ * Remove the "Theme Settings" submenu.
+ *
+ * @since 0.1.0
+ */
+function kalervo_remove_theme_settings_submenu() {
+
+	/* Remove the Theme Settings settings page. */
+	remove_submenu_page( 'themes.php', 'theme-settings' );
 }
 
 /**
