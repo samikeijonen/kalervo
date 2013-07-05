@@ -108,7 +108,7 @@ function kalervo_theme_setup() {
 	define( 'KALERVO_SL_STORE_URL', 'http://foxnet-themes.fi' ); // add your own unique prefix to prevent conflicts
 
 	/* The name of your product. This should match the download name in EDD exactly. */
-	define( 'KALERVO_SL_THEME_NAME', 'Hopeareunus' ); // add your own unique prefix to prevent conflicts
+	define( 'KALERVO_SL_THEME_NAME', 'Kalervo' ); // add your own unique prefix to prevent conflicts
 	
 	/* Define current version of kalervo. Get it from parent theme style.css. */
 	$kalervo_theme = wp_get_theme( 'kalervo' );
@@ -194,7 +194,7 @@ function kalervo_theme_setup() {
 function kalervo_theme_updater() {
 
 	/* If there is no valid license key status, don't let updates. */
-	if( get_option( 'kalervo_license_key_status' ) != 'valid' )
+	if( get_option( 'kalervo_theme_license_key_status' ) != 'valid' )
 		return;
 
 	/* Load our custom theme updater. */
