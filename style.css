@@ -904,8 +904,8 @@ img.wp-smiley {
 }
 #site-title a {
 	color: #191919;
-	font-size: 21px;
-	font-size: 1.5rem;
+	font-size: 28px;
+	font-size: 2rem;
 	text-transform: uppercase;
 }
 #site-title a:hover {
@@ -1192,7 +1192,7 @@ div.menu li, nav.menu li {
 	font-size: 14px;
 	font-size: 1rem;
 	padding: 10px 0;
-	padding: 0.71428571428rem 0;	
+	padding: 0.71428571428rem 0 0;	
 	width: 100%
 }
 #site-description {
@@ -1398,8 +1398,10 @@ a.post-format-link .kalervo-post-format-icon:hover {
 .loop-nav a:visited,
 .pagination .page-numbers,
 .page-links a,
+.page-links a:visited,
 a.more-link,
 a.kalervo-portfolio-item-link,
+a.kalervo-portfolio-item-link:visited,
 a.kalervo-button,
 .edd-submit.button.kalervo-theme-color {
 	background: #303030;
@@ -1426,6 +1428,7 @@ a.kalervo-portfolio-item-link {
 a.more-link:hover,
 a.kalervo-portfolio-item-link:hover {
 	background: #cc071e;
+	color: #fff;
 	text-decoration: none;
 }
 .loop-nav rel.prev {
@@ -2106,14 +2109,6 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
 
 /* =Media queries
 -------------------------------------------------------------- */
-
-/* Minimum width of 308 pixels. */
-@media screen and (min-width: 22em) {
-#site-title a {
-	font-size: 28px;
-}
-
-}
 
 /* Minimum width of 686 pixels. */
 @media screen and (min-width: 49em) {
