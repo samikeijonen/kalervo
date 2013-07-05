@@ -119,6 +119,7 @@ input[type="submit"],
 .page-links a,
 a.more-link,
 a.kalervo-portfolio-item-link,
+a.kalervo-portfolio-item-link:visited,,
 a.kalervo-button,
 .edd-submit.button.kalervo-theme-color,
 .pagination .current,
@@ -177,6 +178,7 @@ body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button,
 .loop-nav a,
 .pagination .page-numbers,
 .page-links a,
+.page-links a:visited,
 a.more-link,
 a.kalervo-portfolio-item-link,
 a.kalervo-button,
@@ -291,6 +293,14 @@ body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover,
 body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover,
 .edd-submit.button.kalervo-theme-color:hover {
 	background: #cc071e;
+}
+
+.loop-nav a:hover,
+.page-links a:hover ,
+.pagination  a.page-numbers:hover,
+a.more-link:hover,
+a.kalervo-portfolio-item-link:hover {
+	color: #fff;
 }
 
 
