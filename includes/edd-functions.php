@@ -25,7 +25,7 @@ function kalervo_add_button_color( $button_style  ) {
 function kalervo_download_price() { ?>
 
 	<div itemprop="price" class="kalervo-price">
-		<?php if ( edd_has_variable_prices( get_the_ID() ) ) _e( 'From:' ); ?> <?php edd_price( get_the_ID() ); ?>
+		<?php if ( edd_has_variable_prices( get_the_ID() ) ) _e( 'From:', 'kalervo' ); ?> <?php edd_price( get_the_ID() ); ?>
 	</div>
 	
 	<?php
