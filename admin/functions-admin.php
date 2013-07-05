@@ -46,8 +46,8 @@ function kalervo_theme_license_page() {
 							<?php _e( 'License Key', 'kalervo' ); ?>
 						</th>
 						<td>
-							<input id="kalervo_theme_license_key" name="kalervo_theme_license_key" type="text" class="regular-text" value="<?php esc_attr_e( $license ); ?>" />
-							<label class="description" for="kalervo_theme_license_key"><?php _e( 'Enter your license key', 'kalervo' ); ?></label>
+							<input id="kalervo_theme_license_key" name="kalervo_theme_license_key" type="text" class="regular-text" value="<?php echo esc_attr( $license ); ?>" />
+							<label class="description" for="kalervo_theme_license_key"><?php _e( 'Enter your license key for receiving automatic upgrades', 'kalervo' ); ?></label>
 						</td>
 					</tr>
 					<?php if( false !== $license ) { ?>
