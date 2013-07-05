@@ -30,6 +30,10 @@ function kalervo_theme_setup() {
 
 	/* Get action/filter hook prefix. */
 	$prefix = hybrid_get_prefix();
+	
+	/* Add theme settings. */
+	if ( is_admin() )
+	    require_once( trailingslashit ( get_template_directory() ) . 'admin/functions-admin.php' );
 		
 	/* Include theme customize. */
 	require_once( trailingslashit( get_template_directory() ) . 'includes/theme-customize.php' );
@@ -98,6 +102,23 @@ function kalervo_theme_setup() {
 	
 	add_theme_support( 'custom-header', $kalervo_header_args );
 	
+	/* Set up Licence key for this theme. URL: https://easydigitaldownloads.com/docs/activating-license-keys-in-wp-plugins-and-themes */
+ 
+	/* This is the URL our updater / license checker pings. This should be the URL of the site with EDD installed. */
+	define( 'KALERVO_SL_STORE_URL', 'http://foxnet-themes.fi' ); // add your own unique prefix to prevent conflicts
+
+	/* The name of your product. This should match the download name in EDD exactly. */
+	define( 'KALERVO_SL_THEME_NAME', 'Hopeareunus' ); // add your own unique prefix to prevent conflicts
+	
+	/* Define current version of kalervo. Get it from parent theme style.css. */
+	$kalervo_theme = wp_get_theme( 'kalervo' );
+	if ( $kalervo_theme->exists() ) {
+		define( 'KALERVO_VERSION', $kalervo_theme->Version ); // Get parent theme kalervo version
+	}
+	
+	/* Setup updater. */
+	add_action( 'admin_init', 'kalervo_theme_updater' );
+	
 	/* Set content width. */
 	hybrid_set_content_width( 604 );
 	add_filter( 'embed_defaults', 'kalervo_embed_defaults' );
@@ -162,6 +183,35 @@ function kalervo_theme_setup() {
 	
 	/* Filter no_id string in soliloquy. */
 	add_filter( 'tgmsp_strings', 'kalervo_soliloquy_no_id_string' );
+
+}
+
+/**
+ * Setup theme updater. @link https://gist.github.com/pippinsplugins/3ab7c0a01d5a9d8005ed
+ *
+ * @since  0.1.0
+ */
+function kalervo_theme_updater() {
+
+	/* If there is no valid license key status, don't let updates. */
+	if( get_option( 'kalervo_license_key_status' ) != 'valid' )
+		return;
+
+	/* Load our custom theme updater. */
+	if( !class_exists( 'EDD_SL_Theme_Updater' ) )
+		require_once( trailingslashit( get_template_directory() ) . 'includes/EDD_SL_Theme_Updater.php' );
+	
+	/* Get license key from database. */
+	$kalervo_license = trim( get_option( 'kalervo_theme_license_key' ) );
+
+	$edd_updater = new EDD_SL_Theme_Updater( array( 
+		'remote_api_url' 	=> KALERVO_SL_STORE_URL, 	// our store URL that is running EDD
+		'version' 			=> KALERVO_VERSION, 		// the current theme version we are running
+		'license' 			=> $kalervo_license, 			// the license key (used get_option above to retrieve from DB)
+		'item_name' 		=> KALERVO_SL_THEME_NAME,	// the name of this theme
+		'author'			=> 'Sami Keijonen'	            // the author's name
+		)
+	);
 
 }
 
