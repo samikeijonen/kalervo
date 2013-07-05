@@ -1,31 +1,15 @@
 <?php
 
-/**
- * Add license key menu item under Appeareance.
- *
- * @since 0.1.0
- */
+/* Add license key menu item under Appeareance. */
 add_action( 'admin_menu', 'kalervo_theme_license_menu' );
 
-/**
- * Register option for the license.
- *
- * @since 0.1.0
- */
+/* Register option for the license. */
 add_action( 'admin_init', 'kalervo_theme_register_option' );
 
-/**
- * Activate the license.
- *
- * @since 0.1.0
- */
+/* Activate the license. */
 add_action( 'admin_init', 'kalervo_theme_activate_license' );
 
-/**
- * Deactivate the license.
- *
- * @since 0.1.0
- */
+/* Deactivate the license. */
 add_action( 'admin_init', 'kalervo_theme_deactivate_license' );
 
 
@@ -75,10 +59,10 @@ function kalervo_theme_license_page() {
 								<?php if( $status !== false && $status == 'valid' ) { ?>
 									<span style="color:green;"><?php _e( 'Active', 'kalervo' ); ?></span>
 									<?php wp_nonce_field( 'kalervo_nonce', 'kalervo_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="kalervo_theme_license_deactivate" value="<?php _e( 'Deactivate License', 'kalervo' ); ?>"/>
+									<input type="submit" class="button-secondary" name="kalervo_theme_license_deactivate" value="<?php esc_attr_e( 'Deactivate License', 'kalervo' ); ?>"/>
 								<?php } else {
 									wp_nonce_field( 'kalervo_nonce', 'kalervo_nonce' ); ?>
-									<input type="submit" class="button-secondary" name="kalervo_theme_license_activate" value="<?php _e( 'Activate License', 'kalervo' ); ?>"/>
+									<input type="submit" class="button-secondary" name="kalervo_theme_license_activate" value="<?php esc_attr_e( 'Activate License', 'kalervo' ); ?>"/>
 								<?php } ?>
 							</td>
 						</tr>
@@ -145,7 +129,7 @@ function kalervo_theme_activate_license() {
 }
 
 /**
- * Deactivate the license. This will descrease the site count.
+ * Deactivate the license. This will decrease the site count.
  *
  * @since 0.1.0
  */
@@ -182,7 +166,7 @@ function kalervo_theme_deactivate_license() {
 		
 		// $license_data->license will be either "deactivated" or "failed"
 		if( $license_data->license == 'deactivated' )
-			delete_option( 'kalervo_theme_license_key' );
+			delete_option( 'kalervo_theme_license_key_status' );
 
 	}
 }
