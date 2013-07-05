@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo WordPress Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-03 20:11+0200\n"
+"POT-Creation-Date: 2013-07-05 12:22+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team:  <sami.keijonen@foxnet.fi>\n"
@@ -172,26 +172,26 @@ msgid ""
 "\" | \"] [entry-edit-link before=\" | \"]"
 msgstr ""
 
-#: functions.php:256
+#: functions.php:346
 msgid "Portfolio Thumbnail"
 msgstr ""
 
-#: functions.php:456 page-templates/front-page.php:11
+#: functions.php:532 page-templates/front-page.php:11
 msgid "Front Page"
 msgstr ""
 
-#: functions.php:457
+#: functions.php:533
 msgid "Front Page widget area."
 msgstr ""
 
-#: functions.php:519
+#: functions.php:606
 #, php-format
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
 "Appearance &gt; Customize &gt; Layout</a>."
 msgstr ""
 
-#: functions.php:557
+#: functions.php:644
 msgid "Visit site"
 msgstr ""
 
@@ -272,6 +272,34 @@ msgstr ""
 msgid "[entry-published] &mdash; <code>%s</code>"
 msgstr ""
 
+#: admin/functions-admin.php:23
+msgid "Theme License"
+msgstr ""
+
+#: admin/functions-admin.php:37
+msgid "Theme License Options"
+msgstr ""
+
+#: admin/functions-admin.php:46
+msgid "License Key"
+msgstr ""
+
+#: admin/functions-admin.php:50
+msgid "Enter your license key"
+msgstr ""
+
+#: admin/functions-admin.php:56 admin/functions-admin.php:65
+msgid "Activate License"
+msgstr ""
+
+#: admin/functions-admin.php:60
+msgid "Active"
+msgstr ""
+
+#: admin/functions-admin.php:62
+msgid "Deactivate License"
+msgstr ""
+
 #: includes/edd-functions.php:14
 msgid "Kalervo Theme Color"
 msgstr ""
@@ -280,227 +308,241 @@ msgstr ""
 msgid "From:"
 msgstr ""
 
-#: includes/theme-customize.php:30
+#: includes/EDD_SL_Theme_Updater.php:54
+msgid ""
+"Updating this theme will lose any customizations you have made. 'Cancel' to "
+"stop, 'OK' to update."
+msgstr ""
+
+#: includes/EDD_SL_Theme_Updater.php:59
+#, php-format
+msgid ""
+"<strong>%1$s %2$s</strong> is available. <a href=\"%3$s\" class=\"thickbox\" "
+"title=\"%4s\">Check out what's new</a> or <a href=\"%5$s\"%6$s>update now</"
+"a>."
+msgstr ""
+
+#: includes/theme-customize.php:37
 msgid "Logo Upload"
 msgstr ""
 
-#: includes/theme-customize.php:53
+#: includes/theme-customize.php:60
 msgid "Upload custom logo. Recommended max width is 300px."
 msgstr ""
 
-#: includes/theme-customize.php:78
+#: includes/theme-customize.php:85
 msgid "Choose Body Font Size (pixels)"
 msgstr ""
 
-#: includes/theme-customize.php:83
+#: includes/theme-customize.php:90
 msgid "13"
 msgstr ""
 
-#: includes/theme-customize.php:84
+#: includes/theme-customize.php:91
 msgid "14"
 msgstr ""
 
-#: includes/theme-customize.php:85
+#: includes/theme-customize.php:92
 msgid "15"
 msgstr ""
 
-#: includes/theme-customize.php:86
+#: includes/theme-customize.php:93
 msgid "16"
 msgstr ""
 
-#: includes/theme-customize.php:87
+#: includes/theme-customize.php:94
 msgid "17"
 msgstr ""
 
-#: includes/theme-customize.php:88
+#: includes/theme-customize.php:95
 msgid "18"
 msgstr ""
 
-#: includes/theme-customize.php:89
+#: includes/theme-customize.php:96
 msgid "19"
 msgstr ""
 
-#: includes/theme-customize.php:112
+#: includes/theme-customize.php:119
 msgid "Choose whether to show Header Image or Soliloque Slider in Header?"
 msgstr ""
 
-#: includes/theme-customize.php:118
+#: includes/theme-customize.php:125
 msgid "Show Header image"
 msgstr ""
 
-#: includes/theme-customize.php:119
+#: includes/theme-customize.php:126
 msgid "Show Slider"
 msgstr ""
 
-#: includes/theme-customize.php:144
+#: includes/theme-customize.php:151
 msgid "Select Soliloquy Slider"
 msgstr ""
 
-#: includes/theme-customize.php:156
+#: includes/theme-customize.php:163
 msgid "Social Links"
 msgstr ""
 
-#: includes/theme-customize.php:178
+#: includes/theme-customize.php:185
 msgid "Twitter URL"
 msgstr ""
 
-#: includes/theme-customize.php:202
+#: includes/theme-customize.php:209
 msgid "Facebook URL"
 msgstr ""
 
-#: includes/theme-customize.php:226
+#: includes/theme-customize.php:233
 msgid "RSS URL"
 msgstr ""
 
-#: includes/theme-customize.php:250
+#: includes/theme-customize.php:257
 msgid "Linkedin URL"
 msgstr ""
 
-#: includes/theme-customize.php:274
+#: includes/theme-customize.php:281
 msgid "Google Plus URL"
 msgstr ""
 
-#: includes/theme-customize.php:298
+#: includes/theme-customize.php:305
 msgid "Github URL"
 msgstr ""
 
-#: includes/theme-customize.php:322
+#: includes/theme-customize.php:329
 msgid "Pinterest URL"
 msgstr ""
 
-#: includes/theme-customize.php:346
+#: includes/theme-customize.php:353
 msgid "Choose icon size"
 msgstr ""
 
-#: includes/theme-customize.php:352
+#: includes/theme-customize.php:359
 msgid "Normal"
 msgstr ""
 
-#: includes/theme-customize.php:353
+#: includes/theme-customize.php:360
 msgid "Icon large"
 msgstr ""
 
-#: includes/theme-customize.php:354
+#: includes/theme-customize.php:361
 msgid "Icon 2x"
 msgstr ""
 
-#: includes/theme-customize.php:355
+#: includes/theme-customize.php:362
 msgid "Icon 3x"
 msgstr ""
 
-#: includes/theme-customize.php:356
+#: includes/theme-customize.php:363
 msgid "Icon 4x"
 msgstr ""
 
-#: includes/theme-customize.php:365
+#: includes/theme-customize.php:372
 msgid "Front Page Callout"
 msgstr ""
 
-#: includes/theme-customize.php:387
+#: includes/theme-customize.php:394
 msgid "Callout text"
 msgstr ""
 
-#: includes/theme-customize.php:411
+#: includes/theme-customize.php:418
 msgid "Callout URL"
 msgstr ""
 
-#: includes/theme-customize.php:435
+#: includes/theme-customize.php:442
 msgid "Callout URL text"
 msgstr ""
 
-#: includes/theme-customize.php:520
+#: includes/theme-customize.php:574
 msgid "Body Font"
 msgstr ""
 
-#: includes/theme-customize.php:530
+#: includes/theme-customize.php:584
 msgid "Headline Font"
 msgstr ""
 
-#: includes/theme-customize.php:541
+#: includes/theme-customize.php:595
 msgid "Trebuchet (font stack)"
 msgstr ""
 
-#: includes/theme-customize.php:549
+#: includes/theme-customize.php:603
 msgid "Arial (font stack)"
 msgstr ""
 
-#: includes/theme-customize.php:557
+#: includes/theme-customize.php:611
 msgid "Lucida Sans Unicode (font stack)"
 msgstr ""
 
-#: includes/theme-customize.php:565
+#: includes/theme-customize.php:619
 msgid "Georgia (font stack)"
 msgstr ""
 
-#: includes/theme-customize.php:573
+#: includes/theme-customize.php:627
 msgid "Helvetica (font stack)"
 msgstr ""
 
-#: includes/theme-customize.php:581
+#: includes/theme-customize.php:635
 msgid "Merriweather Sans"
 msgstr ""
 
-#: includes/theme-customize.php:591
+#: includes/theme-customize.php:645
 msgid "Roboto Condensed"
 msgstr ""
 
-#: includes/theme-customize.php:601
+#: includes/theme-customize.php:655
 msgid "Arvo"
 msgstr ""
 
-#: includes/theme-customize.php:611
+#: includes/theme-customize.php:665
 msgid "Muli"
 msgstr ""
 
-#: includes/theme-customize.php:621
+#: includes/theme-customize.php:675
 msgid "Open Sans"
 msgstr ""
 
-#: includes/theme-customize.php:631
+#: includes/theme-customize.php:685
 msgid "Open Sans Condensed (700)"
 msgstr ""
 
-#: includes/theme-customize.php:654
+#: includes/theme-customize.php:708
 msgid "Body color"
 msgstr ""
 
-#: includes/theme-customize.php:658
+#: includes/theme-customize.php:712
 msgid "Container color"
 msgstr ""
 
-#: includes/theme-customize.php:662
+#: includes/theme-customize.php:716
 msgid "Primary menu color"
 msgstr ""
 
-#: includes/theme-customize.php:666
+#: includes/theme-customize.php:720
 msgid "Primary menu hover color"
 msgstr ""
 
-#: includes/theme-customize.php:670
+#: includes/theme-customize.php:724
 msgid "Primary menu link color"
 msgstr ""
 
-#: includes/theme-customize.php:674
+#: includes/theme-customize.php:728
 msgid "Link color"
 msgstr ""
 
-#: includes/theme-customize.php:678
+#: includes/theme-customize.php:732
 msgid "Link color hover"
 msgstr ""
 
-#: includes/theme-customize.php:682
+#: includes/theme-customize.php:736
 msgid "Site title and entry title color"
 msgstr ""
 
-#: includes/theme-customize.php:686
+#: includes/theme-customize.php:740
 msgid "Widget title and forms text color"
 msgstr ""
 
-#: includes/theme-customize.php:690
+#: includes/theme-customize.php:744
 msgid "Byline, meta, widget, secondary/subsidiary menu links etc. color"
 msgstr ""
 
-#: includes/theme-customize.php:780
+#: includes/theme-customize.php:835
 msgid "Select Slider"
 msgstr ""
 
