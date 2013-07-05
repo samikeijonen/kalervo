@@ -1599,6 +1599,8 @@ ol.comment-list dl dl {
 	padding: 1.42857143rem 0 0 0;
 	overflow: hidden; /* IE7 */
 }
+.bypostauthor {
+}
 
 /* Avatars. */
 .comment-list .avatar,
