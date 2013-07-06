@@ -86,10 +86,13 @@ function kalervo_theme_register_option() {
  */
 
 function kalervo_theme_sanitize_license( $new ) {
+
 	$old = get_option( 'kalervo_theme_license_key' );
+	
 	if( $old && $old != $new ) {
 		delete_option( 'kalervo_theme_license_key_status' ); // new license has been entered, so must reactivate
 	}
+	
 	return $new;
 }
 
