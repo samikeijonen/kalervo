@@ -19,7 +19,7 @@
 		<?php if ( function_exists( 'soliloquy_slider' ) && ( 'slider' == get_theme_mod( 'show_header_slider' ) || is_page_template( 'page-templates/slider-page.php' ) ) ) { ?>
 							
 			<div id="kalervo-header-image">
-				<?php soliloquy_slider( absint( get_theme_mod( 'soliloquy_slider', 'default' ) ) ); ?>
+				<?php soliloquy_slider( absint( get_theme_mod( 'soliloquy_slider', 0 ) ) ); ?>
 			</div><!-- #kalervo-header-image -->
 							
 		<?php } else {
