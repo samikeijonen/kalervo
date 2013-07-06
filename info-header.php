@@ -16,7 +16,7 @@
 	/* Use Header Image/Slider in the front page and singular pages. */
 	if ( is_front_page() || is_singular( 'page' ) ) { ?>
 				
-		<?php if ( function_exists( 'soliloquy_slider' ) && 'slider' == get_theme_mod( 'show_header_slider' ) ) { ?>
+		<?php if ( function_exists( 'soliloquy_slider' ) && ( 'slider' == get_theme_mod( 'show_header_slider' ) || is_page_template( 'page-templates/slider-page.php' ) ) ) { ?>
 							
 			<div id="kalervo-header-image">
 				<?php soliloquy_slider( absint( get_theme_mod( 'soliloquy_slider', 'default' ) ) ); ?>

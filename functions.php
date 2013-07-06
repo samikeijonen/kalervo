@@ -52,7 +52,7 @@ function kalervo_theme_setup() {
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 	
 	/* Add theme support for framework extensions. */
-	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ), array( 'default' => '1c' ) );
+	add_theme_support( 'theme-layouts', array( '1c', '2c-l', '2c-r' ), array( 'default' => '1c', 'customizer' => true ) );
 	add_theme_support( 'post-stylesheets' );
 	add_theme_support( 'loop-pagination' );
 	add_theme_support( 'get-the-image' );
@@ -62,7 +62,7 @@ function kalervo_theme_setup() {
 	add_theme_support( 'featured-header' );
 	
 	/* Add theme support for theme fonts. */
-	add_theme_support( 'theme-fonts',   array( 'callback' => 'kalervo_register_headlines_fonts', 'customizer' => true ) );
+	add_theme_support( 'theme-fonts', array( 'callback' => 'kalervo_register_headlines_fonts', 'customizer' => true ) );
 	
 	/* Add theme support for theme color palette. */
 	add_theme_support( 'color-palette', array( 'callback' => 'kalervo_register_colors' ) );
@@ -105,10 +105,10 @@ function kalervo_theme_setup() {
 	/* Set up Licence key for this theme. URL: https://easydigitaldownloads.com/docs/activating-license-keys-in-wp-plugins-and-themes */
  
 	/* This is the URL our updater / license checker pings. This should be the URL of the site with EDD installed. */
-	define( 'KALERVO_SL_STORE_URL', 'http://foxnet-themes.fi' ); // add your own unique prefix to prevent conflicts
+	define( 'KALERVO_SL_STORE_URL', 'http://foxnet-themes.fi' ); // use your own unique prefix to prevent conflicts
 
 	/* The name of your product. This should match the download name in EDD exactly. */
-	define( 'KALERVO_SL_THEME_NAME', 'Kalervo' ); // add your own unique prefix to prevent conflicts
+	define( 'KALERVO_SL_THEME_NAME', 'Kalervo' ); // use your own unique prefix to prevent conflicts
 	
 	/* Define current version of kalervo. Get it from parent theme style.css. */
 	$kalervo_theme = wp_get_theme( 'kalervo' );
@@ -177,7 +177,7 @@ function kalervo_theme_setup() {
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
 	remove_action( 'woocommerce_sidebar' , 'woocommerce_get_sidebar', 10 );
 	
-	/* Add right wrappers fot the theme. */
+	/* Add right wrappers for the theme. */
 	add_action( 'woocommerce_before_main_content', 'kalervo_wrapper_start', 10 );
 	add_action( 'woocommerce_after_main_content', 'kalervo_wrapper_end', 10 );
 	
@@ -324,7 +324,6 @@ function kalervo_respond_html5shiv() {
 	<?php
 }
 
-
 /**
  *  Adds custom image sizes for thumbnail images.
  * 
@@ -356,10 +355,10 @@ function kalervo_custom_name_image_sizes( $sizes ) {
 function kalervo_scripts_styles() {
 	
 		/* Enqueue FitVids. */
-		wp_enqueue_script( 'kalervo-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/jquery.fitvids.min.js', array( 'jquery' ), '20130525', true );
+		wp_enqueue_script( 'kalervo-fitvids', trailingslashit( get_template_directory_uri() ) . 'js/fitvids/jquery.fitvids.min.js', array( 'jquery' ), '20130707', true );
 		
 		/* Enqueue Kalervo settings. */
-		wp_enqueue_script( 'kalervo-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings/kalervo-settings.js', array( 'jquery', 'kalervo-fitvids' ), '20130525', true );
+		wp_enqueue_script( 'kalervo-settings', trailingslashit( get_template_directory_uri() ) . 'js/settings/kalervo-settings.js', array( 'jquery', 'kalervo-fitvids' ), '20130707', true );
 	
 }
 
@@ -400,7 +399,7 @@ function kalervo_one_column() {
 	elseif ( is_attachment() && wp_attachment_is_image() && 'default' == get_post_layout( get_queried_object_id() ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 
-	elseif ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) )
+	elseif ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) || is_page_template( 'page-templates/slider-page.php' ) )
 		add_filter( 'theme_mod_theme_layout', 'kalervo_theme_layout_one_column' );
 	
 	elseif ( function_exists( 'woocommerce_list_pages' ) && ( is_shop() || is_product_category() || is_product_tag() ) )
@@ -454,7 +453,7 @@ function kalervo_subsidiary_classes( $classes ) {
  */
 function kalervo_front_page_classes( $classes ) {
 	
-	if ( is_active_sidebar( 'front-page' ) && ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) ) ) {
+	if ( is_active_sidebar( 'front-page' ) && ( is_page_template( 'page-templates/front-page.php' ) || is_page_template( 'page-templates/post-page.php' ) || is_page_template( 'page-templates/download-page.php' ) || is_page_template( 'page-templates/portfolio-page.php' ) || is_page_template( 'page-templates/slider-page.php' ) ) ) {
 		
 		$the_sidebars = wp_get_sidebars_widgets();
 		$num = count( $the_sidebars['front-page'] );
@@ -501,7 +500,7 @@ function kalervo_customize_register( $wp_customize ) {
  */
 function kalervo_customize_preview_js() {
 
-	wp_enqueue_script( 'kalervo-customizer', trailingslashit( get_template_directory_uri() ) . 'js/customize/kalervo-customizer.js', array( 'customize-preview' ), '20130524', true );
+	wp_enqueue_script( 'kalervo-customizer', trailingslashit( get_template_directory_uri() ) . 'js/customize/kalervo-customizer.js', array( 'customize-preview' ), '20130707', true );
 	
 }
 
@@ -515,7 +514,7 @@ function kalervo_customize_preview_css() {
 	global $wp_customize;
 
 	if ( is_object( $wp_customize ) )
-		wp_enqueue_style( 'kalervo-customizer-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/customize/kalervo-customizer.css', false, '20130209', 'all' );
+		wp_enqueue_style( 'kalervo-customizer-stylesheet', trailingslashit( get_template_directory_uri() ) . 'css/customize/kalervo-customizer.css', false, '20130707', 'all' );
 }
 
 /**
@@ -603,7 +602,9 @@ function kalervo_wrapper_end() {
  */
 function kalervo_soliloquy_no_id_string( $strings ) {
 
-	$strings['no_id'] = sprintf( __( 'No slider was selected. Please select a Slider under <a href="%s"> Appearance &gt; Customize &gt; Layout</a>.', 'kalervo' ), admin_url( 'customize.php' ) );
+	$kalervo_current_url = ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+	$strings['no_id'] = sprintf( __( 'No slider was selected. Please select a Slider under <a href="%s"> Appearance &gt; Customize &gt; Layout</a>.', 'kalervo' ), add_query_arg( 'url', urlencode( $kalervo_current_url ), wp_customize_url() ) );
 
 	return $strings;
 }
