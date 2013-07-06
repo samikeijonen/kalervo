@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-07-06 11:07+0200\n"
-"PO-Revision-Date: 2013-07-06 11:08+0200\n"
+"PO-Revision-Date: 2013-07-06 14:24+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -486,7 +486,7 @@ msgstr "Open Sans Condensed (700)"
 
 #: includes/theme-customize.php:499
 msgid "Body color"
-msgstr "Sivuston väri"
+msgstr "Tekstin väri"
 
 #: includes/theme-customize.php:503
 msgid "Container color"
