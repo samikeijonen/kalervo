@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 18:54+0200\n"
-"PO-Revision-Date: 2013-07-05 18:58+0200\n"
+"POT-Creation-Date: 2013-07-06 11:07+0200\n"
+"PO-Revision-Date: 2013-07-06 11:08+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
@@ -201,28 +201,28 @@ msgstr ""
 "[entry-author]  [entry-published] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 
-#: functions.php:346
+#: functions.php:345
 msgid "Portfolio Thumbnail"
 msgstr "Portfolion pikkukuva"
 
-#: functions.php:532 page-templates/front-page.php:11
+#: functions.php:531 page-templates/front-page.php:11
 msgid "Front Page"
 msgstr "Etusivu"
 
-#: functions.php:533
+#: functions.php:532
 msgid "Front Page widget area."
 msgstr "Etusivun vimpainalue."
 
-#: functions.php:606
+#: functions.php:607
 #, php-format
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
 "Appearance &gt; Customize &gt; Layout</a>."
 msgstr ""
-"Slideria ei ole vielä valitta. Valitse Slider <a href=\"%s\"> Ulkoasu &gt; "
-"Mukauta &gt; Ulkoasu</a>."
+"Slideria ei ole vielä valittu. Valitse Slider kohdasta <a href=\"%s\"> "
+"Ulkoasu &gt; Mukauta &gt; Ulkoasu</a>."
 
-#: functions.php:644
+#: functions.php:645
 msgid "Visit site"
 msgstr "Vieraile sivulla"
 
@@ -417,170 +417,114 @@ msgid "Select Soliloquy Slider"
 msgstr "Valitse Soliloquy Slider"
 
 #: includes/theme-customize.php:163
-msgid "Social Links"
-msgstr "Sosiaalisen median linkit"
-
-#: includes/theme-customize.php:185
-msgid "Twitter URL"
-msgstr "Twitter URL-linkki"
-
-#: includes/theme-customize.php:209
-msgid "Facebook URL"
-msgstr "Facebook URL-linkki"
-
-#: includes/theme-customize.php:233
-msgid "RSS URL"
-msgstr "RSS URL-linkki"
-
-#: includes/theme-customize.php:257
-msgid "Linkedin URL"
-msgstr "Linkedin URL-linkki"
-
-#: includes/theme-customize.php:281
-msgid "Google Plus URL"
-msgstr "Google Plus URL-linkki"
-
-#: includes/theme-customize.php:305
-msgid "Github URL"
-msgstr "Github URL-linkki"
-
-#: includes/theme-customize.php:329
-msgid "Pinterest URL"
-msgstr "Pinterest URL-linkki"
-
-#: includes/theme-customize.php:353
-msgid "Choose icon size"
-msgstr "Valitse ikonin koko"
-
-#: includes/theme-customize.php:359
-msgid "Normal"
-msgstr "Normaali"
-
-#: includes/theme-customize.php:360
-msgid "Icon large"
-msgstr "Isompi ikoni"
-
-#: includes/theme-customize.php:361
-msgid "Icon 2x"
-msgstr "Ikoni 2x"
-
-#: includes/theme-customize.php:362
-msgid "Icon 3x"
-msgstr "Ikoni 3x"
-
-#: includes/theme-customize.php:363
-msgid "Icon 4x"
-msgstr "Ikoni 4x"
-
-#: includes/theme-customize.php:372
 msgid "Front Page Callout"
 msgstr "Etusivun Callout-teksti"
 
-#: includes/theme-customize.php:394
+#: includes/theme-customize.php:185
 msgid "Callout text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:418
+#: includes/theme-customize.php:209
 msgid "Callout URL"
 msgstr "Callout URL-linkki"
 
-#: includes/theme-customize.php:442
+#: includes/theme-customize.php:233
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:574
+#: includes/theme-customize.php:365
 msgid "Body Font"
 msgstr "Fontti"
 
-#: includes/theme-customize.php:584
+#: includes/theme-customize.php:375
 msgid "Headline Font"
 msgstr "Otsikon fontti"
 
-#: includes/theme-customize.php:595
+#: includes/theme-customize.php:386
 msgid "Trebuchet (font stack)"
 msgstr "Trebuchet"
 
-#: includes/theme-customize.php:603
+#: includes/theme-customize.php:394
 msgid "Arial (font stack)"
 msgstr "Arial"
 
-#: includes/theme-customize.php:611
+#: includes/theme-customize.php:402
 msgid "Lucida Sans Unicode (font stack)"
 msgstr "Lucida Sans Unicode"
 
-#: includes/theme-customize.php:619
+#: includes/theme-customize.php:410
 msgid "Georgia (font stack)"
 msgstr "Georgia"
 
-#: includes/theme-customize.php:627
+#: includes/theme-customize.php:418
 msgid "Helvetica (font stack)"
 msgstr "Helvetica"
 
-#: includes/theme-customize.php:635
+#: includes/theme-customize.php:426
 msgid "Merriweather Sans"
 msgstr "Merriweather Sans"
 
-#: includes/theme-customize.php:645
+#: includes/theme-customize.php:436
 msgid "Roboto Condensed"
 msgstr "Roboto Condensed"
 
-#: includes/theme-customize.php:655
+#: includes/theme-customize.php:446
 msgid "Arvo"
 msgstr "Arvo"
 
-#: includes/theme-customize.php:665
+#: includes/theme-customize.php:456
 msgid "Muli"
 msgstr "Muli"
 
-#: includes/theme-customize.php:675
+#: includes/theme-customize.php:466
 msgid "Open Sans"
 msgstr "Open Sans"
 
-#: includes/theme-customize.php:685
+#: includes/theme-customize.php:476
 msgid "Open Sans Condensed (700)"
 msgstr "Open Sans Condensed (700)"
 
-#: includes/theme-customize.php:708
+#: includes/theme-customize.php:499
 msgid "Body color"
 msgstr "Sivuston väri"
 
-#: includes/theme-customize.php:712
+#: includes/theme-customize.php:503
 msgid "Container color"
 msgstr "Sisällön väri"
 
-#: includes/theme-customize.php:716
+#: includes/theme-customize.php:507
 msgid "Primary menu color"
 msgstr "Päämenu väri"
 
-#: includes/theme-customize.php:720
+#: includes/theme-customize.php:511
 msgid "Primary menu hover color"
 msgstr "Päämenu väri \"hover\""
 
-#: includes/theme-customize.php:724
+#: includes/theme-customize.php:515
 msgid "Primary menu link color"
 msgstr "Päämenun linkin väri"
 
-#: includes/theme-customize.php:728
+#: includes/theme-customize.php:519
 msgid "Link color"
 msgstr "Linkin väri"
 
-#: includes/theme-customize.php:732
+#: includes/theme-customize.php:523
 msgid "Link color hover"
 msgstr "Linkin väri \"hover\""
 
-#: includes/theme-customize.php:736
+#: includes/theme-customize.php:527
 msgid "Site title and entry title color"
 msgstr "Otsikkojen väri"
 
-#: includes/theme-customize.php:740
+#: includes/theme-customize.php:531
 msgid "Widget title and forms text color"
 msgstr "Vimpaimien otsikkojen väri"
 
-#: includes/theme-customize.php:744
+#: includes/theme-customize.php:535
 msgid "Byline, meta, widget, secondary/subsidiary menu links etc. color"
 msgstr "Vimpaimien, toisen ja kolmannen menun jne väri."
 
-#: includes/theme-customize.php:835
+#: includes/theme-customize.php:626
 msgid "Select Slider"
 msgstr "Valitse Slider"
 
@@ -1581,6 +1525,52 @@ msgstr "Artikkeleiden sivu"
 #: page-templates/post-page.php:45
 msgid "Latest articles"
 msgstr "Viimeisimmät artikkelit"
+
+#: page-templates/slider-page.php:11
+msgid "Slider Page"
+msgstr "Kuvasliderin sivu"
+
+#~ msgid "Social Links"
+#~ msgstr "Sosiaalisen median linkit"
+
+#~ msgid "Twitter URL"
+#~ msgstr "Twitter URL-linkki"
+
+#~ msgid "Facebook URL"
+#~ msgstr "Facebook URL-linkki"
+
+#~ msgid "RSS URL"
+#~ msgstr "RSS URL-linkki"
+
+#~ msgid "Linkedin URL"
+#~ msgstr "Linkedin URL-linkki"
+
+#~ msgid "Google Plus URL"
+#~ msgstr "Google Plus URL-linkki"
+
+#~ msgid "Github URL"
+#~ msgstr "Github URL-linkki"
+
+#~ msgid "Pinterest URL"
+#~ msgstr "Pinterest URL-linkki"
+
+#~ msgid "Choose icon size"
+#~ msgstr "Valitse ikonin koko"
+
+#~ msgid "Normal"
+#~ msgstr "Normaali"
+
+#~ msgid "Icon large"
+#~ msgstr "Isompi ikoni"
+
+#~ msgid "Icon 2x"
+#~ msgstr "Ikoni 2x"
+
+#~ msgid "Icon 3x"
+#~ msgstr "Ikoni 3x"
+
+#~ msgid "Icon 4x"
+#~ msgstr "Ikoni 4x"
 
 #~ msgid "Enter your license key"
 #~ msgstr "Kirjoita lisenssiavain"
