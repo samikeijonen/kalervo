@@ -136,7 +136,7 @@ function kalervo_customize_register_logo( $wp_customize ) {
 	$wp_customize->add_setting(
 		'soliloquy_slider',
 		array(
-			'default'           => 'default',
+			'default'           => 0,
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'absint',
@@ -623,7 +623,7 @@ function kalervo_get_soliloquy_slider_choices() {
 	
 	/* Set an array. */
 	$kalervo_slider_data = array(
-		'default' => __( 'Select Slider', 'kalervo' )
+		0 => __( 'Select Slider', 'kalervo' )
 	);
 	
 	/* Get Soliloquy Sliders. */
