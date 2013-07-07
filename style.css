@@ -1779,7 +1779,15 @@ ol.comment-list dl dl {
 }
 .page-template-post-page.layout-1c .hentry,
 .page-template-download-page.layout-1c .hentry,
-.page-template-portfolio-page.layout-1c .hentry {
+.page-template-portfolio-page.layout-1c .hentry,
+.archive-portfolio_item .hentry,
+.taxonomy-portfolio .hentry,
+.archive-download .hentry,
+.taxonomy-download_category .hentry,
+.taxonomy-download_tag .hentry,
+.page-template-post-page .kalervo-post .hentry,
+.page-template-download-page .kalervo-download .hentry,
+.page-template-portfolio-page .kalervo-portfolio .hentry {
 	padding-bottom: 0;
 	margin-bottom: 0;
 }
@@ -2499,16 +2507,6 @@ http://qrayg.com/experiment/cssmenus/
 .page-template-download-page .kalervo-latest-wrap,
 .page-template-portfolio-page .kalervo-latest-wrap {
 	width: 103%;
-}
-.archive-portfolio_item .hentry,
-.taxonomy-portfolio .hentry,
-.archive-download .hentry,
-.taxonomy-download_category .hentry,
-.taxonomy-download_tag .hentry,
-.page-template-post-page .kalervo-post .hentry,
-.page-template-download-page .kalervo-download .hentry,
-.page-template-portfolio-page .kalervo-portfolio .hentry {
-	margin-bottom: 0;
 }
 .archive-portfolio_item .kalervo-portfolio,
 .taxonomy-portfolio .kalervo-portfolio,
