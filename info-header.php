@@ -13,8 +13,8 @@
 	/* Get header image. */
 	$kalervo_header_image = get_header_image();
 				
-	/* Use Header Image/Slider in the front page and singular pages. */
-	if ( is_front_page() || is_singular( 'page' ) ) { ?>
+	/* Use Header Image/Slider in the front page and singular pages. Don't use it on checkout page. */
+	if ( apply_filters( 'kalervo_header_image_conditional', is_front_page() || ( is_singular( 'page' ) && !is_page( 'checkout' ) ) ) ) { ?>
 				
 		<?php if ( function_exists( 'soliloquy_slider' ) && ( 'slider' == get_theme_mod( 'show_header_slider' ) || is_page_template( 'page-templates/slider-page.php' ) ) ) { ?>
 							
