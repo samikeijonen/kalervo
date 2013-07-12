@@ -714,13 +714,6 @@ tbody th {
 tr:hover td {
 
 }
-thead th,
-tfoot th,
-thead tr:hover th,
-tfoot tr:hover th {
-	background: #535e72;
-	color: #fff;
-}
 
 /* Sticky posts. */
 .hfeed .sticky {
@@ -2085,7 +2078,12 @@ body .soliloquy-container.soliloquy-theme-metro .soliloquy-caption {
 	font-size: 16px;
 	font-size: 1.14285714286rem;
 }
-
+body #edd_checkout_form_wrap label {
+    font-size: 100%;
+}
+body #edd_checkout_form_wrap span.edd-description {
+    font-size: 95%;
+}
 
 /* === Clearfix. @link http://nicolasgallagher.com/micro-clearfix-hack === */
 
