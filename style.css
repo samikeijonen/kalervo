@@ -1027,6 +1027,9 @@ select {
 div.menu li, nav.menu li {
 	float: none;
 }
+#menu-primary {
+	background: #303030;
+}
 #menu-primary.toggled-on ul {
 	padding: 0;
 	margin: 0;
@@ -1066,8 +1069,9 @@ div.menu li, nav.menu li {
 	padding: 7px 0;
 	padding: 0.5rem 0;
 }
-.custom-colors #menu-primary.toggled-on li a {
+#menu-primary.toggled-on li a {
 	border-bottom: 1px solid #191919;
+	color: #fff;
 }
 #menu-primary ul.menu-items,
 #menu-primary div.menu-items > ul {
@@ -2176,7 +2180,6 @@ body #edd_checkout_form_wrap span.edd-description {
 
 /* Reset mobile menu settings. */
 #menu-primary {
-	background: #303030;
 	margin-top: 0;
 }
 #menu-primary li {
