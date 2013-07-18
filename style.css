@@ -954,6 +954,11 @@ img.wp-smiley {
 }
 #kalervo-callout-url #kalervo-callout-text {
 	color: #fff;
+	font-size: 28px;
+	font-size: 2rem;
+	line-height: 1.25;
+	padding-bottom: 7px;
+	padding-bottom: 0.5rem;
 }
 #kalervo-callout-url .kalervo-callout-button {
 	background: #303030;
