@@ -119,7 +119,7 @@ class Hybrid_Media_Grabber {
 			'before'      => '',             // HTML before the output
 			'after'       => '',             // HTML after the output
 			'split_media' => false,          // Splits the media from the post content
-			'width'       => $content_width, // Custom width. Can't be greater than $content_width.
+			'width'       => $content_width, // Custom width. Defaults to the theme's content width.
 		);
 
 		/* Set the object properties. */
@@ -292,7 +292,7 @@ class Hybrid_Media_Grabber {
 			foreach ( $matches as $value ) {
 
 				/* Let WP work its magic with the 'autoembed' method. */
-				$embed = apply_filters( 'hybrid_media_grabber_autoembed_media', $value[0] );
+				$embed = trim( apply_filters( 'hybrid_media_grabber_autoembed_media', $value[0] ) );
 
 				if ( !empty( $embed ) ) {
 					$this->original_media = $value[0];
@@ -368,43 +368,77 @@ class Hybrid_Media_Grabber {
 	 *
 	 * @since  0.1.0
 	 * @access public
-	 * @global int     $content_width
 	 * @param  string  $html
 	 * @return string
 	 */
 	public function filter_dimensions( $html ) {
-		global $content_width;
 
-		/* Find the dimensions of the media. */
-		preg_match( '/width=[\'"](.+?)[\'"].+?height=[\'"](.+?)[\'"]/i', $html, $dimensions );
+		/* Find the attributes of the media. */
+		$atts = wp_kses_hair( $html, array( 'http', 'https' ) );
+
+		/* Loop through the media attributes and add them in key/value pairs. */
+		foreach ( $atts as $att )
+			$media_atts[ $att['name'] ] = $att['value'];
 
 		/* If no dimensions are found, just return the HTML. */
-		if ( empty( $dimensions ) || !isset( $dimensions[1] ) || !isset( $dimensions[2] ) )
+		if ( empty( $media_atts ) || !isset( $media_atts['width'] ) || !isset( $media_atts['height'] ) )
 			return $html;
 
-		/* Width can't be greater than $content_width. This is consistent with the [video] shortcode. */
-		$this->args['width'] = $this->args['width'] > $content_width ? $content_width : $this->args['width'];
+		/* Set the max height based on the inputted width and the ratio. */
+		$max_height = round( $this->args['width'] / ( $media_atts['width'] / $media_atts['height'] ) );
 
-		/* Get the ration by dividing the original width by the height of the media. */
-		$ratio = $dimensions[1] / $dimensions[2];
+		/* Set the max width. */
+		$max_width = $this->args['width'];
 
-		/* Correct the height based on the inputted width and the ratio. */
-		$height = round( $this->args['width'] / $ratio );
+		/* Fix for Spotify embeds. */
+		if ( !empty( $media_atts['src'] ) && preg_match( '#https?://(embed)\.spotify\.com/.*#i', $media_atts['src'], $matches ) )
+			list( $max_width, $max_height ) = $this->spotify_dimensions( $media_atts );
+
+		/* Calculate new media dimensions. */
+		list( $width, $height ) = wp_expand_dimensions( 
+			$media_atts['width'], 
+			$media_atts['height'], 
+			$max_width,
+			$max_height
+		);
 
 		/* Set up the patterns for the 'width' and 'height' attributes. */
 		$patterns = array(
 			'/(width=[\'"]).+?([\'"])/i',
-			'/(height=[\'"]).+?([\'"])/i'
+			'/(height=[\'"]).+?([\'"])/i',
+			'/(<div.+?style=[\'"].*?width:.+?).+?(px;.+?[\'"].*?>)/i'
 		);
 
 		/* Set up the replacements for the 'width' and 'height' attributes. */
 		$replacements = array(
-			'${1}' . $this->args['width'] . '${2}',
-			'${1}' . $height . '${2}'
+			'${1}' . $width . '${2}',
+			'${1}' . $height . '${2}',
+			'${1}' . $width . '${2}'
 		);
 
 		/* Filter the dimensions and return the media HTML. */
 		return preg_replace( $patterns, $replacements, $html );
+	}
+
+	/**
+	 * Fix for Spotify embeds because they're the only embeddable service that doesn't work that well 
+	 * with custom-sized embeds.  So, we need to adjust this the best we can.  Right now, the only 
+	 * embed size that works for full-width embeds is the "compact" player (height of 80).
+	 *
+	 * @since  0.1.0
+	 * @access public
+	 * @param  array   $media_atts
+	 * @return array
+	 */
+	public function spotify_dimensions( $media_atts ) {
+
+		$max_width  = $media_atts['width'];
+		$max_height = $media_atts['height'];
+
+		if ( 80 == $media_atts['height'] )
+			$max_width  = $this->args['width'];
+
+		return array( $max_width, $max_height );
 	}
 }
 
