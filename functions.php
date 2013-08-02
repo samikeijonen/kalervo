@@ -626,7 +626,7 @@ function kalervo_get_link_url() {
 
 	$kalervo_content = get_the_content();
 
-	$kalervo_url = get_content_url( $kalervo_content );
+	$kalervo_url = get_url_in_content( $kalervo_content );
 
 	return ( $kalervo_url ) ? $kalervo_url : apply_filters( 'the_permalink', get_permalink() );
 
