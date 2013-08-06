@@ -1,6 +1,6 @@
 <?php if ( is_singular( get_post_type() ) ) { ?>
 	
-	<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+	<article <?php hybrid_post_attributes(); ?>>
 
 		<header class="entry-header">
 			<h1 class="entry-title"><?php single_post_title(); ?></h1>
@@ -24,7 +24,7 @@
 		
 		<div class="kalervo-portfolio">
 		
-			<article id="post-<?php the_ID(); ?>" class="<?php hybrid_entry_class(); ?>">
+			<article <?php hybrid_post_attributes(); ?>>
 		
 				<header class="entry-header">
 					<?php if ( current_theme_supports( 'get-the-image' ) ) get_the_image( array( 'meta_key' => 'Thumbnail', 'size' => 'kalervo-thumbnail-portfolio', 'image_class' => 'kalervo-portfolio-image', 'width' => 450, 'height' => 309, 'default_image' => trailingslashit( get_template_directory_uri() ) . 'images/archive_default.png' ) ); ?>
