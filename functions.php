@@ -207,9 +207,9 @@ function kalervo_theme_updater() {
 	$edd_updater = new EDD_SL_Theme_Updater( array( 
 		'remote_api_url' 	=> KALERVO_SL_STORE_URL, 	// our store URL that is running EDD
 		'version' 			=> KALERVO_VERSION, 		// the current theme version we are running
-		'license' 			=> $kalervo_license, 			// the license key (used get_option above to retrieve from DB)
+		'license' 			=> $kalervo_license, 		// the license key (used get_option above to retrieve from DB)
 		'item_name' 		=> KALERVO_SL_THEME_NAME,	// the name of this theme
-		'author'			=> 'Sami Keijonen'	            // the author's name
+		'author'			=> 'Sami Keijonen'	        // the author's name
 		)
 	);
 
