@@ -112,59 +112,69 @@ function kalervo_customize_register_logo( $wp_customize ) {
 		)
 	);
 	
-	/* Header image or Soliloque Slider control. */
+	/* Header image or Soliloquy Slider control. */
+	
+	if ( post_type_exists( 'soliloquy' ) ) {
+		$kalervo_show_header_slider_label = esc_html__( 'Choose whether to show Header Image or Soliloquy Slider in Header?', 'kalervo' );
+	} else {
+		$kalervo_show_header_slider_label = esc_html__( 'Choose whether to show Header Image or Soliloquy Slider in Header? Note! You need to install and activate Soliloquy Slider Plugin first.', 'kalervo' );
+	}
+	
 	$wp_customize->add_control(
 		'show-header-slider',
 		array(
-			'label'    => esc_html__( 'Choose whether to show Header Image or Soliloque Slider in Header?', 'kalervo' ),
+			'label'    => $kalervo_show_header_slider_label,
 			'section'  => 'layout',
 			'settings' => 'show_header_slider',
 			'type'     => 'radio',
 			'priority' => 10,
 			'choices'  => array(
 				'header'     => esc_html__( 'Show Header image', 'kalervo' ),
-				'slider'   => esc_html__( 'Show Slider', 'kalervo' )
+				'slider'   => esc_html__( 'Show Soliloquy Slider', 'kalervo' )
 			)
 		)
 	);
 	
 	/* Add the Soliloque Slider setting. */
 	
-	/* Get Slider choices. */
-	$kalervo_soliloquy_slider_choices = kalervo_get_soliloquy_slider_choices();
+	/* Get Slider choices if Soliloquy plugin is activated. */
+	if ( post_type_exists( 'soliloquy' ) ) {
 	
-	$wp_customize->add_setting(
-		'soliloquy_slider',
-		array(
-			'default'           => 0,
-			'type'              => 'theme_mod',
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'absint',
-			//'transport'         => 'postMessage'
-		)
-	);
+		$kalervo_soliloquy_slider_choices = kalervo_get_soliloquy_slider_choices();
 	
-	/* Add the Soliloque Slider control. */
-	$wp_customize->add_control(
-		'soliloquy-slider-control',
-		array(
-			'label'    => esc_html__( 'Select Soliloquy Slider', 'kalervo' ),
-			'section'  => 'layout',
-			'settings' => 'soliloquy_slider',
-			'type'     => 'select',
-			'choices'  => $kalervo_soliloquy_slider_choices
-		)
-	);
+		$wp_customize->add_setting(
+			'soliloquy_slider',
+			array(
+				'default'           => 0,
+				'type'              => 'theme_mod',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'absint',
+				//'transport'         => 'postMessage'
+			)
+		);
 	
-	/* Add front page callout section. */
-	$wp_customize->add_section(
-		'front-page-callout',
-		array(
-			'title'      => esc_html__( 'Front Page Callout', 'kalervo' ),
-			'priority'   => 210,
-			'capability' => 'edit_theme_options'
-		)
-	);
+		/* Add the Soliloque Slider control. */
+		$wp_customize->add_control(
+			'soliloquy-slider-control',
+			array(
+				'label'    => esc_html__( 'Select Soliloquy Slider', 'kalervo' ),
+				'section'  => 'layout',
+				'settings' => 'soliloquy_slider',
+				'type'     => 'select',
+				'choices'  => $kalervo_soliloquy_slider_choices
+			)
+		);
+	
+		/* Add front page callout section. */
+		$wp_customize->add_section(
+			'front-page-callout',
+			array(
+				'title'      => esc_html__( 'Front Page Callout', 'kalervo' ),
+				'priority'   => 210,
+				'capability' => 'edit_theme_options'
+			)
+		);
+	}
 	
 	/* Add the callout text setting. */
 	$wp_customize->add_setting(
@@ -495,14 +505,17 @@ function kalervo_register_colors( $color_palette ) {
 
 	/* Add custom colors. */
 	
+	/* Body. */
 	$color_palette->add_color(
 		array( 'id' => 'body', 'label' => __( 'Body color', 'kalervo' ), 'default' => '303030' )
 	);
 	
+	/* Container. */
 	$color_palette->add_color(
 		array( 'id' => 'container', 'label' => __( 'Container color', 'kalervo' ), 'default' => 'fff' )
 	);
 	
+	/* Primary menu. */
 	$color_palette->add_color(
 		array( 'id' => 'menu_primary', 'label' => __( 'Primary menu color', 'kalervo' ), 'default' => '303030' )
 	);
@@ -515,6 +528,7 @@ function kalervo_register_colors( $color_palette ) {
 		array( 'id' => 'menu_primary_link', 'label' => __( 'Primary menu link color', 'kalervo' ), 'default' => 'fff' )
 	);
 	
+	/* Links. */
 	$color_palette->add_color(
 		array( 'id' => 'link', 'label' => __( 'Link color', 'kalervo' ), 'default' => 'cc071e' )
 	);
@@ -523,6 +537,29 @@ function kalervo_register_colors( $color_palette ) {
 		array( 'id' => 'link_hover', 'label' => __( 'Link color hover', 'kalervo' ), 'default' => '191919' )
 	);
 	
+	/* Buttons etc. */
+	$color_palette->add_color(
+		array( 'id' => 'button', 'label' => __( 'Buttons color', 'kalervo' ), 'default' => '191919' )
+	);
+	
+	$color_palette->add_color(
+		array( 'id' => 'button_hover', 'label' => __( 'Buttons color hover', 'kalervo' ), 'default' => 'cc071e' )
+	);
+	
+	/* Callout Button. */
+	$color_palette->add_color(
+		array( 'id' => 'callout_button', 'label' => __( 'Callout button color', 'kalervo' ), 'default' => 'fff' )
+	);
+	
+	$color_palette->add_color(
+		array( 'id' => 'callout_button_bg', 'label' => __( 'Callout button background color', 'kalervo' ), 'default' => 'cc071e' )
+	);
+	
+	$color_palette->add_color(
+		array( 'id' => 'callout_button_hover', 'label' => __( 'Callout button background color hover', 'kalervo' ), 'default' => '303030' )
+	);
+	
+	/* Titles. */
 	$color_palette->add_color(
 		array( 'id' => 'title', 'label' => __( 'Site title and entry title color', 'kalervo' ), 'default' => '191919' )
 	);
@@ -531,6 +568,7 @@ function kalervo_register_colors( $color_palette ) {
 		array( 'id' => 'widget_title', 'label' => __( 'Widget title and forms text color', 'kalervo' ), 'default' => '555' )
 	);
 	
+	/* Entrys. */
 	$color_palette->add_color(
 		array( 'id' => 'entry', 'label' => __( 'Byline, meta, widget, secondary/subsidiary menu links etc. color', 'kalervo' ), 'default' => '777' )
 	);
@@ -554,7 +592,7 @@ function kalervo_register_colors( $color_palette ) {
 	$color_palette->add_rule_set(
 		'menu_primary',
 		array(
-			'background-color'    => '#menu-primary, #menu-primary ul li:hover li a, #menu-primary ul li.iehover li a, #menu-primary ul li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li.iehover li a,#kalervo-callout-url .kalervo-callout-button,  .loop-nav a, .pagination .page-numbers, .page-links a, a.more-link, a.kalervo-portfolio-item-link, a.kalervo-portfolio-item-link:visited, a.kalervo-button, .edd-submit.button.kalervo-theme-color'
+			'background-color'    => '#menu-primary, #menu-primary ul li:hover li a, #menu-primary ul li.iehover li a, #menu-primary ul li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li.iehover li a, .loop-nav a, .pagination .page-numbers, .page-links a, a.more-link, a.kalervo-portfolio-item-link, a.kalervo-portfolio-item-link:visited, a.kalervo-button, .edd-submit.button.kalervo-theme-color'
 		)
 	);
 	
@@ -568,7 +606,7 @@ function kalervo_register_colors( $color_palette ) {
 	$color_palette->add_rule_set(
 		'menu_primary_link',
 		array(
-			'color'               => '#kalervo-header-image #kalervo-header-title, #kalervo-callout-url #kalervo-callout-text, #kalervo-callout-url .kalervo-callout-button, #kalervo-header-title a.kalervo-button, .menu-toggle, input[type="submit"], #respond #submit, .loop-nav a, .loop-nav a:visited, .pagination .page-numbers, .page-links a, .page-links a:visited, a.more-link, a.kalervo-portfolio-item-link, a.kalervo-button, .edd-submit.button.kalervo-theme-color, .pagination .current, body .gform_wrapper .gform_body .gform_page_footer .gform_next_button, body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button, #menu-primary ul a, #menu-primary ul a:hover, #menu-primary ul li:hover a, #menu-primary li.current-menu-item a, #menu-primary ul li.iehover a, #menu-primary ul li:hover li a, #menu-primary ul li.iehover li a, #menu-primary ul.sub-menu li.current-menu-item a, #menu-primary ul li.iehover li.current-menu-item a, #menu-primary ul li:hover li a:hover, #menu-primary ul li:hover li:hover a, #menu-primary ul li.iehover li a:hover, #menu-primary ul li.iehover li.iehover a, #menu-primary ul li:hover li:hover li a,#menu-primary ul li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li.current-menu-item a, #menu-primary ul li.iehover li.iehover li.current-menu-item a, #menu-primary ul li:hover li:hover li a:hover, #menu-primary ul li:hover li:hover li:hover a, #menu-primary ul li.iehover li.iehover li a:hover, #menu-primary ul li.iehover li.iehover li.iehover a, #menu-primary ul li:hover li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li:hover li.current-menu-item a, #menu-primary ul li.iehover li.iehover li.iehover li.current-menu-item a, #menu-primary ul li:hover li:hover li:hover li a:hover, #menu-primary ul li.iehover li.iehover li.iehover li a:hover',
+			'color'               => '#kalervo-header-image #kalervo-header-title, #kalervo-header-title a.kalervo-button, .menu-toggle, input[type="submit"], #respond #submit, .loop-nav a, .loop-nav a:visited, .pagination .page-numbers, .page-links a, .page-links a:visited, a.more-link, a.kalervo-portfolio-item-link, a.kalervo-button, .edd-submit.button.kalervo-theme-color, .pagination .current, body .gform_wrapper .gform_body .gform_page_footer .gform_next_button, body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button, #menu-primary ul a, #menu-primary ul a:hover, #menu-primary ul li:hover a, #menu-primary li.current-menu-item a, #menu-primary ul li.iehover a, #menu-primary ul li:hover li a, #menu-primary ul li.iehover li a, #menu-primary ul.sub-menu li.current-menu-item a, #menu-primary ul li.iehover li.current-menu-item a, #menu-primary ul li:hover li a:hover, #menu-primary ul li:hover li:hover a, #menu-primary ul li.iehover li a:hover, #menu-primary ul li.iehover li.iehover a, #menu-primary ul li:hover li:hover li a,#menu-primary ul li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li.current-menu-item a, #menu-primary ul li.iehover li.iehover li.current-menu-item a, #menu-primary ul li:hover li:hover li a:hover, #menu-primary ul li:hover li:hover li:hover a, #menu-primary ul li.iehover li.iehover li a:hover, #menu-primary ul li.iehover li.iehover li.iehover a, #menu-primary ul li:hover li:hover li:hover li a, #menu-primary ul li.iehover li.iehover li.iehover li a, #menu-primary ul li:hover li:hover li:hover li.current-menu-item a, #menu-primary ul li.iehover li.iehover li.iehover li.current-menu-item a, #menu-primary ul li:hover li:hover li:hover li a:hover, #menu-primary ul li.iehover li.iehover li.iehover li a:hover',
 		)
 	);
 	
@@ -576,18 +614,52 @@ function kalervo_register_colors( $color_palette ) {
 	$color_palette->add_rule_set(
 		'link',
 		array(
-			'color'               => 'a, a:visited',
-			'background-color'    => '#kalervo-callout-url .kalervo-callout-button:hover, #kalervo-callout-url .kalervo-callout-button:focus, .menu-toggle:hover, input[type="submit"]:hover, #respond #submit:hover, .menu-toggle:active, .menu-toggle.toggled-on, input[type="submit"]:active, input[type="submit"].toggled-on, .loop-nav a:hover, .page-links a:hover, .pagination  a.page-numbers:hover, a.more-link:hover, a.kalervo-portfolio-item-link:hover, .pagination .current, body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover, body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover, .edd-submit.button.kalervo-theme-color:hover'
+			'color'               => 'a, a:visited'
 		)
 	);
 
 	$color_palette->add_rule_set(
 		'link_hover',
 		array(
-			'color'               => 'a:focus, a:active, a:hover, #footer a:focus, #footer a:active, #footer a:hover, #menu-secondary li a:hover, #menu-subsidiary li a:hover, #menu-secondary li.current-menu-item a, #menu-subsidiary li.current-menu-item a',
+			'color'               => 'a:focus, a:active, a:hover, #footer a:focus, #footer a:active, #footer a:hover'
+		)
+	);
+	
+	$color_palette->add_rule_set(
+		'button',
+		array(
+			'color'               => '#menu-secondary li a:hover, #menu-subsidiary li a:hover, #menu-secondary li.current-menu-item a, #menu-subsidiary li.current-menu-item a',
 			'background-color'    => '.menu-toggle, input[type="submit"], #respond #submit, body .gform_wrapper .gform_body .gform_page_footer .gform_next_button, body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button, #kalervo-header-image',
 			'border-color'        => '.widget-search input[type="text"]:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="url"]:focus, textarea:focus, body #edd_checkout_form_wrap input[type="text"]:focus, body #edd_checkout_form_wrap input[type="email"]:focus, body #edd_checkout_form_wrap input[type="password"]:focus, #respond input[type="text"]:focus, #respond textarea:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=text]:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=email]:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=tel]:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=url]:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=number]:focus, body .gform_wrapper .gform_body .gform_fields .gfield input[type=password]:focus, body .gform_wrapper .gform_body .gform_fields .gfield textarea:focus',
 			'border-left-color'   => 'blockquote'
+		)
+	);
+	
+	$color_palette->add_rule_set(
+		'button_hover',
+		array(
+			'background-color'    => '.menu-toggle:hover, input[type="submit"]:hover, #respond #submit:hover, .menu-toggle:active, .menu-toggle.toggled-on, input[type="submit"]:active, input[type="submit"].toggled-on, .loop-nav a:hover, .page-links a:hover, .pagination  a.page-numbers:hover, a.more-link:hover, a.kalervo-portfolio-item-link:hover, .pagination .current, body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover, body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover, .edd-submit.button.kalervo-theme-color:hover'
+		)
+	);
+	
+	$color_palette->add_rule_set(
+		'callout_button',
+		array(
+			'color'    => '#kalervo-callout-url #kalervo-callout-text, #kalervo-callout-url .kalervo-callout-button'
+		)
+	);
+	
+	$color_palette->add_rule_set(
+		'callout_button_bg',
+		array(
+			'background-color'    => '#kalervo-callout-url .kalervo-callout-button'
+		)
+	);
+
+	$color_palette->add_rule_set(
+		'callout_button_hover',
+		array(
+			'background-color'    => '#kalervo-callout-url .kalervo-callout-button:hover, #kalervo-callout-url .kalervo-callout-button:focus'
 		)
 	);
 	
