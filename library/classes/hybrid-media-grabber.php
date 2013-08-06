@@ -17,7 +17,7 @@
  * even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
  *
  * @package   HybridMediaGrabber
- * @version   0.1.0 - Alpha
+ * @version   0.1.0
  * @author    Justin Tadlock <justin@justintadlock.com>
  * @copyright Copyright (c) 2013, Justin Tadlock
  * @link      http://themehybrid.com
@@ -139,7 +139,6 @@ class Hybrid_Media_Grabber {
 	 * @return void
 	 */
 	public function __destruct() {
-		remove_filter( 'wp_video_shortcode',    array( $this, 'video_shortcode' ) );
 		remove_filter( 'embed_maybe_make_link', '__return_false' );
 	}
 
@@ -384,22 +383,30 @@ class Hybrid_Media_Grabber {
 		if ( empty( $media_atts ) || !isset( $media_atts['width'] ) || !isset( $media_atts['height'] ) )
 			return $html;
 
-		/* Set the max height based on the inputted width and the ratio. */
-		$max_height = round( $this->args['width'] / ( $media_atts['width'] / $media_atts['height'] ) );
-
 		/* Set the max width. */
 		$max_width = $this->args['width'];
+
+		/* Set the max height based on the max width and original width/height ratio. */
+		$max_height = round( $max_width / ( $media_atts['width'] / $media_atts['height'] ) );
 
 		/* Fix for Spotify embeds. */
 		if ( !empty( $media_atts['src'] ) && preg_match( '#https?://(embed)\.spotify\.com/.*#i', $media_atts['src'], $matches ) )
 			list( $max_width, $max_height ) = $this->spotify_dimensions( $media_atts );
 
 		/* Calculate new media dimensions. */
-		list( $width, $height ) = wp_expand_dimensions( 
+		$dimensions = wp_expand_dimensions( 
 			$media_atts['width'], 
 			$media_atts['height'], 
 			$max_width,
 			$max_height
+		);
+
+		/* Allow devs to filter the final width and height of the media. */
+		list( $width, $height ) = apply_filters( 
+			'hybrid_media_grabber_dimensions', 
+			$dimensions,                       // width/height array
+			$media_atts,                       // media HTML attributes
+			$this                              // media grabber object
 		);
 
 		/* Set up the patterns for the 'width' and 'height' attributes. */
