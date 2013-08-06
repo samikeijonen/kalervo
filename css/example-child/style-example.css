@@ -170,7 +170,6 @@ body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button,
 #menu-primary ul li.iehover li.iehover li a,
 #menu-primary ul li:hover li:hover li:hover li a,
 #menu-primary ul li.iehover li.iehover li.iehover li a,
-#kalervo-callout-url .kalervo-callout-button, 
 .loop-nav a,
 .pagination .page-numbers,
 .page-links a,
@@ -270,8 +269,7 @@ th {
 	background: #fff;
 }
 
-#kalervo-callout-url .kalervo-callout-button:hover,
-#kalervo-callout-url .kalervo-callout-button:focus,
+#kalervo-callout-url .kalervo-callout-button,
 .menu-toggle:hover,
 input[type="submit"]:hover,
 #respond #submit:hover,
@@ -289,6 +287,10 @@ body .gform_wrapper .gform_body .gform_page_footer .gform_next_button:hover,
 body .gform_wrapper .gform_body .gform_page_footer .gform_previous_button:hover,
 .edd-submit.button.kalervo-theme-color:hover {
 	background: #cc071e;
+}
+#kalervo-callout-url .kalervo-callout-button:hover,
+#kalervo-callout-url .kalervo-callout-button:focus {
+	background: #303030;
 }
 
 .loop-nav a:hover,
