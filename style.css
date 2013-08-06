@@ -477,12 +477,6 @@ img {
 	max-width: 100% !important;
 }
 
-/* Audio embed. Somehow 100% doesn't work for all screen sizes. Try to fix this. */
-.entry-media .wp-audio-shortcode,
-.entry-content .wp-audio-shortcode {
-	max-width: 99% !important;
-}
-
 /* Links. */
 a,
 a:visited {
@@ -961,7 +955,7 @@ img.wp-smiley {
 	padding-bottom: 0.5rem;
 }
 #kalervo-callout-url .kalervo-callout-button {
-	background: #303030;
+	background: #cc071e;
 	color: #fff;
 	display: inline-block;
 	padding: 0.75em 1.25em;
@@ -969,7 +963,7 @@ img.wp-smiley {
 }
 #kalervo-callout-url .kalervo-callout-button:hover,
 #kalervo-callout-url .kalervo-callout-button:focus {
-	background: #cc071e;
+	background: #303030;
 }
 #kalervo-callout-url a:hover.kalervo-callout-button {
 	text-decoration: none;
