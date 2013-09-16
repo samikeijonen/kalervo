@@ -98,9 +98,9 @@ function kalervo_customize_register_logo( $wp_customize ) {
 		)
 	);
 	
-	/* == Show header image or Soliloque Slider == */
+	/* == Show header image or Soliloquy Slider == */
 	
-	/* Add setting do you want to show header image or Soliloque Slider. */
+	/* Add setting do you want to show header image or Soliloquy Slider. */
 	$wp_customize->add_setting(
 		'show_header_slider',
 		array(
@@ -135,7 +135,7 @@ function kalervo_customize_register_logo( $wp_customize ) {
 		)
 	);
 	
-	/* Add the Soliloque Slider setting. */
+	/* Add the Soliloquy Slider setting. */
 	
 	/* Get Slider choices if Soliloquy plugin is activated. */
 	if ( post_type_exists( 'soliloquy' ) ) {
@@ -153,7 +153,7 @@ function kalervo_customize_register_logo( $wp_customize ) {
 			)
 		);
 	
-		/* Add the Soliloque Slider control. */
+		/* Add the Soliloquy Slider control. */
 		$wp_customize->add_control(
 			'soliloquy-slider-control',
 			array(
@@ -687,7 +687,7 @@ function kalervo_register_colors( $color_palette ) {
 }
 
 /**
-* Return Soliloque Slider choices.
+* Return Soliloquy Slider choices.
 *
 * @since 0.1.0
 */
