@@ -165,16 +165,17 @@ function kalervo_customize_register_logo( $wp_customize ) {
 			)
 		);
 	
-		/* Add front page callout section. */
-		$wp_customize->add_section(
-			'front-page-callout',
-			array(
-				'title'      => esc_html__( 'Front Page Callout', 'kalervo' ),
-				'priority'   => 210,
-				'capability' => 'edit_theme_options'
-			)
-		);
 	}
+	
+	/* Add front page callout section. */
+	$wp_customize->add_section(
+		'front-page-callout',
+		array(
+			'title'      => esc_html__( 'Front Page Callout', 'kalervo' ),
+			'priority'   => 210,
+			'capability' => 'edit_theme_options'
+		)
+	);
 	
 	/* Add the callout text setting. */
 	$wp_customize->add_setting(
