@@ -10,8 +10,12 @@ add_filter( 'edd_button_colors', 'kalervo_add_button_color' );
  */
 function kalervo_add_button_color( $button_style  ) {
 	
-	if ( function_exists( 'edd_get_button_colors' ) ) 
-		$button_style['kalervo-theme-color'] = __( 'Kalervo Theme Color', 'kalervo' );
+	if ( function_exists( 'edd_get_button_colors' ) ) {
+		$button_style['kalervo-theme-color'] = array( 
+			'label' => __( 'Kalervo Theme Color', 'kalervo' ),
+			'hex'   => ''
+		);
+	}
 
 	return $button_style;
 	
