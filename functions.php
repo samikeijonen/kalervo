@@ -8,7 +8,7 @@
  * @subpackage  Functions
  * @version     0.1.0
  * @author      Sami Keijonen <sami.keijonen@foxnet.fi>
- * @copyright   Copyright (c) 2012, Sami Keijonen
+ * @copyright   Copyright (c) 2014, Sami Keijonen
  * @link        https://foxnet-themes.fi
  * @license     http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
@@ -16,6 +16,9 @@
 /* Load Hybrid Core theme framework. */
 require_once( trailingslashit( get_template_directory() ) . 'library/hybrid.php' );
 new Hybrid();
+
+/* Add support for a custom header image. */
+require trailingslashit( get_template_directory() ) . 'includes/custom-header.php';
 
 /* Theme setup function using 'after_setup_theme' hook. */
 add_action( 'after_setup_theme', 'kalervo_theme_setup' );
@@ -43,7 +46,6 @@ function kalervo_theme_setup() {
 
 	/* Add theme support for core framework features. */
 	add_theme_support( 'hybrid-core-menus', array( 'primary', 'secondary', 'subsidiary' ) );
-	add_theme_support( 'hybrid-core-sidebars', array( 'header', 'primary', 'subsidiary' ) );
 	add_theme_support( 'hybrid-core-widgets' );
 	add_theme_support( 'hybrid-core-shortcodes' );
 	add_theme_support( 'hybrid-core-theme-settings', array( 'about', 'footer' ) );
@@ -86,21 +88,6 @@ function kalervo_theme_setup() {
 			'wp-head-callback' => 'kalervo_custom_background_callback'
 		)
 	);
-	
-	/* Add support for flexible headers. @link http://make.wordpress.org/themes/2012/04/06/updating-custom-backgrounds-and-custom-headers-for-wordpress-3-4/ */
-	
-	$kalervo_header_args = array(
-		'flex-height' => true,
-		'height' => apply_filters( 'kalervo_header_height', 379 ),
-		'flex-width' => true,
-		'width' => apply_filters( 'kalervo_header_width', 1000 ),
-		'default-image' => trailingslashit( get_template_directory_uri() ) . 'images/default_header.jpg',
-		'header-text' => false,
-		'admin-head-callback' => 'kalervo_admin_header_style',
-		'admin-preview-callback' => 'kalervo_admin_header_image',
-	);
-	
-	add_theme_support( 'custom-header', $kalervo_header_args );
 	
 	/* Set up Licence key for this theme. URL: https://easydigitaldownloads.com/docs/activating-license-keys-in-wp-plugins-and-themes */
  
@@ -155,7 +142,7 @@ function kalervo_theme_setup() {
 	/* Add css to customize. */
 	add_action( 'wp_enqueue_scripts', 'kalervo_customize_preview_css' );
 	
-	/* Register additional sidebar to 'front page' page template. */
+	/* Register sidebars. */
 	add_action( 'widgets_init', 'kalervo_register_sidebars' );
 	
 	/* Remove the "Theme Settings" submenu. */
@@ -253,42 +240,6 @@ function kalervo_custom_background_callback() {
 <?php
 
 }
-
-/**
- * Styles the header image displayed on the Appearance > Header admin panel.
- *
- * @since  0.1.0
- */
-function kalervo_admin_header_style() {
-?>
-	<style type="text/css">
-	.appearance_page_custom-header #headimg {
-		border: none;
-		max-width: 100%;
-	}
-	#headimg img {
-		max-width: 90%;
-		height: auto;
-	}
-	</style>
-<?php
-}
-
-/**
- * Outputs markup to be displayed on the Appearance > Header admin panel.
- * This callback overrides the default markup displayed there.
- *
- * @since  0.1.0
- */
-function kalervo_admin_header_image() {
-	?>
-	<div id="headimg">
-		<?php $header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
-			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
-		<?php endif; ?>
-	</div>
-<?php }
 
 /**
  * Overwrites the default widths for embeds. This function overwrites what the $content_width variable handles
@@ -524,18 +475,49 @@ function kalervo_customize_preview_css() {
  */
 function kalervo_register_sidebars() {
 
-	/* Register the 'front-page' sidebar. */
-	register_sidebar(
-		array(
-			'id' => 'front-page',
-			'name' => __( 'Front Page Widget', 'kalervo' ),
-			'description' => __( 'Front Page widget area.', 'kalervo' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s widget-%2$s"><div class="widget-wrap widget-inside">',
-			'after_widget' => '</div></section>',
-			'before_title' => '<h3 class="widget-title">',
-			'after_title' => '</h3>'
-		)
+	/* Register sidebars. */
+	$sidebar_header_args = array(
+		'id'            => 'header',
+		'name'          => _x( 'Header', 'sidebar', 'kalervo' ),
+		'description'   => __( 'A sidebar located in the top of the site.', 'kalervo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
 	);
+	$sidebar_primary_args = array(
+		'id'            => 'primary',
+		'name'          => _x( 'Primary', 'sidebar', 'kalervo' ),
+		'description'   => __( 'The main sidebar. It is displayed on either the left or right side of the page based on the chosen layout.', 'kalervo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+		
+	);
+	$sidebar_subsidiary_args = array(
+		'id'            => 'subsidiary',
+		'name'          => _x( 'Subsidiary', 'sidebar', 'kalervo' ),
+		'description'   => __( 'A sidebar located in the footer of the site.', 'kalervo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+	);
+	$sidebar_front_page_args = array(
+		'id'            => 'front-page',
+		'name'          => _x( 'Front Page Widget', 'sidebar', 'kalervo' ),
+		'description'   => __( 'Front Page widget area.', 'kalervo' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s"><div class="widget-wrap widget-inside">',
+		'after_widget'  => '</div></section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>'
+	);
+	
+	register_sidebar( $sidebar_header_args );
+	register_sidebar( $sidebar_primary_args );
+	register_sidebar( $sidebar_subsidiary_args );
+	register_sidebar( $sidebar_front_page_args );
 
 }
 
