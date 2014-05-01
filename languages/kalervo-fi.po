@@ -4,15 +4,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kalervo Theme in Finnish\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/kalervo\n"
-"POT-Creation-Date: 2013-08-06 08:43:38+00:00\n"
-"PO-Revision-Date: 2013-08-06 11:44+0200\n"
+"POT-Creation-Date: 2014-05-01 11:04:13+00:00\n"
+"PO-Revision-Date: 2014-05-01 14:05+0200\n"
 "Last-Translator: Sami Keijonen <sami.keijonen@foxnet.fi>\n"
 "Language-Team: Foxnet <sami.keijonen@foxnet.fi>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
+"X-Generator: Poedit 1.6.4\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;esc_html__;esc_html_e;_n;"
 "_x;_x:1,2c;_n:1,2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
@@ -225,19 +225,51 @@ msgstr ""
 "[entry-author]  [entry-published] [entry-comments-link before=\" | \"] "
 "[entry-edit-link before=\" | \"]"
 
-#: functions.php:345
+#: functions.php:296
 msgid "Portfolio Thumbnail"
 msgstr "Portfolion pikkukuva"
 
-#: functions.php:531
-msgid "Front Page Widget"
-msgstr "Etusivun vimpaimet"
+#: functions.php:481 library/functions/sidebars.php:99
+msgctxt "sidebar"
+msgid "Header"
+msgstr "Yläpalkin vimpain"
 
-#: functions.php:532
+#: functions.php:482
+msgid "A sidebar located in the top of the site."
+msgstr "Tähän liitetyt vimpaimet näkyvät sivun yläreunassa."
+
+#: functions.php:490 library/functions/sidebars.php:87
+msgctxt "sidebar"
+msgid "Primary"
+msgstr "Päävimpain"
+
+#: functions.php:491
+msgid ""
+"The main sidebar. It is displayed on either the left or right side of the "
+"page based on the chosen layout."
+msgstr ""
+"Päävimpainalue. Se näkyy sisällön vasemmalla tai oikealla puolella riippuen "
+"valitusta ulkoasusta."
+
+#: functions.php:500 library/functions/sidebars.php:95
+msgctxt "sidebar"
+msgid "Subsidiary"
+msgstr "Kolmas vimpain"
+
+#: functions.php:501
+msgid "A sidebar located in the footer of the site."
+msgstr "Sivupalkki sijaitsee alapalkissa."
+
+#: functions.php:509
+msgctxt "sidebar"
+msgid "Front Page Widget"
+msgstr "Etusivun vimpaimet."
+
+#: functions.php:510
 msgid "Front Page widget area."
 msgstr "Etusivun vimpainalue."
 
-#: functions.php:607
+#: functions.php:589
 msgid ""
 "No slider was selected. Please select a Slider under <a href=\"%s\"> "
 "Appearance &gt; Customize &gt; Layout</a>."
@@ -245,7 +277,7 @@ msgstr ""
 "Slideria ei ole vielä valittu. Valitse Slider kohdasta <a href=\"%s\"> "
 "Ulkoasu &gt; Mukauta &gt; Ulkoasu</a>."
 
-#: functions.php:645
+#: functions.php:627
 msgid "Visit site"
 msgstr "Vieraile sivulla"
 
@@ -272,11 +304,16 @@ msgstr ""
 "\" title=\"%4s\">Katso muutosloki</a> tai <a href=\"%5$s\"%6$s>päivitä nyt</"
 "a>."
 
-#: includes/edd-functions.php:14
+#: includes/custom-header.php:36
+msgctxt "header image description"
+msgid "Default header"
+msgstr "Oletusotsakekuva"
+
+#: includes/edd-functions.php:15
 msgid "Kalervo Theme Color"
 msgstr "Kalervo-teeman väri"
 
-#: includes/edd-functions.php:28
+#: includes/edd-functions.php:32
 msgid "From:"
 msgstr "Alkaen:"
 
@@ -344,135 +381,135 @@ msgstr "Näytä Soliloquy Slider"
 msgid "Select Soliloquy Slider"
 msgstr "Valitse Soliloquy Slider"
 
-#: includes/theme-customize.php:172
+#: includes/theme-customize.php:174
 msgid "Front Page Callout"
 msgstr "Etusivun Callout-teksti"
 
-#: includes/theme-customize.php:195
+#: includes/theme-customize.php:196
 msgid "Callout text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:219
+#: includes/theme-customize.php:220
 msgid "Callout URL"
 msgstr "Callout URL-linkki"
 
-#: includes/theme-customize.php:243
+#: includes/theme-customize.php:244
 msgid "Callout URL text"
 msgstr "Callout URL-linkin teksti"
 
-#: includes/theme-customize.php:375
+#: includes/theme-customize.php:376
 msgid "Body Font"
 msgstr "Fontti"
 
-#: includes/theme-customize.php:385
+#: includes/theme-customize.php:386
 msgid "Headline Font"
 msgstr "Otsikon fontti"
 
-#: includes/theme-customize.php:396
+#: includes/theme-customize.php:397
 msgid "Trebuchet (font stack)"
 msgstr "Trebuchet"
 
-#: includes/theme-customize.php:404
+#: includes/theme-customize.php:405
 msgid "Arial (font stack)"
 msgstr "Arial"
 
-#: includes/theme-customize.php:412
+#: includes/theme-customize.php:413
 msgid "Lucida Sans Unicode (font stack)"
 msgstr "Lucida Sans Unicode"
 
-#: includes/theme-customize.php:420
+#: includes/theme-customize.php:421
 msgid "Georgia (font stack)"
 msgstr "Georgia"
 
-#: includes/theme-customize.php:428
+#: includes/theme-customize.php:429
 msgid "Helvetica (font stack)"
 msgstr "Helvetica"
 
-#: includes/theme-customize.php:436
+#: includes/theme-customize.php:437
 msgid "Merriweather Sans"
 msgstr "Merriweather Sans"
 
-#: includes/theme-customize.php:446
+#: includes/theme-customize.php:447
 msgid "Roboto Condensed"
 msgstr "Roboto Condensed"
 
-#: includes/theme-customize.php:456
+#: includes/theme-customize.php:457
 msgid "Arvo"
 msgstr "Arvo"
 
-#: includes/theme-customize.php:466
+#: includes/theme-customize.php:467
 msgid "Muli"
 msgstr "Muli"
 
-#: includes/theme-customize.php:476
+#: includes/theme-customize.php:477
 msgid "Open Sans"
 msgstr "Open Sans"
 
-#: includes/theme-customize.php:486
+#: includes/theme-customize.php:487
 msgid "Open Sans Condensed (700)"
 msgstr "Open Sans Condensed (700)"
 
-#: includes/theme-customize.php:510
+#: includes/theme-customize.php:511
 msgid "Body color"
 msgstr "Tekstin väri"
 
-#: includes/theme-customize.php:515
+#: includes/theme-customize.php:516
 msgid "Container color"
 msgstr "Sisällön väri"
 
-#: includes/theme-customize.php:520
+#: includes/theme-customize.php:521
 msgid "Primary menu color"
 msgstr "Päämenu väri"
 
-#: includes/theme-customize.php:524
+#: includes/theme-customize.php:525
 msgid "Primary menu hover color"
 msgstr "Päämenu väri \"hover\""
 
-#: includes/theme-customize.php:528
+#: includes/theme-customize.php:529
 msgid "Primary menu link color"
 msgstr "Päämenun linkin väri"
 
-#: includes/theme-customize.php:533
+#: includes/theme-customize.php:534
 msgid "Link color"
 msgstr "Linkin väri"
 
-#: includes/theme-customize.php:537
+#: includes/theme-customize.php:538
 msgid "Link color hover"
 msgstr "Linkin väri \"hover\""
 
-#: includes/theme-customize.php:542
+#: includes/theme-customize.php:543
 msgid "Buttons color"
 msgstr "Painikkeiden väri"
 
-#: includes/theme-customize.php:546
+#: includes/theme-customize.php:547
 msgid "Buttons color hover"
 msgstr "Painikkeiden väri \"hover\""
 
-#: includes/theme-customize.php:551
+#: includes/theme-customize.php:552
 msgid "Callout button color"
 msgstr "Callout-painikkeen väri"
 
-#: includes/theme-customize.php:555
+#: includes/theme-customize.php:556
 msgid "Callout button background color"
 msgstr "Callout-painikkeen taustaväri"
 
-#: includes/theme-customize.php:559
+#: includes/theme-customize.php:560
 msgid "Callout button background color hover"
 msgstr "Callout-painikkeen taustaväri \"hover\""
 
-#: includes/theme-customize.php:564
+#: includes/theme-customize.php:565
 msgid "Site title and entry title color"
 msgstr "Otsikkojen väri"
 
-#: includes/theme-customize.php:568
+#: includes/theme-customize.php:569
 msgid "Widget title and forms text color"
 msgstr "Vimpaimien otsikkojen väri"
 
-#: includes/theme-customize.php:573
+#: includes/theme-customize.php:574
 msgid "Byline, meta, widget, secondary/subsidiary menu links etc. color"
 msgstr "Vimpaimien, toisen ja kolmannen menun jne väri."
 
-#: includes/theme-customize.php:698
+#: includes/theme-customize.php:699
 msgid "Select Slider"
 msgstr "Valitse Slider"
 
@@ -562,7 +599,7 @@ msgstr "Vimpain, jolla hallitaan arkistoja."
 
 #: library/classes/widget-archives.php:44
 #: library/classes/widget-archives.php:142
-#: library/extensions/breadcrumb-trail.php:180
+#: library/extensions/breadcrumb-trail.php:183
 #: library/functions/context.php:576 loop-meta.php:86
 msgid "Archives"
 msgstr "Arkistot"
@@ -672,7 +709,7 @@ msgstr "Tekijät"
 msgid "Display Name"
 msgstr "Näytä nimi"
 
-#: library/classes/widget-authors.php:147 library/functions/comments.php:188
+#: library/classes/widget-authors.php:147 library/functions/comments.php:191
 msgid "Email"
 msgstr "Email"
 
@@ -755,7 +792,7 @@ msgstr "Lukumäärä"
 #: library/classes/widget-bookmarks.php:189
 #: library/classes/widget-bookmarks.php:202
 #: library/classes/widget-categories.php:178
-#: library/classes/widget-tags.php:193 library/functions/comments.php:187
+#: library/classes/widget-tags.php:193 library/functions/comments.php:190
 msgid "Name"
 msgstr "Nimi"
 
@@ -982,10 +1019,10 @@ msgid "View"
 msgstr "Näkymä"
 
 #: library/classes/widget-tags.php:177
-#: library/extensions/breadcrumb-trail.php:1122
-#: library/extensions/breadcrumb-trail.php:1158
-#: library/extensions/breadcrumb-trail.php:1175
-#: library/extensions/breadcrumb-trail.php:1206
+#: library/extensions/breadcrumb-trail.php:1130
+#: library/extensions/breadcrumb-trail.php:1166
+#: library/extensions/breadcrumb-trail.php:1183
+#: library/extensions/breadcrumb-trail.php:1214
 #: library/functions/shortcodes.php:205 library/functions/shortcodes.php:527
 msgid "Edit"
 msgstr "Editoi"
@@ -998,76 +1035,76 @@ msgstr "Tyhjä"
 msgid "Pad counts?"
 msgstr "Pad lukumäärä?"
 
-#: library/extensions/breadcrumb-trail.php:175
+#: library/extensions/breadcrumb-trail.php:178
 msgid "Browse:"
 msgstr "Navigointi: "
 
-#: library/extensions/breadcrumb-trail.php:176
+#: library/extensions/breadcrumb-trail.php:179
 msgid "Home"
 msgstr "Etusivu"
 
-#: library/extensions/breadcrumb-trail.php:177
+#: library/extensions/breadcrumb-trail.php:180
 #: library/functions/context.php:582
 msgid "Search results for \"%s\""
 msgstr "Hakutulokset haulle: \"%s\""
 
-#: library/extensions/breadcrumb-trail.php:178
+#: library/extensions/breadcrumb-trail.php:181
 #: library/functions/context.php:586
 msgid "404 Not Found"
 msgstr "404 Sivua ei löytynyt"
 
-#: library/extensions/breadcrumb-trail.php:179
+#: library/extensions/breadcrumb-trail.php:182
 msgid "Page %d"
 msgstr "Sivu %d"
 
-#: library/extensions/breadcrumb-trail.php:181
+#: library/extensions/breadcrumb-trail.php:184
 #: library/functions/context.php:553
 msgid "g:i a"
 msgstr "G:i"
 
-#: library/extensions/breadcrumb-trail.php:182
+#: library/extensions/breadcrumb-trail.php:185
 msgid "Minute %d"
 msgstr "Minuutti %d"
 
-#: library/extensions/breadcrumb-trail.php:183
+#: library/extensions/breadcrumb-trail.php:186
 #: library/functions/context.php:559
 msgid "g a"
 msgstr "g a"
 
-#: library/extensions/breadcrumb-trail.php:184
+#: library/extensions/breadcrumb-trail.php:187
 msgid "d"
 msgstr "d"
 
-#: library/extensions/breadcrumb-trail.php:185
+#: library/extensions/breadcrumb-trail.php:188
 msgid "Week %d"
 msgstr "Viikko %d"
 
-#: library/extensions/breadcrumb-trail.php:186
+#: library/extensions/breadcrumb-trail.php:189
 msgid "F"
 msgstr "F"
 
-#: library/extensions/breadcrumb-trail.php:187
-#: library/extensions/breadcrumb-trail.php:1027
+#: library/extensions/breadcrumb-trail.php:190
+#: library/extensions/breadcrumb-trail.php:1031
 #: library/functions/context.php:565 library/functions/context.php:571
 #: library/functions/core-seo.php:94 library/functions/shortcodes.php:70
 #: loop-meta.php:75
 msgid "Y"
 msgstr "Y"
 
-#: library/extensions/breadcrumb-trail.php:1031
+#: library/extensions/breadcrumb-trail.php:1035
 #: library/functions/core-seo.php:90 loop-meta.php:73
 msgid "F Y"
 msgstr "F Y"
 
-#: library/extensions/breadcrumb-trail.php:1035
+#: library/extensions/breadcrumb-trail.php:1039
 msgid "F j, Y"
 msgstr "j.m.Y"
 
-#: library/extensions/breadcrumb-trail.php:1150
+#: library/extensions/breadcrumb-trail.php:1158
 msgid "Split"
 msgstr "Jaa"
 
-#: library/extensions/breadcrumb-trail.php:1154
+#: library/extensions/breadcrumb-trail.php:1162
 msgid "Merge"
 msgstr "Yhdistä"
 
@@ -1091,61 +1128,61 @@ msgstr "Tyylitiedosto"
 msgid "Fonts"
 msgstr "Fontit"
 
-#: library/extensions/theme-layouts.php:337
+#: library/extensions/theme-layouts.php:344
 msgid "Default"
 msgstr "Oletus"
 
-#: library/extensions/theme-layouts.php:338
+#: library/extensions/theme-layouts.php:345
 msgid "One Column"
 msgstr "Yksi sarake"
 
-#: library/extensions/theme-layouts.php:339
+#: library/extensions/theme-layouts.php:346
 msgid "Two Columns, Left"
 msgstr "Kaksi saraketta, sisältö vasemmalla"
 
-#: library/extensions/theme-layouts.php:340
+#: library/extensions/theme-layouts.php:347
 msgid "Two Columns, Right"
 msgstr "Kaksi saraketta, sisältö oikealla"
 
-#: library/extensions/theme-layouts.php:341
+#: library/extensions/theme-layouts.php:348
 msgid "Three Columns, Left"
 msgstr "Kolme saraketta, sisältö vasemmalla"
 
-#: library/extensions/theme-layouts.php:342
+#: library/extensions/theme-layouts.php:349
 msgid "Three Columns, Right"
 msgstr "Kolme  saraketta, sisältö oikealla"
 
-#: library/extensions/theme-layouts.php:343
+#: library/extensions/theme-layouts.php:350
 msgid "Three Columns, Center"
 msgstr "Kolme saraketta, sisältö keskellä"
 
-#: library/extensions/theme-layouts.php:428
-#: library/extensions/theme-layouts.php:538
-#: library/extensions/theme-layouts.php:623
+#: library/extensions/theme-layouts.php:435
+#: library/extensions/theme-layouts.php:545
+#: library/extensions/theme-layouts.php:630
 msgid "Layout"
 msgstr "Ulkoasu"
 
-#: library/extensions/theme-layouts.php:454
+#: library/extensions/theme-layouts.php:461
 msgid "Layout is a theme-specific structure for the single view of the post."
 msgstr "Tällä voi vaihtaa yksittäisen sivun tai artikkelin ulkoasua."
 
-#: library/extensions/theme-layouts.php:656
+#: library/extensions/theme-layouts.php:663
 msgid "Global Layout"
 msgstr "Globaali ulkoasu"
 
-#: library/functions/comments.php:182
+#: library/functions/comments.php:185
 msgid "*"
 msgstr "*"
 
-#: library/functions/comments.php:189
+#: library/functions/comments.php:192
 msgid "Website"
 msgstr "Kotisivu"
 
-#: library/functions/comments.php:195
+#: library/functions/comments.php:198
 msgid "Comment"
 msgstr "Kommentti"
 
-#: library/functions/comments.php:196
+#: library/functions/comments.php:199
 msgid ""
 "You must be <a href=\"%1$s\" title=\"Log in\">logged in</a> to post a "
 "comment."
@@ -1153,31 +1190,31 @@ msgstr ""
 "Sinun pitää olla <a href=\"%1$s\" title=\"Log in\">kirjautuneena</a> "
 "kirjoittaaksesi kommentin."
 
-#: library/functions/comments.php:197
+#: library/functions/comments.php:200
 msgid "Logged in as <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 msgstr "Kirjautuneena nimellä <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
 
-#: library/functions/comments.php:197
+#: library/functions/comments.php:200
 msgid "Log out of this account"
 msgstr "Kirjaudu ulos tästä tilistä"
 
-#: library/functions/comments.php:197
+#: library/functions/comments.php:200
 msgid "Log out &raquo;"
 msgstr "Kirjaudu ulos &raquo;"
 
-#: library/functions/comments.php:202
+#: library/functions/comments.php:205
 msgid "Leave a Reply"
 msgstr "Jätä kommentti"
 
-#: library/functions/comments.php:203
+#: library/functions/comments.php:206
 msgid "Leave a Reply to %s"
 msgstr "Jätä kommentti %s"
 
-#: library/functions/comments.php:204
+#: library/functions/comments.php:207
 msgid "Click here to cancel reply."
 msgstr "Klikkaa tästä peruuttaaksesi vastauksen."
 
-#: library/functions/comments.php:205
+#: library/functions/comments.php:208
 msgid "Post Comment"
 msgstr "Lähetä  kommentti"
 
@@ -1365,11 +1402,6 @@ msgstr "Vastaa"
 msgid "Log in to reply."
 msgstr "Kirjaudu sisään vastataksesi."
 
-#: library/functions/sidebars.php:87
-msgctxt "sidebar"
-msgid "Primary"
-msgstr "Päävimpain"
-
 #: library/functions/sidebars.php:88
 msgid "The main (primary) widget area, most often used as a sidebar."
 msgstr "Päävimpainalue, yleisesti käytetty sivupalkissa."
@@ -1385,19 +1417,9 @@ msgid ""
 "sidebar."
 msgstr "Toiseksi tärkein vimpainalue, yleisesti käytetty sivupalkissa."
 
-#: library/functions/sidebars.php:95
-msgctxt "sidebar"
-msgid "Subsidiary"
-msgstr "Kolmas vimpain"
-
 #: library/functions/sidebars.php:96
 msgid "A widget area loaded in the footer of the site."
 msgstr "Vimpainalue, joka ladataan sivun alaplakkiin."
-
-#: library/functions/sidebars.php:99
-msgctxt "sidebar"
-msgid "Header"
-msgstr "Yläpalkin vimpain"
 
 #: library/functions/sidebars.php:100
 msgid "Displayed within the site's header area."
@@ -1545,9 +1567,3 @@ msgstr "Artikkeleiden sivu"
 #. Template Name of the plugin/theme
 msgid "Slider Page"
 msgstr "Kuvasliderin sivu"
-
-#~ msgid "Show Slider"
-#~ msgstr "Näytä Slider"
-
-#~ msgid "Search results for &quot;%1$s&quot;"
-#~ msgstr "Hakutulokset haulle: &quot;%1$s&quot;"
