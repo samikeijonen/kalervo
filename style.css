@@ -2,11 +2,11 @@
  * Theme Name: Kalervo
  * Theme URI: https://foxnet-themes.fi/downloads/kalervo
  * Description: Basic theme with Woocommerce, Easy Digital Downloads and Portfolio support.
- * Version: 0.1.3
+ * Version: 0.1.4
  * Author: Sami Keijonen
  * Author URI: https://foxnet-themes.fi
  * Text Domain: kalervo
- * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, flexible-width, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, white, light
+ * Tags: sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, fluid-layout, responsive-layout, left-sidebar, right-sidebar, custom-background, custom-header, featured-images, white, light
  * License: GNU General Public License v2.0
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
@@ -1143,7 +1143,7 @@ div.menu li, nav.menu li {
 #menu-subsidiary li a:visited,
 .woocommerce-pagination a:visited {
 	color: #777;
-	margin-left: 0.5em;
+	margin-left: 3px;
 	text-decoration: none;
 }
 #menu-secondary li a:hover,
@@ -1155,13 +1155,16 @@ div.menu li, nav.menu li {
 	color: #191919;
 	text-decoration: underline;
 }
-#menu-secondary li a:after,
-#menu-subsidiary li a:after {
+#menu-secondary li:after,
+#menu-subsidiary li:after {
 	content: "|";
-	padding-left: 0.5em;
+	color: #777;
+	font-size: 90%;
+	padding-left: 6px;
+	vertical-align: top;
 }
-#menu-secondary li:last-child a:after,
-#menu-subsidiary li:last-child a:after  {
+#menu-secondary li:last-child:after,
+#menu-subsidiary li:last-child:after  {
 	content: "";
 }
 #menu-secondary li:last-child a:after,
