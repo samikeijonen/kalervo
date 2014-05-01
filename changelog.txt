@@ -1,3 +1,10 @@
+May 1, 2014 - version 0.1.4
+
+* Update Hybrid Core to version 1.6.3.
+* Updated header and widgets to work with WordPress 3.9.
+* Small css tweaks in menus.
+* Update language files.
+
 October (rust) 10, 2013 - version 0.1.3
 
 * Update EDD buttons styles and functions.
